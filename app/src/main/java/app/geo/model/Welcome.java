@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import app.geo.R;
-import app.geo.main.GeoMenu;
+import app.geo.activity.GeoMenu;
 
 public class Welcome extends AppCompatActivity {
 
