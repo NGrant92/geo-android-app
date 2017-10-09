@@ -4,4 +4,11 @@
     <string name="signup">Sign Up</string>
     <string name="enter">Enter</string>
     <string name="menu">Geo Menu</string>
+    <string name="welcome">Welcome to Geo!</string>
+    <string name="map">Map</string>
+    <string name="geo_list">Geo List</string>
+    <string name="my_geo">My Geos</string>
+    <string name="add_geo">Add Geo</string>
+    <string name="mail">Mail</string>
+    <string name="settings">Settings</string>
 </resources>
