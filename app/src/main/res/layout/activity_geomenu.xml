@@ -24,6 +24,7 @@
         android:layout_marginEnd="24dp"
         android:layout_marginTop="32dp"
         android:text="@string/geo_list"
+        android:onClick="geoListButtonPressed"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -34,6 +35,7 @@
         android:layout_marginEnd="24dp"
         android:layout_marginTop="24dp"
         android:text="@string/add_geo"
+        android:onClick="addGeoButtonPressed"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button2" />
 
@@ -44,6 +46,7 @@
         android:layout_marginStart="24dp"
         android:layout_marginTop="24dp"
         android:text="@string/my_geo"
+        android:onClick="myGeosButtonPressed"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button" />
 
@@ -54,6 +57,7 @@
         android:layout_marginStart="24dp"
         android:layout_marginTop="24dp"
         android:text="@string/mail"
+        android:onClick="mailButtonPressed"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button3" />
 
@@ -64,6 +68,7 @@
         android:layout_marginEnd="24dp"
         android:layout_marginTop="24dp"
         android:text="@string/settings"
+        android:onClick="settingsButtonPressed"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button4" />
 
