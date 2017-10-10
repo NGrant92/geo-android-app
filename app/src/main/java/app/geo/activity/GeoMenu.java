@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Toast;
 
 import app.geo.R;
+import app.geo.model.Settings;
 
 /**
  * Created by niall on 08/10/17.

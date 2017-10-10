@@ -42,7 +42,7 @@
             android:label="@string/mail">
         </activity>
         <activity
-            android:name=".activity.Settings"
+            android:name=".model.Settings"
             android:label="@string/settings">
         </activity>
     </application>

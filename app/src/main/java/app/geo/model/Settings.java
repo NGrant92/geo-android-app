@@ -1,4 +1,4 @@
-package app.geo.activity;
+package app.geo.model;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
