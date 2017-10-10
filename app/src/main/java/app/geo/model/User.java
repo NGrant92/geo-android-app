@@ -2,6 +2,7 @@ package app.geo.model;
 
 /**
  * Created by niall on 10/10/17.
+ * A class that will hold information of a user.
  */
 
 public class User {
