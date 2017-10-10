@@ -45,5 +45,9 @@
             android:name=".model.Settings"
             android:label="@string/settings">
         </activity>
+        <activity
+            android:name=".model.Signup"
+            android:label="@string/signup">
+        </activity>
     </application>
 </manifest>

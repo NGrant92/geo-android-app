@@ -19,4 +19,8 @@ public class Welcome extends AppCompatActivity {
   public void enterPressed(View view){
     startActivity(new Intent(this, GeoMenu.class));
   }
+
+  public void signupPressed(View view){
+    startActivity(new Intent(this, Signup.class));
+  }
 }
