@@ -16,4 +16,5 @@
     <string name="lastName">Last Name</string>
     <string name="description">Description</string>
     <string name="location">Location</string>
+    <string name="add">Add</string>
 </resources>
