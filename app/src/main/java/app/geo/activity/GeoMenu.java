@@ -1,4 +1,4 @@
-package app.geo.activity;
+package app.geo.main;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,6 +7,11 @@ import android.view.View;
 import android.widget.Toast;
 
 import app.geo.R;
+import app.geo.activity.AddGeo;
+import app.geo.activity.GeoList;
+import app.geo.activity.Mail;
+import app.geo.activity.Map;
+import app.geo.activity.MyGeos;
 import app.geo.model.Settings;
 
 /**
