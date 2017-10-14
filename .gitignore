@@ -3,6 +3,8 @@
 /local.properties
 /.idea/workspace.xml
 /.idea/libraries
+.idea/modules.xml
+.idea/vcs.xml
 .DS_Store
 /build
 /captures
@@ -13,3 +15,6 @@
 bin/
 gen/
 Thumbs.db
+app/libs/
+app/src/main/res/menu/
+/.idea/
