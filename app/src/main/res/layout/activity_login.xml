@@ -29,6 +29,7 @@
         android:background="@drawable/background"
         android:ems="10"
         android:hint="@string/email"
+        android:text="homer@simpson.com"
         android:inputType="textEmailAddress"
         android:paddingEnd="5dp"
         android:paddingStart="5dp"
@@ -46,6 +47,7 @@
         android:ems="10"
         android:inputType="textPassword"
         android:hint="@string/password"
+        android:text="secret"
         android:paddingStart="5dp"
         android:paddingEnd="5dp"
         android:background="@drawable/background"
@@ -61,6 +63,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:text="@string/login"
+        android:onClick="loginPressed"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
