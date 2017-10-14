@@ -26,4 +26,7 @@
     <string name="location">Location</string>
     <string name="email">Email</string>
     <string name="password">Password</string>
+
+    <string name="defaultName">Name</string>
+    <string name="defaultLocation">Location</string>
 </resources>
