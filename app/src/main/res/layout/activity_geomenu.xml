@@ -7,69 +7,89 @@
     android:layout_height="match_parent">
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/map"
         android:layout_width="140dp"
         android:layout_height="110dp"
-        android:layout_marginStart="24dp"
+        android:layout_marginStart="32dp"
         android:layout_marginTop="32dp"
         android:text="@string/map"
+        android:gravity="center|bottom"
+        android:paddingBottom="10dp"
         android:onClick="mapButtonPressed"
+        android:background="@drawable/background"
+        android:src="@drawable/background"
+        android:padding="20dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/geolist"
         android:layout_width="140dp"
         android:layout_height="110dp"
-        android:layout_marginEnd="24dp"
+        android:layout_marginEnd="32dp"
         android:layout_marginTop="32dp"
         android:text="@string/geo_list"
+        android:gravity="center|bottom"
+        android:paddingBottom="10dp"
         android:onClick="geoListButtonPressed"
+        android:background="@drawable/background"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/addgeo"
         android:layout_width="140dp"
         android:layout_height="110dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginTop="32dp"
         android:text="@string/add_geo"
+        android:gravity="center|bottom"
+        android:paddingBottom="10dp"
         android:onClick="addGeoButtonPressed"
+        android:background="@drawable/background"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button2" />
+        app:layout_constraintTop_toBottomOf="@+id/geolist" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/mygeos"
         android:layout_width="140dp"
         android:layout_height="110dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
         android:text="@string/my_geo"
+        android:gravity="center|bottom"
+        android:paddingBottom="10dp"
         android:onClick="myGeosButtonPressed"
+        android:background="@drawable/background"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
+        app:layout_constraintTop_toBottomOf="@+id/map" />
 
     <Button
-        android:id="@+id/button5"
+        android:id="@+id/mail"
         android:layout_width="140dp"
         android:layout_height="110dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
         android:text="@string/mail"
+        android:gravity="center|bottom"
+        android:paddingBottom="10dp"
         android:onClick="mailButtonPressed"
+        android:background="@drawable/background"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button3" />
+        app:layout_constraintTop_toBottomOf="@+id/mygeos" />
 
     <Button
-        android:id="@+id/button6"
+        android:id="@+id/mainsettings"
         android:layout_width="140dp"
         android:layout_height="110dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginTop="32dp"
         android:text="@string/settings"
+        android:gravity="center|bottom"
+        android:paddingBottom="10dp"
         android:onClick="settingsButtonPressed"
+        android:background="@drawable/background"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button4" />
+        app:layout_constraintTop_toBottomOf="@+id/mygeos" />
 
 </android.support.constraint.ConstraintLayout>
