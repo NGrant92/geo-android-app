@@ -29,27 +29,27 @@
         android:layout_marginTop="8dp"
         android:text="@string/welcome"
         android:textAppearance="@android:style/TextAppearance.Large"
-        app:layout_constraintBottom_toTopOf="@+id/mainenter"
+        app:layout_constraintBottom_toTopOf="@+id/mainLogin"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView4" />
 
     <Button
-        android:id="@+id/mainenter"
+        android:id="@+id/mainLogin"
         android:layout_width="233dp"
         android:layout_height="49dp"
         android:layout_marginBottom="16dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:onClick="enterPressed"
+        android:onClick="loginPressed"
         android:text="@string/login"
-        app:layout_constraintBottom_toTopOf="@+id/button9"
+        app:layout_constraintBottom_toTopOf="@+id/mainSignup"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/button9"
+        android:id="@+id/mainSignup"
         android:layout_width="233dp"
         android:layout_height="49dp"
         android:layout_marginBottom="32dp"

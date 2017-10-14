@@ -1,4 +1,4 @@
-package app.geo.main;
+package app.geo.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
