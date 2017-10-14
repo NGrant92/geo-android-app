@@ -20,7 +20,16 @@ public class GeoApp extends Application{
   public void newUser(User user){
     users.add(user);
   }
-  public void newGeo(User user){
-    users.add(user);
+  public void newGeo(Geo geo){
+    geos.add(geo);
+  }
+
+  public boolean validUser(String email, String password){
+    for(User user : users){
+      if(user.email.equals(email) && user.password.equals(password)){
+        return true;
+      }
+    }
+    return false;
   }
 }
