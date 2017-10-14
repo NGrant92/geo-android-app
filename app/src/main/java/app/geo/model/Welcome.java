@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import app.geo.R;
-import app.geo.activity.GeoMenu;
+import app.geo.activity.Login;
 
 public class Welcome extends AppCompatActivity {
 
@@ -16,8 +16,8 @@ public class Welcome extends AppCompatActivity {
     setContentView(R.layout.activity_welcome);
   }
 
-  public void enterPressed(View view){
-    startActivity(new Intent(this, GeoMenu.class));
+  public void loginPressed(View view){
+    startActivity(new Intent(this, Login.class));
   }
 
   public void signupPressed(View view){
