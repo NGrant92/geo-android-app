@@ -7,7 +7,7 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/settingstitle"
+        android:id="@+id/settingsTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
@@ -20,7 +20,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/settingsfirstName"
+        android:id="@+id/settingsFirstName"
         android:layout_width="wrap_content"
         android:layout_height="32dp"
         android:layout_marginEnd="8dp"
@@ -34,10 +34,10 @@
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/settingstitle" />
+        app:layout_constraintTop_toBottomOf="@+id/settingsTitle" />
 
     <EditText
-        android:id="@+id/settingslastName"
+        android:id="@+id/settingsLastName"
         android:layout_width="wrap_content"
         android:layout_height="32dp"
         android:layout_marginEnd="8dp"
@@ -51,10 +51,10 @@
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/settingsfirstName" />
+        app:layout_constraintTop_toBottomOf="@+id/settingsFirstName" />
 
     <EditText
-        android:id="@+id/settingsemail"
+        android:id="@+id/settingsEmail"
         android:layout_width="wrap_content"
         android:layout_height="32dp"
         android:layout_marginEnd="8dp"
@@ -68,10 +68,10 @@
         android:inputType="textEmailAddress"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/settingslastName" />
+        app:layout_constraintTop_toBottomOf="@+id/settingsLastName" />
 
     <EditText
-        android:id="@+id/settingspassword"
+        android:id="@+id/settingsPassword"
         android:layout_width="wrap_content"
         android:layout_height="32dp"
         android:layout_marginEnd="8dp"
@@ -85,16 +85,17 @@
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/settingsemail" />
+        app:layout_constraintTop_toBottomOf="@+id/settingsEmail" />
 
     <Button
-        android:id="@+id/button8"
+        android:id="@+id/settingsUpdateButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="32dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:text="@string/update"
+        android:onClick="updateButtonPressed"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

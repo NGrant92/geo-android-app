@@ -1,6 +1,7 @@
 package app.geo.main;
 
 import android.app.Application;
+import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,7 +29,7 @@ public class GeoApp extends Application{
   public boolean validUser(String email, String password){
     for(User user : users){
       if(user.email.equals(email) && user.password.equals(password)){
-        currUser = user;
+        this.currUser = user;
         return true;
       }
     }

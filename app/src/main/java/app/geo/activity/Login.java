@@ -38,8 +38,7 @@ public class Login extends Base {
       startActivity(new Intent(this, GeoMenu.class));
     }
     else{
-      Toast toast = Toast.makeText(this, "Invalid Credentials", Toast.LENGTH_SHORT);
-      toast.show();
+      toastMessage("Invalid Credentials");
     }
   }
 
