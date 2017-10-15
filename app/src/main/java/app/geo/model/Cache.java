@@ -12,7 +12,6 @@ public class Cache {
   public String name;
   public String location;
   public String description;
-  //public String owner;
 
   public Cache(String name, String location, String description){
     this.cacheId = autoid++;
