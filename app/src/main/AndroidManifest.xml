@@ -35,7 +35,7 @@
             android:label="@string/cache_list">
         </activity>
         <activity
-            android:name=".activity.MyGeos"
+            android:name=".activity.MyCache"
             android:label="@string/my_cache">
         </activity>
         <activity

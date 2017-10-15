@@ -2,7 +2,6 @@ package app.geo.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 import app.geo.R;
@@ -12,7 +11,7 @@ import app.geo.model.Settings;
  * Created by niall on 08/10/17.
  */
 
-public class GeoMenu extends AppCompatActivity {
+public class GeoMenu extends Base {
 
   @Override
   protected void onCreate(Bundle savedInstanceState){
@@ -29,7 +28,7 @@ public class GeoMenu extends AppCompatActivity {
   }
 
   public void myCacheButtonPressed(View view){
-    startActivity(new Intent(this, MyGeos.class));
+    startActivity(new Intent(this, MyCache.class));
   }
 
   public void addCacheButtonPressed(View view){

@@ -20,7 +20,7 @@ import app.geo.model.Cache;
  * Created by niall on 09/10/17.
  */
 
-public class CacheList extends AppCompatActivity {
+public class CacheList extends Base {
 
   public ListView listView;
   public GeoApp app;

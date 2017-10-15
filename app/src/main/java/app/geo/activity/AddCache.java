@@ -15,7 +15,7 @@ import app.geo.model.Cache;
  * Created by niall on 09/10/17.
  */
 
-public class AddCache extends AppCompatActivity {
+public class AddCache extends Base {
   @Override
   protected void onCreate(Bundle savedInstanceState){
     super.onCreate(savedInstanceState);

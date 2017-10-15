@@ -9,7 +9,7 @@ import app.geo.R;
  * Created by niall on 09/10/17.
  */
 
-public class Map extends AppCompatActivity {
+public class Map extends Base {
   @Override
   protected void onCreate(Bundle savedInstanceState){
     super.onCreate(savedInstanceState);
