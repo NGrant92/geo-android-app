@@ -7,7 +7,7 @@
     android:id="@+id/relativeLayout2">
 
     <TextView
-        android:id="@+id/geo_name"
+        android:id="@+id/cache_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="48dp"
@@ -17,12 +17,12 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/geo_location"
+        android:id="@+id/cache_location"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="79dp"
         android:text="@string/defaultLocation"
-        app:layout_constraintBaseline_toBaselineOf="@+id/geo_name"
+        app:layout_constraintBaseline_toBaselineOf="@+id/cache_name"
         app:layout_constraintEnd_toEndOf="parent" />
 
 </android.support.constraint.ConstraintLayout>

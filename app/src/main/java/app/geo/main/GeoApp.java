@@ -5,7 +5,7 @@ import android.app.Application;
 import java.util.ArrayList;
 import java.util.List;
 
-import app.geo.model.Geo;
+import app.geo.model.Cache;
 import app.geo.model.User;
 
 /**
@@ -14,14 +14,14 @@ import app.geo.model.User;
 
 public class GeoApp extends Application{
 
-  public List<Geo> geos = new ArrayList<>();
+  public List<Cache> caches = new ArrayList<>();
   public List<User> users = new ArrayList<>();
 
   public void newUser(User user){
     users.add(user);
   }
-  public void newGeo(Geo geo){
-    geos.add(geo);
+  public void newGeo(Cache cache){
+    caches.add(cache);
   }
 
   public boolean validUser(String email, String password){

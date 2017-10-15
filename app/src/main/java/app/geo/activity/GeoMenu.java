@@ -4,14 +4,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.Toast;
 
 import app.geo.R;
-import app.geo.activity.AddGeo;
-import app.geo.activity.GeoList;
-import app.geo.activity.Mail;
-import app.geo.activity.Map;
-import app.geo.activity.MyGeos;
 import app.geo.model.Settings;
 
 /**
@@ -23,23 +17,23 @@ public class GeoMenu extends AppCompatActivity {
   @Override
   protected void onCreate(Bundle savedInstanceState){
     super.onCreate(savedInstanceState);
-    setContentView(R.layout.activity_geomenu);
+    setContentView(R.layout.activity_geo_menu);
   }
 
   public void mapButtonPressed(View view){
     startActivity(new Intent(this, Map.class));
   }
 
-  public void geoListButtonPressed(View view){
-    startActivity(new Intent(this, GeoList.class));
+  public void cacheListButtonPressed(View view){
+    startActivity(new Intent(this, CacheList.class));
   }
 
-  public void myGeosButtonPressed(View view){
+  public void myCacheButtonPressed(View view){
     startActivity(new Intent(this, MyGeos.class));
   }
 
-  public void addGeoButtonPressed(View view){
-    startActivity(new Intent(this, AddGeo.class));
+  public void addCacheButtonPressed(View view){
+    startActivity(new Intent(this, AddCache.class));
   }
 
   public void mailButtonPressed(View view){

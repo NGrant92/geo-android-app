@@ -7,20 +7,20 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/addGeoTitle"
+        android:id="@+id/addCacheTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="32dp"
         android:layout_marginStart="32dp"
         android:layout_marginTop="32dp"
-        android:text="@string/add_geo"
+        android:text="@string/add_cache"
         android:textAppearance="@android:style/TextAppearance.Large"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/addGeoName"
+        android:id="@+id/addCacheName"
         android:layout_width="wrap_content"
         android:layout_height="32dp"
         android:layout_marginEnd="8dp"
@@ -35,10 +35,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/addGeoTitle" />
+        app:layout_constraintTop_toBottomOf="@+id/addCacheTitle" />
 
     <EditText
-        android:id="@+id/addGeoLocation"
+        android:id="@+id/addCacheLocation"
         android:layout_width="wrap_content"
         android:layout_height="32dp"
         android:layout_marginEnd="8dp"
@@ -53,10 +53,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/addGeoName" />
+        app:layout_constraintTop_toBottomOf="@+id/addCacheName" />
 
     <EditText
-        android:id="@+id/addGeoDescription"
+        android:id="@+id/addCacheDescription"
         android:layout_width="215dp"
         android:layout_height="130dp"
         android:layout_marginEnd="8dp"
@@ -72,10 +72,10 @@
         android:background="@drawable/background"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/addGeoLocation" />
+        app:layout_constraintTop_toBottomOf="@+id/addCacheLocation" />
 
     <Button
-        android:id="@+id/addGeoButton"
+        android:id="@+id/addCacheButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="32dp"

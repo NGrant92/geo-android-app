@@ -31,16 +31,16 @@
             android:label="@string/map">
         </activity>
         <activity
-            android:name=".activity.GeoList"
-            android:label="@string/geo_list">
+            android:name=".activity.CacheList"
+            android:label="@string/cache_list">
         </activity>
         <activity
             android:name=".activity.MyGeos"
-            android:label="@string/my_geo">
+            android:label="@string/my_cache">
         </activity>
         <activity
-            android:name=".activity.AddGeo"
-            android:label="@string/add_geo">
+            android:name=".activity.AddCache"
+            android:label="@string/add_cache">
         </activity>
         <activity
             android:name=".activity.Mail"

@@ -18,48 +18,48 @@
         android:onClick="mapButtonPressed"
         android:background="@drawable/background"
         android:src="@drawable/background"
-        android:padding="20dp"
+        android:padding="10dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/geolist"
+        android:id="@+id/cachelist"
         android:layout_width="140dp"
         android:layout_height="110dp"
         android:layout_marginEnd="32dp"
         android:layout_marginTop="32dp"
-        android:text="@string/geo_list"
+        android:text="@string/cache_list"
         android:gravity="center|bottom"
         android:paddingBottom="10dp"
-        android:onClick="geoListButtonPressed"
+        android:onClick="cacheListButtonPressed"
         android:background="@drawable/background"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/addgeo"
+        android:id="@+id/addcache"
         android:layout_width="140dp"
         android:layout_height="110dp"
         android:layout_marginEnd="32dp"
         android:layout_marginTop="32dp"
-        android:text="@string/add_geo"
+        android:text="@string/add_cache"
         android:gravity="center|bottom"
         android:paddingBottom="10dp"
-        android:onClick="addGeoButtonPressed"
+        android:onClick="addCacheButtonPressed"
         android:background="@drawable/background"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/geolist" />
+        app:layout_constraintTop_toBottomOf="@+id/cachelist" />
 
     <Button
-        android:id="@+id/mygeos"
+        android:id="@+id/mycache"
         android:layout_width="140dp"
         android:layout_height="110dp"
         android:layout_marginStart="32dp"
         android:layout_marginTop="32dp"
-        android:text="@string/my_geo"
+        android:text="@string/my_cache"
         android:gravity="center|bottom"
         android:paddingBottom="10dp"
-        android:onClick="myGeosButtonPressed"
+        android:onClick="myCacheButtonPressed"
         android:background="@drawable/background"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/map" />
@@ -76,7 +76,7 @@
         android:onClick="mailButtonPressed"
         android:background="@drawable/background"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/mygeos" />
+        app:layout_constraintTop_toBottomOf="@+id/mycache" />
 
     <Button
         android:id="@+id/mainsettings"
@@ -84,12 +84,12 @@
         android:layout_height="110dp"
         android:layout_marginEnd="32dp"
         android:layout_marginTop="32dp"
-        android:text="@string/settings"
-        android:gravity="center|bottom"
-        android:paddingBottom="10dp"
-        android:onClick="settingsButtonPressed"
         android:background="@drawable/background"
+        android:gravity="center|bottom"
+        android:onClick="settingsButtonPressed"
+        android:paddingBottom="10dp"
+        android:text="@string/settings"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/mygeos" />
+        app:layout_constraintTop_toBottomOf="@+id/addcache" />
 
 </android.support.constraint.ConstraintLayout>

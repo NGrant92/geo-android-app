@@ -12,9 +12,9 @@
 
     <string name="menu">Geo Menu</string>
     <string name="map">Map</string>
-    <string name="geo_list">Geo List</string>
-    <string name="my_geo">My Geos</string>
-    <string name="add_geo">Add Geo</string>
+    <string name="cache_list">Cache List</string>
+    <string name="my_cache">My Cache</string>
+    <string name="add_cache">Add Cache</string>
     <string name="mail">Mail</string>
     <string name="settings">Settings</string>
 
