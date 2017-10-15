@@ -35,9 +35,15 @@ public class Signup extends Base {
 
     User user = new User(firstName.getText().toString(), lastName.getText().toString(), email.getText().toString(), password.getText().toString());
     GeoApp app = (GeoApp)getApplication();
-    app.newUser(user);
 
-    startActivity(new Intent(this, Login.class));
+    if(app.emailExists(user.email)){
+      toastMessage("Email is used by another account");
+    }
+    else{
+      app.newUser(user);
+      goToActivity(this, Login.class, null);
+    }
+
   }
 
   @Override

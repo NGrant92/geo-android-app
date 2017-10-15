@@ -35,4 +35,13 @@ public class GeoApp extends Application{
     }
     return false;
   }
+
+  public boolean emailExists(String regEmail){
+    for(User user : users){
+      if(user.email.equals(regEmail)){
+        return true;
+      }
+    }
+    return false;
+  }
 }

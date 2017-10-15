@@ -7,8 +7,11 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import java.util.List;
+
 import app.geo.R;
 import app.geo.activity.Base;
+import app.geo.activity.GeoMenu;
 import app.geo.main.GeoApp;
 
 /**
@@ -32,29 +35,50 @@ public class Settings extends Base {
     ((EditText)findViewById(R.id.settingsPassword)).setText(String.valueOf(user.password));
   }
 
-  public void updateButtonPressed(View view){
-    String firstName = ((TextView)findViewById(R.id.settingsFirstName)).getText().toString();
-    String lastName = ((TextView)findViewById(R.id.settingsLastName)).getText().toString();;
-    String email = ((TextView)findViewById(R.id.settingsEmail)).getText().toString();;
-    String password = ((TextView)findViewById(R.id.settingsPassword)).getText().toString();;
+  public void updateButtonPressed(View view) {
+    GeoApp app = (GeoApp) getApplication();
 
-    if(isNew(firstName, user.firstName)){
-      user.firstName = firstName;
+    String firstName = ((TextView) findViewById(R.id.settingsFirstName)).getText().toString();
+    String lastName = ((TextView) findViewById(R.id.settingsLastName)).getText().toString();
+    String email = ((TextView) findViewById(R.id.settingsEmail)).getText().toString();
+    String password = ((TextView) findViewById(R.id.settingsPassword)).getText().toString();
+
+    if(isValidEmail(email, user.userId)){
+      if (isNew(firstName, user.firstName)) {
+        user.firstName = firstName;
+      }
+      if (isNew(lastName, user.lastName)) {
+        user.lastName = lastName;
+      }
+      if (isNew(email, user.email)) {
+        user.email = email;
+      }
+      if (isNew(password, user.password)) {
+        user.password = password;
+      }
+      toastMessage("Profile updated!");
+      goToActivity(this, GeoMenu.class, null);
     }
-    if(isNew(lastName, user.lastName)){
-      user.lastName = lastName;
-    }
-    if(isNew(email, user.email)){
-      user.email = email;
-    }
-    if(isNew(password, user.password)){
-      user.password = password;
+    else{
+
+      toastMessage("Invalid Email.");
     }
 
   }
 
-  public boolean isNew(String newString, String currString){
+  public boolean isValidEmail(String email, int userId){
+    GeoApp app = (GeoApp) getApplication();
+    List<User> users = app.users;
+    for(User user : users){
+      if(email.equals(user.email) && user.userId != userId){
+        return false;
+      }
+    }
+    return true;
+  }
 
+
+  public boolean isNew(String newString, String currString){
     return newString != null && !newString.equals(currString);
   }
 }
