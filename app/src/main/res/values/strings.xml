@@ -4,6 +4,7 @@
     <string name="welcome">Welcome to Geo!</string>
     <string name="login">Login</string>
     <string name="signup">Sign Up</string>
+    <string name="home">Home</string>
 
     <string name="enter">Enter</string>
     <string name="add">Add</string>

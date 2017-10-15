@@ -4,6 +4,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
@@ -35,6 +38,30 @@ public class Signup extends AppCompatActivity {
     app.newUser(user);
 
     startActivity(new Intent(this, Login.class));
+  }
+
+  @Override
+  public boolean onCreateOptionsMenu(Menu menu){
+    //to inflate the menu items for use in the action bar
+    MenuInflater inflater = getMenuInflater();
+    inflater.inflate(R.menu.menu_welcome, menu);
+    return super.onCreateOptionsMenu(menu);
+  }
+
+  @Override
+  public boolean onOptionsItemSelected(MenuItem item){
+    switch(item.getItemId()){
+      case R.id.menuWelcome:
+        startActivity(new Intent(this, Welcome.class));
+        break;
+      case R.id.menuLogin:
+        startActivity(new Intent(this, Login.class));
+        break;
+      case R.id.menusignup:
+        startActivity(new Intent(this, Signup.class));
+        break;
+    }
+    return true;
   }
 }
 
