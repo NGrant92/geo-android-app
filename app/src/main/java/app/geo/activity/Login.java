@@ -21,7 +21,7 @@ import app.geo.model.Welcome;
  * Created by niall on 10/10/17.
  */
 
-public class Login extends AppCompatActivity {
+public class Login extends Base {
   @Override
   protected void onCreate(Bundle savedInstanceState){
     super.onCreate(savedInstanceState);
@@ -46,9 +46,8 @@ public class Login extends AppCompatActivity {
   @Override
   public boolean onCreateOptionsMenu(Menu menu){
     //to inflate the menu items for use in the action bar
-    MenuInflater inflater = getMenuInflater();
-    inflater.inflate(R.menu.menu_welcome, menu);
-    return super.onCreateOptionsMenu(menu);
+    getMenuInflater().inflate(R.menu.menu_welcome, menu);
+    return true;
   }
 
   @Override

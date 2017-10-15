@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import app.geo.R;
+import app.geo.activity.Base;
 import app.geo.activity.Login;
 import app.geo.main.GeoApp;
 
@@ -18,7 +19,7 @@ import app.geo.main.GeoApp;
  * Created by niall on 10/10/17.
  */
 
-public class Signup extends AppCompatActivity {
+public class Signup extends Base {
   @Override
   protected void onCreate(Bundle savedInstanceState){
     super.onCreate(savedInstanceState);
@@ -43,9 +44,8 @@ public class Signup extends AppCompatActivity {
   @Override
   public boolean onCreateOptionsMenu(Menu menu){
     //to inflate the menu items for use in the action bar
-    MenuInflater inflater = getMenuInflater();
-    inflater.inflate(R.menu.menu_welcome, menu);
-    return super.onCreateOptionsMenu(menu);
+    getMenuInflater().inflate(R.menu.menu_welcome, menu);
+    return true;
   }
 
   @Override
