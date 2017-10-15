@@ -10,6 +10,8 @@ import android.widget.Toast;
 
 import app.geo.R;
 import app.geo.model.Settings;
+import app.geo.model.Signup;
+import app.geo.model.Welcome;
 
 /**
  * Created by niall on 15/10/17.
@@ -32,12 +34,17 @@ public class Base extends AppCompatActivity {
     return true;
   }
 
-  public void menuSettings(MenuItem m) {
-    goToActivity(this, Settings.class, null);
-  }
-
-  public void menuHome(MenuItem m) {
-    goToActivity(this, GeoMenu.class, null);
+  @Override
+  public boolean onOptionsItemSelected(MenuItem item){
+    switch(item.getItemId()){
+      case R.id.menuSettings:
+        goToActivity(this, Settings.class, null);
+        break;
+      case R.id.menuHome:
+        goToActivity(this, GeoMenu.class, null);
+        break;
+    }
+    return true;
   }
 
   protected void toastMessage(String s) {
