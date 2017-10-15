@@ -54,13 +54,13 @@ public class Login extends Base {
   public boolean onOptionsItemSelected(MenuItem item){
     switch(item.getItemId()){
       case R.id.menuWelcome:
-        startActivity(new Intent(this, Welcome.class));
+        goToActivity(this, Welcome.class, null);
         break;
       case R.id.menuLogin:
-        startActivity(new Intent(this, Login.class));
+        toastMessage("Already on Login Page");
         break;
       case R.id.menusignup:
-        startActivity(new Intent(this, Signup.class));
+        goToActivity(this, Signup.class, null);
         break;
     }
     return true;

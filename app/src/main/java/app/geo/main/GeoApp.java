@@ -16,17 +16,19 @@ public class GeoApp extends Application{
 
   public List<Cache> caches = new ArrayList<>();
   public List<User> users = new ArrayList<>();
+  public User currUser;
 
   public void newUser(User user){
     users.add(user);
   }
-  public void newGeo(Cache cache){
+  public void newCache(Cache cache){
     caches.add(cache);
   }
 
   public boolean validUser(String email, String password){
     for(User user : users){
       if(user.email.equals(email) && user.password.equals(password)){
+        currUser = user;
         return true;
       }
     }

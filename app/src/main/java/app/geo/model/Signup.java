@@ -34,7 +34,6 @@ public class Signup extends Base {
     TextView password = (TextView)findViewById(R.id.signupPassword);
 
     User user = new User(firstName.getText().toString(), lastName.getText().toString(), email.getText().toString(), password.getText().toString());
-
     GeoApp app = (GeoApp)getApplication();
     app.newUser(user);
 
@@ -52,13 +51,13 @@ public class Signup extends Base {
   public boolean onOptionsItemSelected(MenuItem item){
     switch(item.getItemId()){
       case R.id.menuWelcome:
-        startActivity(new Intent(this, Welcome.class));
+        goToActivity(this, Welcome.class, null);
         break;
       case R.id.menuLogin:
-        startActivity(new Intent(this, Login.class));
+        goToActivity(this, Login.class, null);
         break;
       case R.id.menusignup:
-        startActivity(new Intent(this, Signup.class));
+        toastMessage("Already on Sign Up Page");
         break;
     }
     return true;

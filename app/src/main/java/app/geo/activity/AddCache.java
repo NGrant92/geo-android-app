@@ -30,7 +30,7 @@ public class AddCache extends Base {
 
     Cache cache = new Cache(name.getText().toString(), location.getText().toString(), description.getText().toString());
     GeoApp app = (GeoApp)getApplication();
-    app.newGeo(cache);
+    app.newCache(cache);
 
     Toast.makeText(this, "Cache Added!", Toast.LENGTH_SHORT).show();
     startActivity(new Intent(this, GeoMenu.class));

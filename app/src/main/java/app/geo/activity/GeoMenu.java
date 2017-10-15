@@ -2,10 +2,14 @@ package app.geo.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 
 import app.geo.R;
 import app.geo.model.Settings;
+import app.geo.model.Signup;
+import app.geo.model.Welcome;
 
 /**
  * Created by niall on 08/10/17.
@@ -20,26 +24,46 @@ public class GeoMenu extends Base {
   }
 
   public void mapButtonPressed(View view){
-    startActivity(new Intent(this, Map.class));
+    goToActivity(this, Map.class, null);
   }
 
   public void cacheListButtonPressed(View view){
-    startActivity(new Intent(this, CacheList.class));
+    goToActivity(this, CacheList.class, null);
   }
 
   public void myCacheButtonPressed(View view){
-    startActivity(new Intent(this, MyCache.class));
+    goToActivity(this, MyCache.class, null);
   }
 
   public void addCacheButtonPressed(View view){
-    startActivity(new Intent(this, AddCache.class));
+    goToActivity(this, AddCache.class, null);
   }
 
   public void mailButtonPressed(View view){
-    startActivity(new Intent(this, Mail.class));
+    goToActivity(this, Mail.class, null);
   }
 
   public void settingsButtonPressed(View view){
-    startActivity(new Intent(this, Settings.class));
+    goToActivity(this, Settings.class, null);
+  }
+
+  @Override
+  public boolean onCreateOptionsMenu(Menu menu){
+    //to inflate the menu items for use in the action bar
+    getMenuInflater().inflate(R.menu.geo_home_menu, menu);
+    return true;
+  }
+
+  @Override
+  public boolean onOptionsItemSelected(MenuItem item){
+    switch(item.getItemId()){
+      case R.id.menuSettings:
+        goToActivity(this, Settings.class, null);
+        break;
+      case R.id.menuLogout:
+        goToActivity(this, Welcome.class, null);
+        break;
+    }
+    return true;
   }
 }

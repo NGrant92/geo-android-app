@@ -8,9 +8,14 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import app.geo.R;
+import app.geo.model.Cache;
 import app.geo.model.Settings;
 import app.geo.model.Signup;
+import app.geo.model.User;
 import app.geo.model.Welcome;
 
 /**
