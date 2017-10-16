@@ -26,15 +26,6 @@ public class UserStore {
     users.add(user);
   }
 
-  public User getUser(int id){
-    for(User user : users){
-      if(id == user.userId){
-        return user;
-      }
-    }
-    return null;
-  }
-
   public boolean saveUsers(){
     try{
       serializer.saveUsers(users);

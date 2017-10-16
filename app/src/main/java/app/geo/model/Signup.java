@@ -36,9 +36,11 @@ public class Signup extends Base {
 
     User user = new User(firstName.getText().toString(), lastName.getText().toString(), email.getText().toString(), password.getText().toString());
     GeoApp app = (GeoApp)getApplication();
+    UserStore userStore  = app.userStore;
 
-    if(app.userStore.isEmailFree(user.email)){
-      app.userStore.addUser(user);
+    if(userStore.isEmailFree(user.email)){
+      userStore.addUser(user);
+      userStore.saveUsers();
       goToActivity(this, Login.class, null);
     }
     else{

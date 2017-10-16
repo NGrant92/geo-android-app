@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import app.geo.R;
+import app.geo.main.GeoApp;
 import app.geo.model.Cache;
 import app.geo.model.Settings;
 import app.geo.model.Signup;
@@ -47,6 +48,11 @@ public class Base extends AppCompatActivity {
         break;
       case R.id.menuHome:
         goToActivity(this, GeoMenu.class, null);
+        break;
+      case R.id.menuLogout:
+        GeoApp app = (GeoApp)getApplication();
+        app.currUser = null;
+        goToActivity(this, Welcome.class, null);
         break;
     }
     return true;

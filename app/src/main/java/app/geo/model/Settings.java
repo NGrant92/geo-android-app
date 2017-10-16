@@ -37,13 +37,14 @@ public class Settings extends Base {
 
   public void updateButtonPressed(View view) {
     GeoApp app = (GeoApp) getApplication();
+    UserStore userStore = app.userStore;
 
     String firstName = ((TextView) findViewById(R.id.settingsFirstName)).getText().toString();
     String lastName = ((TextView) findViewById(R.id.settingsLastName)).getText().toString();
     String email = ((TextView) findViewById(R.id.settingsEmail)).getText().toString();
     String password = ((TextView) findViewById(R.id.settingsPassword)).getText().toString();
 
-    if(app.userStore.updateEmailCheck(email, user.userId)){
+    if(userStore.updateEmailCheck(email, user.userId)){
       if (isNew(firstName, user.firstName)) {
         user.firstName = firstName;
       }
@@ -56,6 +57,8 @@ public class Settings extends Base {
       if (isNew(password, user.password)) {
         user.password = password;
       }
+      userStore.saveUsers();
+
       toastMessage("Profile updated!");
       goToActivity(this, GeoMenu.class, null);
     }

@@ -7,6 +7,7 @@ import android.view.MenuItem;
 import android.view.View;
 
 import app.geo.R;
+import app.geo.main.GeoApp;
 import app.geo.model.Settings;
 import app.geo.model.Signup;
 import app.geo.model.Welcome;
@@ -61,6 +62,8 @@ public class GeoMenu extends Base {
         goToActivity(this, Settings.class, null);
         break;
       case R.id.menuLogout:
+        GeoApp app = (GeoApp)getApplication();
+        app.currUser = null;
         goToActivity(this, Welcome.class, null);
         break;
     }
