@@ -7,6 +7,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import app.geo.model.Cache;
+import app.geo.model.CacheSerializer;
+import app.geo.model.CacheStore;
 import app.geo.model.User;
 import app.geo.model.UserSerializer;
 import app.geo.model.UserStore;
@@ -20,13 +22,18 @@ public class GeoApp extends Application{
   public List<Cache> caches = new ArrayList<>();
   public User currUser;
   public UserStore userStore;
-  private static final String FILENAME = "userstore.json";
+  public CacheStore cacheStore;
+  private static final String USERSTORE = "userstore.json";
+  private static final String CACHESTORE = "cachestore.json";
 
   @Override
   public void onCreate(){
     super.onCreate();
-    UserSerializer serializer = new UserSerializer(this, FILENAME);
+    UserSerializer serializer = new UserSerializer(this, USERSTORE);
     userStore = new UserStore(serializer);
+
+    CacheSerializer cacheSerializer = new CacheSerializer(this, CACHESTORE);
+    cacheStore = new CacheStore(cacheSerializer);
 
     Log.v("Geo", "Geo App Launched");
   }

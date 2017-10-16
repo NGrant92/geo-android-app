@@ -1,5 +1,8 @@
 package app.geo.model;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 /**
  * Created by niall on 10/10/17.
  * A class that will be used to hold information about a single Geocache
@@ -13,10 +16,32 @@ public class Cache {
   public String location;
   public String description;
 
+  private static final String JSON_CACHEID = "cacheId";
+  private static final String JSON_CACHENAME = "name";
+  private static final String JSON_CACHELOCATION = "location";
+  private static final String JSON_CACHEDESCRIPTION = "description";
+
   public Cache(String name, String location, String description){
     this.cacheId = autoid++;
     this.name = name;
     this.location = location;
     this.description = description;
+  }
+
+  public Cache(JSONObject json) throws JSONException {
+    cacheId = json.getInt(JSON_CACHEID);
+    name = json.getString(JSON_CACHENAME);
+    location = json.getString(JSON_CACHELOCATION);
+    description = json.getString(JSON_CACHEDESCRIPTION);
+  }
+
+  public JSONObject toJSON() throws JSONException{
+    JSONObject json = new JSONObject();
+    json.put(JSON_CACHEID, String.valueOf(cacheId));
+    json.put(JSON_CACHENAME, name);
+    json.put(JSON_CACHELOCATION, location);
+    json.put(JSON_CACHEDESCRIPTION, description);
+
+    return json;
   }
 }
