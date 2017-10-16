@@ -43,7 +43,7 @@ public class Settings extends Base {
     String email = ((TextView) findViewById(R.id.settingsEmail)).getText().toString();
     String password = ((TextView) findViewById(R.id.settingsPassword)).getText().toString();
 
-    if(isValidEmail(email, user.userId)){
+    if(app.userStore.updateEmailCheck(email, user.userId)){
       if (isNew(firstName, user.firstName)) {
         user.firstName = firstName;
       }
@@ -60,21 +60,8 @@ public class Settings extends Base {
       goToActivity(this, GeoMenu.class, null);
     }
     else{
-
       toastMessage("Invalid Email.");
     }
-
-  }
-
-  public boolean isValidEmail(String email, int userId){
-    GeoApp app = (GeoApp) getApplication();
-    List<User> users = app.users;
-    for(User user : users){
-      if(email.equals(user.email) && user.userId != userId){
-        return false;
-      }
-    }
-    return true;
   }
 
 

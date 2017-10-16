@@ -15,6 +15,7 @@ import org.w3c.dom.Text;
 import app.geo.R;
 import app.geo.main.GeoApp;
 import app.geo.model.Signup;
+import app.geo.model.UserStore;
 import app.geo.model.Welcome;
 
 /**
@@ -22,6 +23,9 @@ import app.geo.model.Welcome;
  */
 
 public class Login extends Base {
+
+  public UserStore userStore;
+
   @Override
   protected void onCreate(Bundle savedInstanceState){
     super.onCreate(savedInstanceState);
@@ -30,11 +34,13 @@ public class Login extends Base {
 
   public void loginPressed(View view){
     GeoApp app = (GeoApp)getApplication();
+    this.userStore = app.userStore;
 
     TextView email = (TextView)findViewById(R.id.loginEmail);
     TextView password = (TextView)findViewById(R.id.loginPassword);
 
-    if(app.validUser(email.getText().toString(), password.getText().toString())){
+    if(userStore.validUser(email.getText().toString(), password.getText().toString())){
+      app.currUser = userStore.getUser(email.getText().toString());
       startActivity(new Intent(this, GeoMenu.class));
     }
     else{
