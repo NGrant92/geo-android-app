@@ -18,7 +18,6 @@ import app.geo.model.UserStore;
 public class GeoApp extends Application{
 
   public List<Cache> caches = new ArrayList<>();
-  public List<User> users = new ArrayList<>();
   public User currUser;
   public UserStore userStore;
   private static final String FILENAME = "userstore.json";
@@ -32,29 +31,7 @@ public class GeoApp extends Application{
     Log.v("Geo", "Geo App Launched");
   }
 
-  public void newUser(User user){
-    users.add(user);
-  }
   public void newCache(Cache cache){
     caches.add(cache);
-  }
-
-  public boolean validUser(String email, String password){
-    for(User user : users){
-      if(user.email.equals(email) && user.password.equals(password)){
-        this.currUser = user;
-        return true;
-      }
-    }
-    return false;
-  }
-
-  public boolean emailExists(String regEmail){
-    for(User user : users){
-      if(user.email.equals(regEmail)){
-        return true;
-      }
-    }
-    return false;
   }
 }

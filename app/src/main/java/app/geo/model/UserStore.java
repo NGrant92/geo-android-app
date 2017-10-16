@@ -46,4 +46,40 @@ public class UserStore {
       return false;
     }
   }
+
+  public boolean validUser(String email, String password){
+    for(User user : users){
+      if(user.email.equals(email) && user.password.equals(password)){
+        return true;
+      }
+    }
+    return false;
+  }
+
+  public boolean updateEmailCheck(String email, int userId){
+    for(User user : users){
+      if(email.equals(user.email) && userId != user.userId){
+        return false;
+      }
+    }
+    return true;
+  }
+
+  public boolean isEmailFree(String email){
+    for(User user : users){
+      if(email.equals(user.email)){
+        return false;
+      }
+    }
+    return true;
+  }
+
+  public User getUser(String email){
+    for(User user : users){
+      if(user.email.equals(email)){
+        return user;
+      }
+    }
+    return null;
+  }
 }
