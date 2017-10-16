@@ -19,7 +19,6 @@ import app.geo.model.UserStore;
 
 public class GeoApp extends Application{
 
-  public List<Cache> caches = new ArrayList<>();
   public User currUser;
   public UserStore userStore;
   public CacheStore cacheStore;
@@ -36,9 +35,5 @@ public class GeoApp extends Application{
     cacheStore = new CacheStore(cacheSerializer);
 
     Log.v("Geo", "Geo App Launched");
-  }
-
-  public void newCache(Cache cache){
-    caches.add(cache);
   }
 }

@@ -34,7 +34,7 @@ public class CacheList extends Base {
     app = (GeoApp)getApplication();
 
     listView = (ListView)findViewById(R.id.cache_list);
-    CacheAdapter adapter = new CacheAdapter(this, app.caches);
+    CacheAdapter adapter = new CacheAdapter(this, app.cacheStore.caches);
     listView.setAdapter(adapter);
   }
 }
