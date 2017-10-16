@@ -20,6 +20,9 @@ import app.geo.main.GeoApp;
  */
 
 public class Signup extends Base {
+
+  public UserStore userStore;
+
   @Override
   protected void onCreate(Bundle savedInstanceState){
     super.onCreate(savedInstanceState);
@@ -35,15 +38,18 @@ public class Signup extends Base {
 
     User user = new User(firstName.getText().toString(), lastName.getText().toString(), email.getText().toString(), password.getText().toString());
     GeoApp app = (GeoApp)getApplication();
+    userStore = app.userStore;
+    Log.v("Geo", "USERSTORE: " + userStore);
 
     if(app.emailExists(user.email)){
       toastMessage("Email is used by another account");
     }
     else{
+      userStore.addUser(user);
+      Log.v("Geo", "added to user store");
       app.newUser(user);
       goToActivity(this, Login.class, null);
     }
-
   }
 
   @Override

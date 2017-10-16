@@ -8,6 +8,8 @@ import java.util.List;
 
 import app.geo.model.Cache;
 import app.geo.model.User;
+import app.geo.model.UserSerializer;
+import app.geo.model.UserStore;
 
 /**
  * Created by niall on 14/10/17.
@@ -18,6 +20,17 @@ public class GeoApp extends Application{
   public List<Cache> caches = new ArrayList<>();
   public List<User> users = new ArrayList<>();
   public User currUser;
+  public UserStore userStore;
+  private static final String FILENAME = "userstore.json";
+
+  @Override
+  public void onCreate(){
+    super.onCreate();
+    UserSerializer serializer = new UserSerializer(this, FILENAME);
+    userStore = new UserStore(serializer);
+
+    Log.v("Geo", "Geo App Launched");
+  }
 
   public void newUser(User user){
     users.add(user);
