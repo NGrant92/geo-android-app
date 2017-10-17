@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 
 import app.geo.R;
 import app.geo.main.GeoApp;
@@ -22,6 +23,10 @@ public class GeoMenu extends Base {
   protected void onCreate(Bundle savedInstanceState){
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_geo_menu);
+
+    GeoApp app = (GeoApp)getApplication();
+    String menuTitle = app.currUser.firstName + "'s Geo Menu";
+    ((TextView)findViewById(R.id.menuTitle)).setText(menuTitle);
   }
 
   public void mapButtonPressed(View view){
