@@ -6,21 +6,38 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <Button
-        android:id="@+id/map"
+    <LinearLayout
+        android:id="@+id/button"
         android:layout_width="140dp"
         android:layout_height="110dp"
         android:layout_marginStart="32dp"
         android:layout_marginTop="32dp"
-        android:text="@string/map"
-        android:gravity="center|bottom"
-        android:paddingBottom="10dp"
-        android:onClick="mapButtonPressed"
         android:background="@drawable/background"
-        android:src="@drawable/background"
-        android:padding="10dp"
+        android:clickable="true"
+        android:onClick="mapButtonPressed"
+        android:orientation="vertical"
+        android:gravity="center_vertical|center"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/img"
+            android:layout_width="wrap_content"
+            android:layout_height="70dp"
+            android:gravity="center|top"
+            android:src="@drawable/location"
+            android:contentDescription="@string/map"/>
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:gravity="center|bottom"
+            android:text="@string/map"
+            android:textAllCaps="true"
+            android:textColor="@color/colorGreenDark"/>
+    </LinearLayout>
 
     <Button
         android:id="@+id/cachelist"
@@ -56,13 +73,13 @@
         android:layout_height="110dp"
         android:layout_marginStart="32dp"
         android:layout_marginTop="32dp"
-        android:text="@string/my_cache"
-        android:gravity="center|bottom"
-        android:paddingBottom="10dp"
-        android:onClick="myCacheButtonPressed"
         android:background="@drawable/background"
+        android:gravity="center|bottom"
+        android:onClick="myCacheButtonPressed"
+        android:paddingBottom="10dp"
+        android:text="@string/my_cache"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/map" />
+        app:layout_constraintTop_toBottomOf="@+id/button" />
 
     <Button
         android:id="@+id/mail"
@@ -70,11 +87,11 @@
         android:layout_height="110dp"
         android:layout_marginStart="32dp"
         android:layout_marginTop="32dp"
-        android:text="@string/mail"
-        android:gravity="center|bottom"
-        android:paddingBottom="10dp"
-        android:onClick="mailButtonPressed"
         android:background="@drawable/background"
+        android:gravity="center|bottom"
+        android:onClick="mailButtonPressed"
+        android:paddingBottom="10dp"
+        android:text="@string/mail"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/mycache" />
 
