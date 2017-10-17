@@ -1,6 +1,5 @@
 package app.geo.activity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -9,9 +8,6 @@ import android.widget.TextView;
 
 import app.geo.R;
 import app.geo.main.GeoApp;
-import app.geo.model.Settings;
-import app.geo.model.Signup;
-import app.geo.model.Welcome;
 
 /**
  * Created by niall on 08/10/17.

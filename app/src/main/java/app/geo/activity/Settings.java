@@ -1,4 +1,4 @@
-package app.geo.model;
+package app.geo.activity;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -13,6 +13,8 @@ import app.geo.R;
 import app.geo.activity.Base;
 import app.geo.activity.GeoMenu;
 import app.geo.main.GeoApp;
+import app.geo.model.User;
+import app.geo.model.UserStore;
 
 /**
  * Created by niall on 09/10/17.

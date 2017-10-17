@@ -2,21 +2,14 @@ package app.geo.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
-import android.widget.Toast;
-
-import org.w3c.dom.Text;
 
 import app.geo.R;
 import app.geo.main.GeoApp;
-import app.geo.model.Signup;
 import app.geo.model.UserStore;
-import app.geo.model.Welcome;
 
 /**
  * Created by niall on 10/10/17.

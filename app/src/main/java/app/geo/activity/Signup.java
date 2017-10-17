@@ -1,11 +1,7 @@
-package app.geo.model;
+package app.geo.activity;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
@@ -13,7 +9,10 @@ import android.widget.TextView;
 import app.geo.R;
 import app.geo.activity.Base;
 import app.geo.activity.Login;
+import app.geo.activity.Welcome;
 import app.geo.main.GeoApp;
+import app.geo.model.User;
+import app.geo.model.UserStore;
 
 /**
  * Created by niall on 10/10/17.

@@ -10,7 +10,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".model.Welcome">
+        <activity android:name=".activity.Welcome">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -47,11 +47,11 @@
             android:label="@string/mail">
         </activity>
         <activity
-            android:name=".model.Settings"
+            android:name=".activity.Settings"
             android:label="@string/settings">
         </activity>
         <activity
-            android:name=".model.Signup"
+            android:name=".activity.Signup"
             android:label="@string/signup">
         </activity>
     </application>

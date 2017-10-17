@@ -1,4 +1,4 @@
-package app.geo.model;
+package app.geo.activity;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.view.View;
 
 import app.geo.R;
-import app.geo.activity.Login;
 
 public class Welcome extends AppCompatActivity {
 
