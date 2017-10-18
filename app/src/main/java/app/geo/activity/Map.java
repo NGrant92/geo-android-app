@@ -1,7 +1,6 @@
 package app.geo.activity;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 
 import app.geo.R;
 
@@ -13,6 +12,6 @@ public class Map extends Base {
   @Override
   protected void onCreate(Bundle savedInstanceState){
     super.onCreate(savedInstanceState);
-    setContentView(R.layout.activity_map);
+    setContentView(R.layout.fragment_map);
   }
 }

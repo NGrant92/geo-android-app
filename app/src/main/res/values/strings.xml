@@ -37,4 +37,7 @@
 
     <string name="defaultName">Name</string>
     <string name="defaultLocation">Location</string>
+
+    <string name="title_map">Map</string>
+    <string name="google_maps_key">AIzaSyDkWMmlfW_WEA7JpmqAdUBhoRrcKN_E6Us</string>
 </resources>
