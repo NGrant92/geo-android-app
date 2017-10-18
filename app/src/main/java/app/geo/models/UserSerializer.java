@@ -1,11 +1,6 @@
-package app.geo.model;
+package app.geo.models;
 
 import android.content.Context;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONTokener;
-
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -16,23 +11,27 @@ import java.io.OutputStreamWriter;
 import java.io.Writer;
 import java.util.ArrayList;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONTokener;
+
 /**
  * Created by niall on 16/10/17.
  */
 
-public class CacheSerializer {
+public class UserSerializer {
   private Context mContext;
   private String mFilename;
 
-  public CacheSerializer(Context c, String f){
+  public UserSerializer(Context c, String f){
     this.mContext = c;
     this.mFilename = f;
   }
 
-  public void saveCache(ArrayList<Cache> caches) throws JSONException, IOException{
+  public void saveUsers(ArrayList<User> users) throws JSONException, IOException{
     JSONArray array = new JSONArray();
-    for(Cache c : caches){
-      array.put(c.toJSON());
+    for(User u : users){
+      array.put(u.toJSON());
     }
 
     Writer writer = null;
@@ -48,8 +47,8 @@ public class CacheSerializer {
     }
   }
 
-  public ArrayList<Cache> loadCache() throws JSONException, IOException{
-    ArrayList<Cache> caches = new ArrayList<Cache>();
+  public ArrayList<User> loadUsers() throws JSONException, IOException{
+    ArrayList<User> users = new ArrayList<User>();
     BufferedReader reader = null;
 
     try{
@@ -64,7 +63,7 @@ public class CacheSerializer {
       JSONArray array = (JSONArray) new JSONTokener(jsonString.toString()).nextValue();
 
       for(int i = 0; i < array.length(); i++){
-        caches.add(new Cache(array.getJSONObject(i)));
+        users.add(new User(array.getJSONObject(i)));
       }
     }
     catch(FileNotFoundException e){
@@ -74,6 +73,6 @@ public class CacheSerializer {
       if(reader != null)
         reader.close();
     }
-    return caches;
+    return users;
   }
 }

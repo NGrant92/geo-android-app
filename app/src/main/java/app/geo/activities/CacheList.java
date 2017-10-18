@@ -1,8 +1,7 @@
-package app.geo.activity;
+package app.geo.activities;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,7 +13,7 @@ import java.util.List;
 
 import app.geo.R;
 import app.geo.main.GeoApp;
-import app.geo.model.Cache;
+import app.geo.models.Cache;
 
 /**
  * Created by niall on 09/10/17.

@@ -1,4 +1,4 @@
-package app.geo.activity;
+package app.geo.activities;
 
 import android.os.Bundle;
 import android.view.Menu;

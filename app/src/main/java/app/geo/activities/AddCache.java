@@ -1,16 +1,15 @@
-package app.geo.activity;
+package app.geo.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import app.geo.R;
 import app.geo.main.GeoApp;
-import app.geo.model.Cache;
-import app.geo.model.User;
+import app.geo.models.Cache;
+import app.geo.models.User;
 
 /**
  * Created by niall on 09/10/17.

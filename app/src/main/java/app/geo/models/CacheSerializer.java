@@ -1,6 +1,11 @@
-package app.geo.model;
+package app.geo.models;
 
 import android.content.Context;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONTokener;
+
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -11,29 +16,23 @@ import java.io.OutputStreamWriter;
 import java.io.Writer;
 import java.util.ArrayList;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONTokener;
-
-import android.content.Context;
-
 /**
  * Created by niall on 16/10/17.
  */
 
-public class UserSerializer {
+public class CacheSerializer {
   private Context mContext;
   private String mFilename;
 
-  public UserSerializer(Context c, String f){
+  public CacheSerializer(Context c, String f){
     this.mContext = c;
     this.mFilename = f;
   }
 
-  public void saveUsers(ArrayList<User> users) throws JSONException, IOException{
+  public void saveCache(ArrayList<Cache> caches) throws JSONException, IOException{
     JSONArray array = new JSONArray();
-    for(User u : users){
-      array.put(u.toJSON());
+    for(Cache c : caches){
+      array.put(c.toJSON());
     }
 
     Writer writer = null;
@@ -49,8 +48,8 @@ public class UserSerializer {
     }
   }
 
-  public ArrayList<User> loadUsers() throws JSONException, IOException{
-    ArrayList<User> users = new ArrayList<User>();
+  public ArrayList<Cache> loadCache() throws JSONException, IOException{
+    ArrayList<Cache> caches = new ArrayList<Cache>();
     BufferedReader reader = null;
 
     try{
@@ -65,7 +64,7 @@ public class UserSerializer {
       JSONArray array = (JSONArray) new JSONTokener(jsonString.toString()).nextValue();
 
       for(int i = 0; i < array.length(); i++){
-        users.add(new User(array.getJSONObject(i)));
+        caches.add(new Cache(array.getJSONObject(i)));
       }
     }
     catch(FileNotFoundException e){
@@ -75,6 +74,6 @@ public class UserSerializer {
       if(reader != null)
         reader.close();
     }
-    return users;
+    return caches;
   }
 }

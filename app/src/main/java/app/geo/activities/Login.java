@@ -1,4 +1,4 @@
-package app.geo.activity;
+package app.geo.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 import app.geo.R;
 import app.geo.main.GeoApp;
-import app.geo.model.UserStore;
+import app.geo.models.UserStore;
 
 /**
  * Created by niall on 10/10/17.

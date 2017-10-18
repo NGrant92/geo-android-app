@@ -1,20 +1,14 @@
-package app.geo.activity;
+package app.geo.activities;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import java.util.List;
-
 import app.geo.R;
-import app.geo.activity.Base;
-import app.geo.activity.GeoMenu;
 import app.geo.main.GeoApp;
-import app.geo.model.User;
-import app.geo.model.UserStore;
+import app.geo.models.User;
+import app.geo.models.UserStore;
 
 /**
  * Created by niall on 09/10/17.

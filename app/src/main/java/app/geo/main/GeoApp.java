@@ -3,15 +3,11 @@ package app.geo.main;
 import android.app.Application;
 import android.util.Log;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import app.geo.model.Cache;
-import app.geo.model.CacheSerializer;
-import app.geo.model.CacheStore;
-import app.geo.model.User;
-import app.geo.model.UserSerializer;
-import app.geo.model.UserStore;
+import app.geo.models.CacheSerializer;
+import app.geo.models.CacheStore;
+import app.geo.models.User;
+import app.geo.models.UserSerializer;
+import app.geo.models.UserStore;
 
 /**
  * Created by niall on 14/10/17.

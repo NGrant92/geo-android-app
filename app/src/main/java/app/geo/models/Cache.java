@@ -1,4 +1,4 @@
-package app.geo.model;
+package app.geo.models;
 
 import org.json.JSONException;
 import org.json.JSONObject;
