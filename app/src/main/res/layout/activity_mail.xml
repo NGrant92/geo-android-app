@@ -7,13 +7,85 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/mailTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
         android:layout_marginStart="32dp"
         android:layout_marginTop="32dp"
         android:text="@string/mail"
         android:textAppearance="@android:style/TextAppearance.Large"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/mailSendTo"
+        android:layout_width="330dp"
+        android:layout_height="29dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/background"
+        android:ems="10"
+        android:hint="@string/send_to"
+        android:inputType="textPersonName"
+        android:paddingEnd="5dp"
+        android:paddingStart="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mailTitle" />
+
+    <EditText
+        android:id="@+id/mailSubject"
+        android:layout_width="330dp"
+        android:layout_height="32dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/background"
+        android:ems="10"
+        android:hint="@string/subject"
+        android:inputType="textPersonName"
+        android:paddingEnd="5dp"
+        android:paddingStart="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mailSendTo" />
+
+    <EditText
+        android:id="@+id/mailText"
+        android:layout_width="330dp"
+        android:layout_height="202dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/background"
+        android:ems="10"
+        android:gravity="top"
+        android:hint="@string/message"
+        android:inputType="textMultiLine"
+        android:maxLength="140"
+        android:paddingEnd="5dp"
+        android:paddingStart="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mailSubject" />
+
+    <Button
+        android:id="@+id/sendMailButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:text="@string/send"
+        android:onClick="sendMailPressed"
+        android:textColor="@color/colorWhite"
+        android:background="@drawable/green_button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 </android.support.constraint.ConstraintLayout>

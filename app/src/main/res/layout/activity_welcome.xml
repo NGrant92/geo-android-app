@@ -36,13 +36,15 @@
 
     <Button
         android:id="@+id/mainLogin"
-        android:layout_width="233dp"
+        android:layout_width="200dp"
         android:layout_height="49dp"
         android:layout_marginBottom="16dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:onClick="loginPressed"
         android:text="@string/login"
+        android:textColor="@color/colorWhite"
+        android:background="@drawable/green_button"
         app:layout_constraintBottom_toTopOf="@+id/mainSignup"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.503"
@@ -50,13 +52,15 @@
 
     <Button
         android:id="@+id/mainSignup"
-        android:layout_width="233dp"
+        android:layout_width="200dp"
         android:layout_height="49dp"
         android:layout_marginBottom="32dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:onClick="signupPressed"
         android:text="@string/signup"
+        android:textColor="@color/colorWhite"
+        android:background="@drawable/green_button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.503"

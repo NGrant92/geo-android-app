@@ -30,6 +30,11 @@
     <string name="email">Email</string>
     <string name="password">Password</string>
 
+    <string name="send_to">Send to</string>
+    <string name="subject">Subject</string>
+    <string name="message">Message</string>
+    <string name="send">Send</string>
+
     <string name="defaultName">Name</string>
     <string name="defaultLocation">Location</string>
 </resources>
