@@ -2,10 +2,16 @@ package app.geo.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
+
+import com.google.android.gms.auth.api.Auth;
+import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.location.LocationServices;
 
 import app.geo.R;
 import app.geo.main.GeoApp;
@@ -15,14 +21,19 @@ import app.geo.models.UserStore;
  * Created by niall on 10/10/17.
  */
 
-public class Login extends Base {
+public class Login extends Base implements GoogleApiClient.OnConnectionFailedListener {
 
   public UserStore userStore;
+  public GeoApp app = GeoApp.getInstance();
 
   @Override
   protected void onCreate(Bundle savedInstanceState){
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_login);
+
+    app.mGoogleApiClient = new GoogleApiClient.Builder(this)
+        .addApi(LocationServices.API)
+        .build();
   }
 
   public void loginPressed(View view){
@@ -62,6 +73,11 @@ public class Login extends Base {
         break;
     }
     return true;
+  }
+
+  @Override
+  public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
+
   }
 }
 
