@@ -22,43 +22,33 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".activities.GeoMenu"
-            android:label="@string/app_name">
-        </activity>
+            android:label="@string/app_name"></activity>
         <activity
             android:name=".activities.Login"
-            android:label="@string/login">
-        </activity>
+            android:label="@string/login"></activity>
         <activity
             android:name=".activities.Map"
-            android:label="@string/map">
-        </activity>
+            android:label="@string/map"></activity>
         <activity
             android:name=".activities.CacheList"
-            android:label="@string/cache_list">
-        </activity>
+            android:label="@string/cache_list"></activity>
         <activity
             android:name=".activities.MyCache"
-            android:label="@string/my_cache">
-        </activity>
+            android:label="@string/my_cache"></activity>
         <activity
             android:name=".activities.AddCache"
-            android:label="@string/add_cache">
-        </activity>
+            android:label="@string/add_cache"></activity>
         <activity
             android:name=".activities.Mail"
-            android:label="@string/mail">
-        </activity>
+            android:label="@string/mail"></activity>
         <activity
             android:name=".activities.Settings"
-            android:label="@string/settings">
-        </activity>
+            android:label="@string/settings"></activity>
         <activity
             android:name=".activities.Signup"
-            android:label="@string/signup">
-        </activity>
+            android:label="@string/signup"></activity>
 
         <meta-data
             android:name="com.google.android.gms.version"
@@ -66,5 +56,8 @@
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
+
+        <activity android:name=".fragments.MapsFragment"></activity>
     </application>
+
 </manifest>
