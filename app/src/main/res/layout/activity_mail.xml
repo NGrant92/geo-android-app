@@ -19,7 +19,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
+    <Button
         android:id="@+id/mailSendTo"
         android:layout_width="330dp"
         android:layout_height="29dp"
@@ -29,7 +29,8 @@
         android:background="@drawable/background"
         android:ems="10"
         android:hint="@string/send_to"
-        android:inputType="textPersonName"
+        android:textSize="17sp"
+        android:gravity="start|center_vertical"
         android:paddingEnd="5dp"
         android:paddingStart="5dp"
         app:layout_constraintEnd_toEndOf="parent"
