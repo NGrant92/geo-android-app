@@ -80,7 +80,7 @@
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:text="@string/update"
-      android:onClick=""
+      android:onClick="updateCacheButtonPressed"
       android:textColor="@color/colorWhite"
       android:background="@drawable/green_button"
       android:layout_marginStart="32dp"

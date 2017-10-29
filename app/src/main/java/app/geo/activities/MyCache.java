@@ -50,6 +50,13 @@ public class MyCache extends Base  implements AdapterView.OnItemClickListener{
 
     startActivity(intent);
   }
+
+  @Override
+  public void onResume()
+  {
+    super.onResume();
+    adapter.notifyDataSetChanged();
+  }
 }
 
 class CacheAdapter extends ArrayAdapter<Cache> {
