@@ -5,15 +5,98 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+  
+  <TextView
+      android:id="@+id/editCacheTitle"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="32dp"
+      android:text="@string/edit_cache"
+      android:textAppearance="@android:style/TextAppearance.Large"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      android:layout_marginRight="8dp"
+      app:layout_constraintRight_toRightOf="parent"
+      android:layout_marginLeft="8dp"
+      app:layout_constraintLeft_toLeftOf="parent"/>
+  
+  <EditText
+      android:id="@+id/editCacheName"
+      android:layout_width="wrap_content"
+      android:layout_height="32dp"
+      android:layout_marginEnd="8dp"
+      android:layout_marginStart="8dp"
+      android:layout_marginTop="32dp"
+      android:background="@drawable/background"
+      android:ems="10"
+      android:hint="@string/name"
+      android:inputType="textEmailAddress"
+      android:paddingEnd="5dp"
+      android:paddingStart="5dp"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/editCacheTitle"
+      tools:layout_editor_absoluteX="85dp"/>
+  
+  <EditText
+      android:id="@+id/editCacheLocation"
+      android:layout_width="wrap_content"
+      android:layout_height="32dp"
+      android:layout_marginEnd="8dp"
+      android:layout_marginStart="8dp"
+      android:layout_marginTop="32dp"
+      android:background="@drawable/background"
+      android:ems="10"
+      android:hint="@string/location"
+      android:inputType="textEmailAddress"
+      android:paddingEnd="5dp"
+      android:paddingStart="5dp"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/editCacheName"
+      tools:layout_editor_absoluteX="85dp"/>
+  
+  <EditText
+      android:id="@+id/editCacheDescription"
+      android:layout_width="215dp"
+      android:layout_height="130dp"
+      android:layout_marginEnd="8dp"
+      android:layout_marginStart="8dp"
+      android:layout_marginTop="32dp"
+      android:ems="10"
+      android:hint="@string/description"
+      android:paddingStart="5dp"
+      android:paddingEnd="5dp"
+      android:inputType="textMultiLine"
+      android:maxLength="140"
+      android:gravity="top"
+      android:background="@drawable/background"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/editCacheLocation" />
+  
+  <Button
+      android:id="@+id/button2"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="@string/update"
+      android:onClick=""
+      android:textColor="@color/colorWhite"
+      android:background="@drawable/green_button"
+      tools:layout_editor_absoluteY="436dp"
+      android:layout_marginStart="32dp"
+      app:layout_constraintLeft_toLeftOf="parent"/>
+  
+  <Button
+      android:id="@+id/button3"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginEnd="32dp"
+      android:text="@string/delete"
+      android:onClick=""
+      android:textColor="@color/colorWhite"
+      android:background="@drawable/red_button"
+      app:layout_constraintRight_toRightOf="parent"
+      tools:layout_editor_absoluteY="436dp"/>
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="32dp"
-        android:text="@string/my_cache"
-        android:textAppearance="@android:style/TextAppearance.Large"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 </android.support.constraint.ConstraintLayout>
