@@ -25,6 +25,7 @@ public class MyCache extends Base  implements AdapterView.OnItemClickListener{
 
   public ListView listView;
   public GeoApp app;
+  public CacheAdapter adapter;
 
   @Override
   protected void onCreate(Bundle savedInstanceState){
@@ -35,13 +36,19 @@ public class MyCache extends Base  implements AdapterView.OnItemClickListener{
 
     app = (GeoApp)getApplication();
 
-    CacheAdapter adapter = new CacheAdapter(this, app.cacheStore.caches);
+    adapter = new CacheAdapter(this, app.cacheStore.caches);
     listView.setAdapter(adapter);
+    listView.setOnItemClickListener(this);
   }
 
   @Override
   public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-    startActivity(new Intent(this, EditCache.class));
+
+    Cache cache = adapter.getItem(position);
+    Intent intent = new Intent(this, EditCache.class);
+    intent.putExtra("cache_id", cache.cacheId);
+
+    startActivity(intent);
   }
 }
 

@@ -38,4 +38,13 @@ public class CacheStore {
       return false;
     }
   }
+
+  public Cache getCache(int id){
+    for(Cache cache : caches){
+      if(id == cache.cacheId){
+        return cache;
+      }
+    }
+    return null;
+  }
 }
