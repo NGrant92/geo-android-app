@@ -18,7 +18,7 @@ import android.widget.TextView;
 public class CacheItem extends Base {
   View view;
 
-  public CacheItem(Context context, ViewGroup parent, OnClickListener deleteListener, Cache cache){
+  public CacheItem(Context context, ViewGroup parent, Cache cache){
 
     LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     view = inflater.inflate(R.layout.cache_row, parent, false);
@@ -33,7 +33,7 @@ public class CacheItem extends Base {
 
     GeoApp app = (GeoApp)getApplication();
 
-    User owner = app.userStore.getUser(cache.ownerId);
-    ((TextView) view.findViewById(R.id.cacheRowOwner)).setText(owner.firstName + " " + owner.lastName);
+    //User owner = app.userStore.getUser(cache.ownerId);
+    ((TextView) view.findViewById(R.id.cacheRowOwner)).setText("No Owner");
   }
 }

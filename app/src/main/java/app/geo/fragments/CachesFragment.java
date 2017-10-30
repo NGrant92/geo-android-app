@@ -8,6 +8,7 @@ import app.geo.adapters.CacheListAdapter;
 import app.geo.models.CacheStore;
 
 import android.app.ListFragment;
+import android.util.Log;
 import android.view.View;
 import android.widget.AbsListView;
 import android.app.AlertDialog;
@@ -42,10 +43,10 @@ public class CachesFragment extends ListFragment implements View.OnClickListener
   }
 
   @Override
-  public void onCreate(Bundle saveInstanceState){
-    super.onCreate(saveInstanceState);
+  public void onCreate(Bundle savedInstanceState){
+    super.onCreate(savedInstanceState);
 
-    listAdapter = new CacheListAdapter(getActivity(), cacheStore.getCaches());
+    listAdapter = new CacheListAdapter(getActivity(), CacheStore.caches);
     setListAdapter(listAdapter);
   }
 
