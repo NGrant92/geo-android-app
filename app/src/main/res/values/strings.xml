@@ -13,6 +13,7 @@
   <string name="update">Update</string>
   <string name="register">Register</string>
   <string name="delete">Delete</string>
+  <string name="delete_selected">Delete Selected</string>
   
   <string name="menu">Geo Menu</string>
   <string name="map">Map</string>
