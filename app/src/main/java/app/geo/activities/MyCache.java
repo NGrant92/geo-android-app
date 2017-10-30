@@ -3,13 +3,19 @@ package app.geo.activities;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.ActionMode;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AbsListView;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.AbsListView.MultiChoiceModeListener;
 
 import java.util.List;
 
@@ -21,7 +27,7 @@ import app.geo.models.Cache;
  * Created by niall on 09/10/17.
  */
 
-public class MyCache extends Base  implements AdapterView.OnItemClickListener{
+public class MyCache extends Base implements AdapterView.OnItemClickListener{
 
   public ListView listView;
   public GeoApp app;
@@ -37,6 +43,7 @@ public class MyCache extends Base  implements AdapterView.OnItemClickListener{
     app = (GeoApp)getApplication();
 
     adapter = new CacheAdapter(this, app.cacheStore.caches);
+    listView.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE_MODAL);
     listView.setAdapter(adapter);
     listView.setOnItemClickListener(this);
   }
@@ -56,6 +63,10 @@ public class MyCache extends Base  implements AdapterView.OnItemClickListener{
   {
     super.onResume();
     adapter.notifyDataSetChanged();
+  }
+
+  private void deleteCaches(ActionMode mode) {
+    toastMessage("deleteCaches pressed");
   }
 }
 

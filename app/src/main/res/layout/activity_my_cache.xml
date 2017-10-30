@@ -33,6 +33,7 @@
     
     <ListView
         android:id="@+id/myCacheList"
+        android:background="@drawable/background_activated"
         android:layout_width="360dp"
         android:layout_height="450dp"
         android:layout_marginStart="0dp"
