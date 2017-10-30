@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/RelativeLayout1"
     android:layout_width="fill_parent"
-    android:layout_height="46dp"
+    android:layout_height="50dp"
     android:padding="8dp"
     android:background="@drawable/background_activated">
   
@@ -24,28 +24,29 @@
       android:id="@+id/cacheRowName"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:layout_alignTop="@+id/cacheRowStar"
-      android:layout_marginStart="26dp"
-      android:layout_toEndOf="@+id/cacheRowStar"
+      android:layout_marginStart="27dp"
       android:gravity="center_vertical"
       android:text="Coffee Name"
       android:textColor="@color/colorBlack"
       android:textSize="14sp"
       android:textStyle="bold"
-      tools:ignore="HardcodedText" />
+      tools:ignore="HardcodedText"
+      android:layout_alignParentTop="true"
+      android:layout_toEndOf="@+id/cacheRowStar"/>
   
   <TextView
       android:id="@+id/cacheRowLocation"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:layout_alignBottom="@+id/cacheRowStar"
-      android:layout_alignStart="@+id/cacheRowName"
       android:gravity="center_vertical"
       android:text="Location"
       android:textColor="@color/colorBlack"
       android:textSize="11sp"
       android:textStyle="bold"
-      tools:ignore="HardcodedText,SmallSp" />
+      tools:ignore="HardcodedText,SmallSp"
+      android:layout_below="@+id/cacheRowName"
+      android:layout_alignStart="@+id/cacheRowName"
+      android:layout_alignParentBottom="true"/>
   
   <TextView
       android:id="@+id/cacheRowOwner"
