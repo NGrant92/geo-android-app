@@ -61,7 +61,6 @@ public class CacheListAdapter extends ArrayAdapter<Cache> {
 
   @Override
   public long getItemId(int position) {
-    //return coffeeList.get(position).coffeeId;
     return position;
   }
 
