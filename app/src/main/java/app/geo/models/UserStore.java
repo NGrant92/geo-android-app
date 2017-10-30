@@ -73,4 +73,13 @@ public class UserStore {
     }
     return null;
   }
+
+  public User getUserByEmail(String email){
+    for(User user : users){
+      if(user.email.equals(email)){
+        return user;
+      }
+    }
+    return null;
+  }
 }
