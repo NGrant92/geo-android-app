@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/RelativeLayout1"
+    android:layout_width="fill_parent"
+    android:layout_height="46dp"
+    android:padding="8dp"
+    android:background="@drawable/background_activated">
+  
+  <ImageView
+      android:id="@+id/cacheRowStar"
+      android:onClick="toggle"
+      android:layout_width="30dp"
+      android:layout_height="30dp"
+      android:layout_alignParentStart="true"
+      android:layout_marginStart="14dp"
+      android:contentDescription="fav"
+      android:gravity="center_vertical"
+      android:src="@drawable/star_green_empty"
+      tools:ignore="HardcodedText" />
+  
+  <TextView
+      android:id="@+id/cacheRowName"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_alignTop="@+id/cacheRowStar"
+      android:layout_marginStart="26dp"
+      android:layout_toEndOf="@+id/cacheRowStar"
+      android:gravity="center_vertical"
+      android:text="Coffee Name"
+      android:textColor="@color/colorBlack"
+      android:textSize="14sp"
+      android:textStyle="bold"
+      tools:ignore="HardcodedText" />
+  
+  <TextView
+      android:id="@+id/cacheRowLocation"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_alignBottom="@+id/cacheRowStar"
+      android:layout_alignStart="@+id/cacheRowName"
+      android:gravity="center_vertical"
+      android:text="Location"
+      android:textColor="@color/colorBlack"
+      android:textSize="11sp"
+      android:textStyle="bold"
+      tools:ignore="HardcodedText,SmallSp" />
+  
+  <TextView
+      android:id="@+id/cacheRowOwner"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:gravity="center_vertical"
+      android:text="Owner"
+      android:textColor="@color/colorBlack"
+      android:textSize="14sp"
+      android:textStyle="bold"
+      tools:ignore="HardcodedText"
+      android:layout_marginEnd="50dp"
+      android:layout_centerVertical="true"
+      android:layout_alignParentEnd="true"/>
+
+</RelativeLayout>
