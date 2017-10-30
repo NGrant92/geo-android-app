@@ -16,5 +16,4 @@ bin/
 gen/
 Thumbs.db
 app/libs/
-app/src/main/res/menu/
 /.idea/

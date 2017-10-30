@@ -90,7 +90,9 @@ public class CachesFragment extends ListFragment implements View.OnClickListener
 
   @Override
   public boolean onCreateActionMode(ActionMode mode, Menu menu) {
-    return false;
+    MenuInflater inflater = mode.getMenuInflater();
+    inflater.inflate(R.menu.delete_list_context, menu);
+    return true;
   }
 
   @Override
@@ -100,7 +102,25 @@ public class CachesFragment extends ListFragment implements View.OnClickListener
 
   @Override
   public boolean onActionItemClicked(ActionMode mode, MenuItem item) {
-    return false;
+
+    switch (item.getItemId()) {
+      case R.id.menu_item_delete_cache:
+        deleteCaches(mode);
+        return true;
+      default:
+        return false;
+    }
+  }
+
+  private void deleteCaches(ActionMode mode) {
+    for (int i = listAdapter.getCount() - 1; i >= 0; i--) {
+      if (listView.isItemChecked(i)) {
+        cacheStore.remCache(cacheStore.getCache(i));
+        cacheStore.saveCaches();
+      }
+    }
+    mode.finish();
+    listAdapter.notifyDataSetChanged();
   }
 
   @Override
