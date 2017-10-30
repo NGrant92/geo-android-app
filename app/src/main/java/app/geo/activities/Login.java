@@ -44,7 +44,7 @@ public class Login extends Base implements GoogleApiClient.OnConnectionFailedLis
     TextView password = (TextView)findViewById(R.id.loginPassword);
 
     if(userStore.validUser(email.getText().toString(), password.getText().toString())){
-      app.currUser = userStore.getUser(email.getText().toString());
+      app.currUser = userStore.getUserByEmail(email.getText().toString());
       startActivity(new Intent(this, GeoMenu.class));
     }
     else{

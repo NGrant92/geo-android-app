@@ -51,4 +51,8 @@ public class CacheStore {
     }
     return null;
   }
+
+  public ArrayList<Cache> getCaches(){
+    return caches;
+  }
 }
