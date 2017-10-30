@@ -115,8 +115,7 @@ public class CachesFragment extends ListFragment implements View.OnClickListener
   private void deleteCaches(ActionMode mode) {
     for (int i = listAdapter.getCount() - 1; i >= 0; i--) {
       if (listView.isItemChecked(i)) {
-        cacheStore.remCache(cacheStore.getCache(i));
-        cacheStore.saveCaches();
+        CacheStore.caches.remove(listAdapter.getItem(i));
       }
     }
     mode.finish();
