@@ -9,6 +9,7 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 import app.geo.R;
+import app.geo.fragments.CachesFragment;
 import app.geo.main.GeoApp;
 
 /**
@@ -16,6 +17,8 @@ import app.geo.main.GeoApp;
  */
 
 public class Base extends AppCompatActivity {
+
+  public CachesFragment cacheFragment;
 
   protected void goToActivity(Activity current, Class<? extends Activity> activityClass, Bundle bundle) {
     Intent newActivity = new Intent(current, activityClass);
