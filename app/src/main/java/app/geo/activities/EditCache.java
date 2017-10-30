@@ -78,6 +78,13 @@ public class EditCache extends Base implements TextWatcher, CompoundButton.OnChe
     goToActivity(this, MyCache.class, null);
   }
 
+  public void deleteCacheButtonPressed(View view){
+    cacheStore.remCache(cache);
+    cacheStore.saveCaches();
+    toastMessage(cache.name + " removed!");
+    goToActivity(this, MyCache.class, null);
+  }
+
   public boolean isNew(String newString, String currString){
     return newString != null && !newString.equals(currString);
   }

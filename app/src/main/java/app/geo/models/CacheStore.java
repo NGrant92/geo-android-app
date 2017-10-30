@@ -27,6 +27,10 @@ public class CacheStore {
     caches.add(cache);
   }
 
+  public void remCache(Cache cache){
+    caches.remove(cache);
+  }
+
   public boolean saveCaches(){
     try{
       serializer.saveCache(caches);
