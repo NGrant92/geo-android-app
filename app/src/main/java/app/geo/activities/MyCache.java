@@ -23,6 +23,7 @@ import java.util.List;
 import app.geo.R;
 import app.geo.main.GeoApp;
 import app.geo.models.Cache;
+import app.geo.fragments.CachesFragment;
 
 /**
  * Created by niall on 09/10/17.
@@ -39,14 +40,10 @@ public class MyCache extends Base implements AdapterView.OnItemClickListener{
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_my_cache);
 
-    listView = (ListView)findViewById(R.id.myCacheList);
 
     app = (GeoApp)getApplication();
 
     adapter = new CacheListAdapter(this, app.cacheStore.caches);
-    listView.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE_MODAL);
-    listView.setAdapter(adapter);
-    listView.setOnItemClickListener(this);
   }
 
   @Override
@@ -64,6 +61,9 @@ public class MyCache extends Base implements AdapterView.OnItemClickListener{
   {
     super.onResume();
     adapter.notifyDataSetChanged();
+
+    cacheFragment = CachesFragment.newInstance();
+    getFragmentManager().beginTransaction().add(R.id.fragment_layout, cacheFragment).commit();
   }
 
   private void deleteCaches(ActionMode mode) {
