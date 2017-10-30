@@ -1,5 +1,8 @@
 package app.geo.activities;
 
+import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -79,10 +82,29 @@ public class EditCache extends Base implements TextWatcher, CompoundButton.OnChe
   }
 
   public void deleteCacheButtonPressed(View view){
-    cacheStore.remCache(cache);
-    cacheStore.saveCaches();
-    toastMessage(cache.name + " removed!");
-    goToActivity(this, MyCache.class, null);
+
+    AlertDialog.Builder builder = new AlertDialog.Builder(this);
+    builder.setMessage("Are you sure you want to Delete the \'Coffee\' " + cache.name + "?");
+    builder.setCancelable(false);
+
+    builder.setPositiveButton("Yes", new DialogInterface.OnClickListener()
+    {
+      public void onClick(DialogInterface dialog, int id)
+      {
+        cacheStore.remCache(cache);
+        cacheStore.saveCaches();
+        toastMessage(cache.name + " removed!");
+        goToActivity(EditCache.this, MyCache.class, null);
+      }
+    }).setNegativeButton("No", new DialogInterface.OnClickListener()
+    {
+      public void onClick(DialogInterface dialog, int id)
+      {
+        dialog.cancel();
+      }
+    });
+    AlertDialog alert = builder.create();
+    alert.show();
   }
 
   public boolean isNew(String newString, String currString){
