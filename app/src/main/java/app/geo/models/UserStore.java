@@ -65,9 +65,9 @@ public class UserStore {
     return true;
   }
 
-  public User getUser(String email){
+  public User getUser(int id){
     for(User user : users){
-      if(user.email.equals(email)){
+      if(user.userId == id){
         return user;
       }
     }
