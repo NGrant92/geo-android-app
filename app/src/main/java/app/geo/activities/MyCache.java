@@ -31,7 +31,6 @@ import app.geo.fragments.CachesFragment;
 
 public class MyCache extends Base implements AdapterView.OnItemClickListener{
 
-  public ListView listView;
   public GeoApp app;
   public CacheListAdapter adapter;
 
@@ -62,8 +61,10 @@ public class MyCache extends Base implements AdapterView.OnItemClickListener{
     super.onResume();
     adapter.notifyDataSetChanged();
 
-    cacheFragment = CachesFragment.newInstance();
-    getFragmentManager().beginTransaction().add(R.id.fragment_layout, cacheFragment).commit();
+    if(app.cacheStore.getCaches() != null){
+      cacheFragment = CachesFragment.newInstance();
+      getFragmentManager().beginTransaction().add(R.id.fragment_layout, cacheFragment).commit();
+    }
   }
 
   private void deleteCaches(ActionMode mode) {

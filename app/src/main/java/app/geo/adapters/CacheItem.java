@@ -6,8 +6,10 @@ import app.geo.main.GeoApp;
 import app.geo.models.Cache;
 import app.geo.R;
 import app.geo.models.User;
+import app.geo.models.UserStore;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -31,9 +33,8 @@ public class CacheItem extends Base {
     ((TextView) view.findViewById(R.id.cacheRowName)).setText(cache.name);
     ((TextView) view.findViewById(R.id.cacheRowLocation)).setText(cache.location);
 
-    GeoApp app = (GeoApp)getApplication();
-
-    //User owner = app.userStore.getUser(cache.ownerId);
-    ((TextView) view.findViewById(R.id.cacheRowOwner)).setText("No Owner");
+    UserStore currStore = GeoApp.getInstance().userStore;
+    User owner = currStore.getUser(cache.ownerId);
+    ((TextView) view.findViewById(R.id.cacheRowOwner)).setText(owner.firstName + " " + owner.lastName);
   }
 }

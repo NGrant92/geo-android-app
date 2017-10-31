@@ -66,6 +66,7 @@ public class UserStore {
   }
 
   public User getUser(int id){
+    Log.v("Geo", "USER: ");
     for(User user : users){
       if(user.userId == id){
         return user;

@@ -26,7 +26,7 @@
       android:layout_height="wrap_content"
       android:layout_marginStart="27dp"
       android:gravity="center_vertical"
-      android:text="Coffee Name"
+      android:text="Cache Name"
       android:textColor="@color/colorBlack"
       android:textSize="14sp"
       android:textStyle="bold"
@@ -35,11 +35,11 @@
       android:layout_toEndOf="@+id/cacheRowStar"/>
   
   <TextView
-      android:id="@+id/cacheRowLocation"
+      android:id="@+id/cacheRowOwner"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:gravity="center_vertical"
-      android:text="Location"
+      android:text="Owner"
       android:textColor="@color/colorBlack"
       android:textSize="11sp"
       android:textStyle="bold"
@@ -49,11 +49,11 @@
       android:layout_alignParentBottom="true"/>
   
   <TextView
-      android:id="@+id/cacheRowOwner"
+      android:id="@+id/cacheRowLocation"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:gravity="center_vertical"
-      android:text="Owner"
+      android:text="Location"
       android:textColor="@color/colorBlack"
       android:textSize="14sp"
       android:textStyle="bold"
