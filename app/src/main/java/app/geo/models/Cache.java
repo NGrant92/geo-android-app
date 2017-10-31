@@ -54,7 +54,7 @@ public class Cache {
   }
 
   private int newid(){
-    ArrayList<Cache> caches = CacheStore.caches;
+    ArrayList<Cache> caches = GeoApp.getInstance().cacheStore.caches;
     if(caches.size() > 0) {
       Cache cache = caches.get(caches.size() - 1);
       return cache.cacheId + 1;

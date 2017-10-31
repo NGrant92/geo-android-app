@@ -1,6 +1,7 @@
 package app.geo.fragments;
 
 import app.geo.R;
+import app.geo.main.GeoApp;
 import app.geo.models.Cache;
 import app.geo.activities.Base;
 import app.geo.activities.EditCache;
@@ -46,7 +47,8 @@ public class CachesFragment extends ListFragment implements View.OnClickListener
   public void onCreate(Bundle savedInstanceState){
     super.onCreate(savedInstanceState);
 
-    listAdapter = new CacheListAdapter(getActivity(), CacheStore.caches);
+    cacheStore = GeoApp.getInstance().cacheStore;
+    listAdapter = new CacheListAdapter(getActivity(), cacheStore.caches);
     setListAdapter(listAdapter);
   }
 
@@ -115,7 +117,8 @@ public class CachesFragment extends ListFragment implements View.OnClickListener
   private void deleteCaches(ActionMode mode) {
     for (int i = listAdapter.getCount() - 1; i >= 0; i--) {
       if (listView.isItemChecked(i)) {
-        CacheStore.caches.remove(listAdapter.getItem(i));
+        cacheStore.caches.remove(listAdapter.getItem(i));
+        cacheStore.saveCaches();
       }
     }
     mode.finish();

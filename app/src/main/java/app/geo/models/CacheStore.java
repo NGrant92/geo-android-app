@@ -10,7 +10,7 @@ import java.util.ArrayList;
 
 public class CacheStore {
 
-  public static ArrayList<Cache> caches;
+  public ArrayList<Cache> caches;
   private CacheSerializer serializer;
 
   public CacheStore(CacheSerializer serializer){
