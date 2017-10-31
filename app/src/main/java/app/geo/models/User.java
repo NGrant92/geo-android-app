@@ -3,6 +3,10 @@ package app.geo.models;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
+
+import app.geo.main.GeoApp;
+
 /**
  * Created by niall on 10/10/17.
  * A class that will hold information of a user.
@@ -10,7 +14,6 @@ import org.json.JSONObject;
 
 public class User {
 
-  public static int autoid = 1;
   public int userId;
   public String firstName;
   public String lastName;
@@ -24,7 +27,7 @@ public class User {
   private static final String JSON_PASSWORD = "password";
 
   public User(String firstName, String lastName, String email, String password){
-    this.userId = autoid++;
+    this.userId = newid();
     this.firstName = firstName;
     this.lastName = lastName;
     this.email = email;
@@ -48,5 +51,16 @@ public class User {
     json.put(JSON_PASSWORD, password);
 
     return json;
+  }
+
+  private int newid(){
+    ArrayList<User> users = GeoApp.getInstance().userStore.users;
+    if(users.size() > 0) {
+      User user = users.get(users.size() - 1);
+      return user.userId + 1;
+    }
+    else{
+      return 0;
+    }
   }
 }

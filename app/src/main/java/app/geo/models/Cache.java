@@ -3,6 +3,10 @@ package app.geo.models;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
+
+import app.geo.main.GeoApp;
+
 /**
  * Created by niall on 10/10/17.
  * A class that will be used to hold information about a single Geocache
@@ -10,7 +14,6 @@ import org.json.JSONObject;
 
 public class Cache {
 
-  public static int autoid = 1;
   public int cacheId;
   public String name;
   public String location;
@@ -24,7 +27,7 @@ public class Cache {
   private static final String JSON_CACHEOWNERID = "ownerId";
 
   public Cache(String name, String location, String description, int ownerId){
-    this.cacheId = autoid++;
+    this.cacheId = newid();
     this.name = name;
     this.location = location;
     this.description = description;
@@ -48,5 +51,16 @@ public class Cache {
     json.put(JSON_CACHEOWNERID, String.valueOf(ownerId));
 
     return json;
+  }
+
+  private int newid(){
+    ArrayList<Cache> caches = CacheStore.caches;
+    if(caches.size() > 0) {
+      Cache cache = caches.get(caches.size() - 1);
+      return cache.cacheId + 1;
+    }
+    else{
+      return 0;
+    }
   }
 }
