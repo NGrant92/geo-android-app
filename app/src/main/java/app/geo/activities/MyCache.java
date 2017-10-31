@@ -39,7 +39,6 @@ public class MyCache extends Base implements AdapterView.OnItemClickListener{
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_my_cache);
 
-
     app = (GeoApp)getApplication();
 
     adapter = new CacheListAdapter(this, app.cacheStore.caches);
