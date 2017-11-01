@@ -1,6 +1,7 @@
 package app.geo.fragments;
 
 import app.geo.R;
+import app.geo.activities.CacheInfo;
 import app.geo.activities.MyCache;
 import app.geo.adapters.CacheFilter;
 import app.geo.main.GeoApp;
@@ -97,10 +98,16 @@ public class CachesFragment extends ListFragment implements View.OnClickListener
   public void onListItemClick(ListView list, View view, int position, long id) {
     Bundle activityInfo = new Bundle();
     activityInfo.putInt("cache_id", view.getId());
-
-    Intent goEdit = new Intent(getActivity(), EditCache.class);
-    goEdit.putExtras(activityInfo);
-    getActivity().startActivity(goEdit);
+    if(getActivity() instanceof EditCache){
+      Intent goEdit = new Intent(getActivity(), EditCache.class);
+      goEdit.putExtras(activityInfo);
+      getActivity().startActivity(goEdit);
+    }
+    else{
+      Intent goInfo = new Intent(getActivity(), CacheInfo.class);
+      goInfo.putExtras(activityInfo);
+      getActivity().startActivity(goInfo);
+    }
   }
 
   @Override

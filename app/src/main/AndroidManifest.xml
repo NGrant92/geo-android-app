@@ -39,6 +39,9 @@
         android:name=".activities.MyCache"
         android:label="@string/my_cache"/>
     <activity
+        android:name=".activities.CacheInfo"
+        android:label="@string/cache_info"/>
+    <activity
         android:name=".activities.EditCache"
         android:label="@string/my_cache"/>
     <activity
