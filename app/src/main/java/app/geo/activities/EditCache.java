@@ -136,6 +136,7 @@ public class EditCache extends Base implements TextWatcher, CompoundButton.OnChe
 
       starIcon.setImageResource(R.drawable.star_green_full);
     }
+    cacheStore.saveCaches();
   }
 
   public boolean isNew(String newString, String currString){

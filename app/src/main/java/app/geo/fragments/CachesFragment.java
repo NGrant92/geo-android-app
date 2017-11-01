@@ -1,6 +1,8 @@
 package app.geo.fragments;
 
 import app.geo.R;
+import app.geo.activities.MyCache;
+import app.geo.adapters.CacheFilter;
 import app.geo.main.GeoApp;
 import app.geo.models.Cache;
 import app.geo.activities.Base;
@@ -36,6 +38,7 @@ public class CachesFragment extends ListFragment implements View.OnClickListener
   public CacheListAdapter listAdapter;
   public ListView listView;
   public CacheStore cacheStore;
+  public CacheFilter cacheFilter;
 
   public CachesFragment(){}
 
@@ -56,6 +59,16 @@ public class CachesFragment extends ListFragment implements View.OnClickListener
     super.onResume();
 
     listAdapter = new CacheListAdapter(getActivity(), cacheStore.caches);
+    cacheFilter = new CacheFilter(cacheStore.caches, "all", listAdapter);
+
+    if(getActivity() instanceof MyCache){
+      cacheFilter.setFilter("mycache");
+      //filtering data but without a prefix
+      cacheFilter.filter(null);
+      //updating adapter
+      listAdapter.notifyDataSetChanged();
+    }
+    setListAdapter(listAdapter);
   }
 
   @Override

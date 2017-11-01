@@ -82,7 +82,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:text="@string/add"
-        android:onClick="addGeoPressed"
+        android:onClick="addCachePressed"
         android:textColor="@color/colorWhite"
         android:background="@drawable/green_button"
         app:layout_constraintBottom_toBottomOf="parent"

@@ -22,7 +22,7 @@ public class AddCache extends Base {
     setContentView(R.layout.activity_add_cache);
   }
 
-  public void addGeoPressed(View view){
+  public void addCachePressed(View view){
     GeoApp app = (GeoApp)getApplication();
     User currUser = app.currUser;
 

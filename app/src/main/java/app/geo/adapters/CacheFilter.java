@@ -42,7 +42,7 @@ public class CacheFilter extends Filter{
         results.count = caches.size();
       }
       else{
-        if(filter.equals("user")){
+        if(filter.equals("mycache")){
           int userid = app.currUser.userId;
           for (Cache c : caches){
             if(c.ownerId == userid){
