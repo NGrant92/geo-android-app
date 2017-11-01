@@ -70,4 +70,9 @@ public class GeoMenu extends Base {
     }
     return true;
   }
+
+  @Override
+  public void onBackPressed() {
+    moveTaskToBack(true);
+  }
 }
