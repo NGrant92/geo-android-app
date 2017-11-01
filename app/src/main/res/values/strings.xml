@@ -20,6 +20,7 @@
   <string name="cache_list">Cache List</string>
   <string name="my_cache">My Cache</string>
   <string name="edit_cache">Edit Cache</string>
+  <string name="cache_info">Cache Info</string>
   <string name="add_cache">Add Cache</string>
   <string name="mail">Mail</string>
   <string name="settings">Settings</string>
