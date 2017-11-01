@@ -31,12 +31,10 @@ public class CacheInfo extends Base implements TextWatcher, CompoundButton.OnChe
   @Override
   protected void onCreate(Bundle savedInstanceState){
     super.onCreate(savedInstanceState);
-    setContentView(R.layout.activity_edit_cache);
+    setContentView(R.layout.activity_cache_info);
 
     cacheName = (TextView)findViewById(R.id.cacheInfoName);
-
     cacheLocation = (TextView)findViewById(R.id.cacheInfoLocation);
-
     cacheDescription = (TextView)findViewById(R.id.cacheInfoDescription);
 
     GeoApp app = (GeoApp)getApplication();
