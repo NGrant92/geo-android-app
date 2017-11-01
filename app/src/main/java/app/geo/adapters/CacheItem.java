@@ -9,7 +9,6 @@ import app.geo.models.User;
 import app.geo.models.UserStore;
 
 import android.content.Context;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -36,5 +35,14 @@ public class CacheItem extends Base {
     UserStore currStore = GeoApp.getInstance().userStore;
     User owner = currStore.getUser(cache.ownerId);
     ((TextView) view.findViewById(R.id.cacheRowOwner)).setText(owner.firstName + " " + owner.lastName);
+
+    ImageView starIcon = (ImageView) view.findViewById(R.id.cacheRowStar);
+
+    if(cache.favourite){
+      starIcon.setImageResource(R.drawable.star_green_full);
+    }
+    else{
+      starIcon.setImageResource(R.drawable.star_green_empty);
+    }
   }
 }

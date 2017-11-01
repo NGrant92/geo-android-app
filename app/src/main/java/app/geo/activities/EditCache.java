@@ -9,6 +9,7 @@ import android.text.TextWatcher;
 import android.view.View;
 import android.widget.CompoundButton;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import app.geo.R;
@@ -25,6 +26,8 @@ public class EditCache extends Base implements TextWatcher, CompoundButton.OnChe
   public EditText cacheName;
   public EditText cacheLocation;
   public EditText cacheDescription;
+  public ImageView starIcon;
+  public Boolean isFavourite;
 
   public CacheStore cacheStore;
   public Cache cache;
@@ -49,6 +52,8 @@ public class EditCache extends Base implements TextWatcher, CompoundButton.OnChe
     int resId = (int)getIntent().getExtras().getSerializable("cache_id");
     cache = cacheStore.getCache(resId);
 
+     starIcon = (ImageView)findViewById(R.id.editCacheStar);
+
     if(cache != null){
       updateControls(cache);
     }
@@ -58,6 +63,15 @@ public class EditCache extends Base implements TextWatcher, CompoundButton.OnChe
     cacheName.setText(cache.name);
     cacheLocation.setText(cache.location);
     cacheDescription.setText(cache.description);
+
+    if(cache.favourite){
+      starIcon.setImageResource(R.drawable.star_green_full);
+      isFavourite = true;
+    }
+    else{
+      starIcon.setImageResource(R.drawable.star_green_empty);
+      isFavourite = false;
+    }
   }
 
   public void updateCacheButtonPressed(View view) {

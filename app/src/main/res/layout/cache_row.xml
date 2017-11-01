@@ -10,7 +10,6 @@
   
   <ImageView
       android:id="@+id/cacheRowStar"
-      android:onClick="toggle"
       android:layout_width="30dp"
       android:layout_height="30dp"
       android:layout_alignParentStart="true"

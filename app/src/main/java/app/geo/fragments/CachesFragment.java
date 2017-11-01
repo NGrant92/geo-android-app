@@ -75,8 +75,7 @@ public class CachesFragment extends ListFragment implements View.OnClickListener
   }
 
   @Override
-  public void onListItemClick(ListView list, View view, int position, long id)
-  {
+  public void onListItemClick(ListView list, View view, int position, long id) {
     Bundle activityInfo = new Bundle();
     activityInfo.putInt("cache_id", view.getId());
 
@@ -86,9 +85,7 @@ public class CachesFragment extends ListFragment implements View.OnClickListener
   }
 
   @Override
-  public void onItemCheckedStateChanged(ActionMode mode, int position, long id, boolean checked) {
-
-  }
+  public void onItemCheckedStateChanged(ActionMode mode, int position, long id, boolean checked) {}
 
   @Override
   public boolean onCreateActionMode(ActionMode mode, Menu menu) {

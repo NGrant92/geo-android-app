@@ -18,12 +18,14 @@ public class Cache {
   public String name;
   public String location;
   public String description;
+  public boolean favourite;
   public int ownerId;
 
   private static final String JSON_CACHEID = "cacheId";
   private static final String JSON_CACHENAME = "name";
   private static final String JSON_CACHELOCATION = "location";
   private static final String JSON_CACHEDESCRIPTION = "description";
+  private static final String JSON_CACHEDFAVOURITE= "favourite";
   private static final String JSON_CACHEOWNERID = "ownerId";
 
   public Cache(String name, String location, String description, int ownerId){
@@ -31,6 +33,7 @@ public class Cache {
     this.name = name;
     this.location = location;
     this.description = description;
+    this.favourite = false;
     this.ownerId = ownerId;
   }
 
@@ -39,6 +42,7 @@ public class Cache {
     name = json.getString(JSON_CACHENAME);
     location = json.getString(JSON_CACHELOCATION);
     description = json.getString(JSON_CACHEDESCRIPTION);
+    favourite = json.getBoolean(JSON_CACHEDFAVOURITE);
     ownerId = json.getInt(JSON_CACHEOWNERID);
   }
 
@@ -48,6 +52,7 @@ public class Cache {
     json.put(JSON_CACHENAME, name);
     json.put(JSON_CACHELOCATION, location);
     json.put(JSON_CACHEDESCRIPTION, description);
+    json.put(JSON_CACHEDFAVOURITE, String.valueOf(favourite));
     json.put(JSON_CACHEOWNERID, String.valueOf(ownerId));
 
     return json;
