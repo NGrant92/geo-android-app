@@ -30,11 +30,16 @@ public class AddCache extends Base {
     TextView location = (TextView)findViewById(R.id.addCacheLocation);
     TextView description = (TextView)findViewById(R.id.addCacheDescription);
 
-    Cache cache = new Cache(name.getText().toString(), location.getText().toString(), description.getText().toString(), currUser.userId);
-    app.cacheStore.addCache(cache);
-    app.cacheStore.saveCaches();
+    if(name.length() == 0 || location.length() == 0 || description.length() == 0){
+      toastMessage("Please ensure no empty fields");
+    }
+    else{
+      Cache cache = new Cache(name.getText().toString(), location.getText().toString(), description.getText().toString(), currUser.userId);
+      app.cacheStore.addCache(cache);
+      app.cacheStore.saveCaches();
 
-    Toast.makeText(this, "Cache Added!", Toast.LENGTH_SHORT).show();
-    startActivity(new Intent(this, GeoMenu.class));
+      Toast.makeText(this, "Cache Added!", Toast.LENGTH_SHORT).show();
+      startActivity(new Intent(this, GeoMenu.class));
+    }
   }
 }
