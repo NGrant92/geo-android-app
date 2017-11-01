@@ -48,8 +48,14 @@ public class CachesFragment extends ListFragment implements View.OnClickListener
     super.onCreate(savedInstanceState);
 
     cacheStore = GeoApp.getInstance().cacheStore;
-    listAdapter = new CacheListAdapter(getActivity(), cacheStore.caches);
     setListAdapter(listAdapter);
+  }
+
+  @Override
+  public void onResume(){
+    super.onResume();
+
+    listAdapter = new CacheListAdapter(getActivity(), cacheStore.caches);
   }
 
   @Override
