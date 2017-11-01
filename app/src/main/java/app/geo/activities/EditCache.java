@@ -121,6 +121,23 @@ public class EditCache extends Base implements TextWatcher, CompoundButton.OnChe
     alert.show();
   }
 
+  public void toggle(View view){
+    if(isFavourite){
+      cache.favourite = false;
+      isFavourite = false;
+      toastMessage("Removed from favourites");
+
+      starIcon.setImageResource(R.drawable.star_green_empty);
+    }
+    else{
+      cache.favourite = true;
+      isFavourite = true;
+      toastMessage("Added to favourites");
+
+      starIcon.setImageResource(R.drawable.star_green_full);
+    }
+  }
+
   public boolean isNew(String newString, String currString){
     return newString != null && !newString.equals(currString);
   }
