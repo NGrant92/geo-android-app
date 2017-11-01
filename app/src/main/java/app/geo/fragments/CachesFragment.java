@@ -98,7 +98,8 @@ public class CachesFragment extends ListFragment implements View.OnClickListener
   public void onListItemClick(ListView list, View view, int position, long id) {
     Bundle activityInfo = new Bundle();
     activityInfo.putInt("cache_id", view.getId());
-    if(getActivity() instanceof EditCache){
+
+    if(getActivity() instanceof MyCache){
       Intent goEdit = new Intent(getActivity(), EditCache.class);
       goEdit.putExtras(activityInfo);
       getActivity().startActivity(goEdit);
