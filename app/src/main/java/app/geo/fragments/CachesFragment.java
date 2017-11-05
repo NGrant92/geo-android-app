@@ -128,7 +128,7 @@ public class CachesFragment extends ListFragment implements View.OnClickListener
   @Override
   public boolean onCreateActionMode(ActionMode mode, Menu menu) {
 
-    if(getActivity() instanceof EditCache){
+    if(getActivity() instanceof MyCache){
       MenuInflater inflater = mode.getMenuInflater();
       inflater.inflate(R.menu.delete_list_context, menu);
       return true;
