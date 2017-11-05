@@ -12,9 +12,12 @@ import app.geo.models.Cache;
 import app.geo.models.User;
 
 /**
+ * @author Niall Grant 05/11/2017
  * This activity is used to add a new cache
  *
  * The user is required to fill in all 3 fields (name, location & description)
+ * If fields are empty they are prompted with a toast message
+ * If fields are full then the Cache is added and saved
  */
 
 public class AddCache extends Base {

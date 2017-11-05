@@ -26,7 +26,13 @@ import app.geo.models.Cache;
 import app.geo.fragments.CachesFragment;
 
 /**
- * Created by niall on 09/10/17.
+ * @author Niall Grant 05/11/2017
+ *
+ * This activity is used to display the list of the user's existing caches
+ * From this activity if the user clicks on a Cache Item they are
+ * directed to EditCache.java and given the ability to edit the information
+ *
+ * Main reference source: 7(a) UI Design 1 & App Structure
  */
 
 public class MyCache extends Base implements AdapterView.OnItemClickListener{

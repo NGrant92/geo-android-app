@@ -1,7 +1,6 @@
 package app.geo.activities;
 
 import android.app.Activity;
-import android.app.Application;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -14,7 +13,12 @@ import app.geo.fragments.CachesFragment;
 import app.geo.main.GeoApp;
 
 /**
- * Created by niall on 15/10/17.
+ * @author Niall Grant 05/11/2017
+ *
+ * This is a Base class that is extended by all activity classes
+ * It stores general methods that are used by a number of classes such as the top menu
+ *
+ * Main reference source: 7(a) UI Design 1 & App Structure
  */
 
 public class Base extends AppCompatActivity {

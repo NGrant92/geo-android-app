@@ -8,8 +8,10 @@ import java.util.ArrayList;
 import app.geo.main.GeoApp;
 
 /**
- * Created by niall on 10/10/17.
- * A class that will be used to hold information about a single Geocache
+ * @author Niall Grant 05/11/2017
+ * A model class that defines what should be stored in the cache object
+ *
+ * Main reference source: 4(a) Navigation and LifeCycles (Siobhán) Lab 2
  */
 
 public class Cache {

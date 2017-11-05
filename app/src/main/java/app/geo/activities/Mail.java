@@ -17,9 +17,15 @@ import static app.geo.helpers.ContactHelper.sendEmail;
 import static app.geo.helpers.IntentHelper.selectContact;
 import android.content.Intent;
 
-public class Mail extends Base implements TextWatcher,
-    CompoundButton.OnCheckedChangeListener,
-    View.OnClickListener{
+/**
+ * @author Niall Grant 05/11/2017
+ *
+ * This activity allows the user to write and send an email from their contact list
+ *
+ * Main reference source: 5a (SUPPLEMENTAL) Persistence and Communicaton
+ */
+
+public class Mail extends Base implements TextWatcher, CompoundButton.OnCheckedChangeListener, View.OnClickListener{
 
   private String emailAddress;
 

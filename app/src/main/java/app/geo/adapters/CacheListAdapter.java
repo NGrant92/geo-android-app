@@ -12,6 +12,13 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
+/**
+ * @author Niall Grant 05/11/2017
+ * This adapter is used to format the list of caches
+ *
+ * Main reference source: 7(a) UI Design 1 & App Structure
+ */
+
 public class CacheListAdapter extends ArrayAdapter<Cache> {
   public Context context;
   public List<Cache> caches;

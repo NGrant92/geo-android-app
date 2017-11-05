@@ -23,6 +23,13 @@ public class Welcome extends AppCompatActivity {
     startActivity(new Intent(this, Signup.class));
   }
 
+
+  /**
+   * Once logged out, if they hit the back button, trying to get back to the main logged in menu,
+   * they are exited from the app
+   *
+   * Reference: https://stackoverflow.com/a/26492794
+   */
   @Override
   public void onBackPressed() {
     moveTaskToBack(true);

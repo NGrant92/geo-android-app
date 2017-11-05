@@ -11,7 +11,11 @@ import app.geo.models.User;
 import app.geo.models.UserStore;
 
 /**
- * Created by niall on 09/10/17.
+ * @author Niall Grant 05/11/2017
+ *
+ * This activity allows the user to edit their personal information
+ *
+ * Main reference source: 7(a) UI Design 1 & App Structure
  */
 
 public class Settings extends Base {

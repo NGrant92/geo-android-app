@@ -16,6 +16,13 @@ import android.view.View.OnClickListener;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+/**
+ * @author Niall Grant 05/11/2017
+ * This adapter is used as a template to display the information of a particular cache
+ *
+ * Main reference source: 7(a) UI Design 1 & App Structure
+ */
+
 public class CacheItem extends Base {
   View view;
 

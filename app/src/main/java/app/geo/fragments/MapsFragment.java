@@ -40,6 +40,16 @@ import app.geo.R;
 import static android.Manifest.permission.ACCESS_FINE_LOCATION;
 import static android.Manifest.permission.CAMERA;
 
+/**
+ * @author Niall Grant 05/11/2017
+ * This fragment is used to display the integrated google maps
+ * It is responsible for displaying the user location currently
+ *
+ * In the future it will display the location of Caches to provide a better UX
+ *
+ * Main reference source: 9 Google Services
+ */
+
 public class MapsFragment extends MapFragment implements GoogleMap.OnInfoWindowClickListener, GoogleMap.OnMapClickListener, GoogleMap.OnMarkerClickListener, OnMapReadyCallback {
 
   private LocationRequest mLocationRequest;

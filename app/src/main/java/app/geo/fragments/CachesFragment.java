@@ -34,6 +34,13 @@ import android.widget.ListView;
 
 import java.util.ArrayList;
 
+/**
+ * @author Niall Grant 05/11/2017
+ * This fragment is used to display the information from CacheListAdapter
+ *
+ * Main reference source: 7(a) UI Design 1 & App Structure
+ */
+
 public class CachesFragment extends ListFragment implements View.OnClickListener, AbsListView.MultiChoiceModeListener {
   public Base activity;
   public CacheListAdapter listAdapter;
@@ -94,6 +101,10 @@ public class CachesFragment extends ListFragment implements View.OnClickListener
     super.onStart();
   }
 
+  /**
+   * Checks if user is currently in MyCache or CacheList activities and will
+   * load either EditCache or CacheInfo
+   */
   @Override
   public void onListItemClick(ListView list, View view, int position, long id) {
     Bundle activityInfo = new Bundle();

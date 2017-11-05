@@ -18,7 +18,13 @@ import app.geo.main.GeoApp;
 import app.geo.models.UserStore;
 
 /**
- * Created by niall on 10/10/17.
+ * @author Niall Grant 05/11/2017
+ *
+ * This activity is where the user is asked to log in using their email and password
+ * If they do not enter the correct credentials then a toast message is displayed
+ * If credentials are corrct then they are brought to the GeoMenu.java activity
+ *
+ * Main reference source: 2(b). Activities and Layouts (Siobhán)
  */
 
 public class Login extends Base implements GoogleApiClient.OnConnectionFailedListener {
@@ -54,7 +60,6 @@ public class Login extends Base implements GoogleApiClient.OnConnectionFailedLis
 
   @Override
   public boolean onCreateOptionsMenu(Menu menu){
-    //to inflate the menu items for use in the action bar
     getMenuInflater().inflate(R.menu.menu_welcome, menu);
     return true;
   }

@@ -9,6 +9,15 @@ import java.util.ArrayList;
 import app.geo.main.GeoApp;
 import app.geo.models.Cache;
 
+/**
+ * @author Niall Grant 05/11/2017
+ *
+ * This adapter is used to filter the list of caches in the CachesFragment.java
+ * This is used to ensure only the User's caches are displayed in MyCache
+ *
+ * Main reference source: 7(b) UI Design 2
+ */
+
 public class CacheFilter extends Filter{
   private ArrayList<Cache> caches;
   private String filter;

@@ -13,7 +13,11 @@ import app.geo.models.UserSerializer;
 import app.geo.models.UserStore;
 
 /**
- * Created by niall on 14/10/17.
+ * @author Niall Grant 05/11/2017
+ * The main entry point for the application and is responsible for
+ * loading the persisted data into the app
+ *
+ * Main reference source: 3(b) Navigation and App Structure (Siobhán)
  */
 
 public class GeoApp extends Application{

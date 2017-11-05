@@ -18,7 +18,14 @@ import app.geo.models.Cache;
 import app.geo.models.CacheStore;
 
 /**
- * Created by niall on 09/10/17.
+ * @author Niall Grant 05/11/2017
+ *
+ * This activity is used to edit an existing Cache.
+ * When a user clicks on a Coffee Item in MyCache.java they are directed
+ * to this activity. MyCache.java only displays the Caches a user has created
+ * so they can only edit the ones they created
+ *
+ * Main reference source: 7(a) UI Design 1 & App Structure
  */
 
 public class EditCache extends Base implements TextWatcher, CompoundButton.OnCheckedChangeListener {
@@ -98,7 +105,7 @@ public class EditCache extends Base implements TextWatcher, CompoundButton.OnChe
   public void deleteCacheButtonPressed(View view){
 
     AlertDialog.Builder builder = new AlertDialog.Builder(this);
-    builder.setMessage("Are you sure you want to Delete the \'Coffee\' " + cache.name + "?");
+    builder.setMessage("Are you sure you want to Delete the \'Cache\' " + cache.name + "?");
     builder.setCancelable(false);
 
     builder.setPositiveButton("Yes", new DialogInterface.OnClickListener()

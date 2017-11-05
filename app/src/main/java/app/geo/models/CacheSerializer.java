@@ -17,7 +17,10 @@ import java.io.Writer;
 import java.util.ArrayList;
 
 /**
- * Created by niall on 16/10/17.
+ * @author Niall Grant 05/11/2017
+ * A class used to save and store the list of caches
+ *
+ * Main reference source: 4(a) Navigation and LifeCycles (Siobhán) Lab 2
  */
 
 public class CacheSerializer {

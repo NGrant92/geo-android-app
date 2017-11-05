@@ -20,7 +20,12 @@ import app.geo.main.GeoApp;
 import app.geo.models.Cache;
 
 /**
- * Created by niall on 09/10/17.
+ * @author Niall Grant 05/11/2017
+ * This activity is used to display the list of all existing caches
+ * From this activity if the user clicks on a Cache Item they are
+ * directed to CacheInfo.java and given the information of a specific cache
+ *
+ * Main reference source: 7(a) UI Design 1 & App Structure
  */
 
 public class CacheList extends Base implements AdapterView.OnItemClickListener {

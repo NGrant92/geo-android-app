@@ -12,7 +12,14 @@ import app.geo.models.User;
 import app.geo.models.UserStore;
 
 /**
- * Created by niall on 10/10/17.
+ * @author Niall Grant 05/11/2017
+ *
+ * This activity allows the user to register an account if wish to do so.
+ * Email input is checked to ensure that it is registered to one account only
+ * If a matching email is found then a toast message is displayed
+ * If no matching email is found then they are brought to the home screen
+ *
+ * Main reference source: 2(b). Activities and Layouts (Siobhán)
  */
 
 public class Signup extends Base {

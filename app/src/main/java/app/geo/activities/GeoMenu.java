@@ -10,7 +10,12 @@ import app.geo.R;
 import app.geo.main.GeoApp;
 
 /**
- * Created by niall on 08/10/17.
+ * @author Niall Grant 05/11/2017
+ *
+ * This activity is the main menu for the user when they log in.
+ * They are given a list of buttons that will direct them to the appropriate activity
+ *
+ * Main reference source: 2(b). Activities and Layouts (Siobhán)
  */
 
 public class GeoMenu extends Base {
@@ -51,7 +56,6 @@ public class GeoMenu extends Base {
 
   @Override
   public boolean onCreateOptionsMenu(Menu menu){
-    //to inflate the menu items for use in the action bar
     getMenuInflater().inflate(R.menu.geo_home_menu, menu);
     return true;
   }
@@ -71,6 +75,12 @@ public class GeoMenu extends Base {
     return true;
   }
 
+  /**
+   * Once logged in, if they hit the back button, trying to get back to the login menu,
+   * they are exited from the app
+   *
+   * Reference: https://stackoverflow.com/a/26492794
+   */
   @Override
   public void onBackPressed() {
     moveTaskToBack(true);

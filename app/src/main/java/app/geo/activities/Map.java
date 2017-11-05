@@ -6,7 +6,11 @@ import android.util.Log;
 import app.geo.R;
 
 /**
- * Created by niall on 09/10/17.
+ * @author Niall Grant 05/11/2017
+ *
+ * This activity is the main activity that displays the integrated google maps api
+ *
+ * Main reference source: 9 Google Services
  */
 
 public class Map extends Base {

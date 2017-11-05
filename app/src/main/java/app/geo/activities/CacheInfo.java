@@ -14,7 +14,12 @@ import app.geo.models.Cache;
 import app.geo.models.CacheStore;
 
 /**
- * Created by niall on 09/10/17.
+ * @author Niall Grant 05/11/2017
+ *
+ * This activity is used to to view the information of a specific Cache
+ * It displays the information in TextView fields and allows the user to favourite the Cache
+ *
+ * Main reference source: 7(a) UI Design 1 & App Structure
  */
 
 public class CacheInfo extends Base implements TextWatcher, CompoundButton.OnCheckedChangeListener {

@@ -1,6 +1,14 @@
 # Geocache Android App
 ## Assignment #1 for Android App Dev
 
+### Author Details:
+
+**Name:** Niall Grant
+
+**Student No:** 11414608
+
+**Github repo:** https://github.com/NGrant92/geo-android-app
+
 ### Description:
 
 Geocaching is a form of Orienteering or 'treasure hunting' that is run and maintained by the players
@@ -24,6 +32,7 @@ their settings.
 
 ##### Features in Development:
 
+- List of favourite caches
 - Tracking Caches in map
 - Add cache location using maps
 - Star rating for each caches
@@ -32,4 +41,5 @@ their settings.
 
 ##### References:
 
-- Most of the code is based on the Donation and CoffeeMate labs on https://edge.moodle.wit.ie/
+- Most of the code is based on the MyRent and CoffeeMate labs on https://edge.moodle.wit.ie/
+- onBackPressed() in Welcome and GeoMenu: https://stackoverflow.com/a/26492794

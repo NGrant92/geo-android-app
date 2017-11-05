@@ -1,7 +1,11 @@
 package app.geo.helpers;
 
 /**
- * Created by niall on 28/10/17.
+ * @author Niall Grant 05/11/2017
+ *
+ * This is used to allow the user to access their phone contact list from within the app
+ *
+ * Main reference source: 5a (SUPPLEMENTAL) Persistence and Communicaton
  */
 
 import android.content.Context;
