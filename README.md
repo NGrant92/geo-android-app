@@ -43,3 +43,12 @@ their settings.
 
 - Most of the code is based on the MyRent and CoffeeMate labs on https://edge.moodle.wit.ie/
 - onBackPressed() in Welcome and GeoMenu: https://stackoverflow.com/a/26492794
+
+
+##### Images:
+
+![login](http://res.cloudinary.com/ngrant/image/upload/c_scale,w_900/v1509892066/main-login-menu_aj1rr1.jpg)
+
+![cache list](http://res.cloudinary.com/ngrant/image/upload/c_scale,w_600/v1509892062/cache-list_pvtxh9.jpg)
+
+![my cache](http://res.cloudinary.com/ngrant/image/upload/c_scale,w_600/v1509892062/my-cache_gnysdk.jpg)
