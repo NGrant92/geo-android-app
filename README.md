@@ -5,8 +5,6 @@
 
 **Name:** Niall Grant
 
-**Student No:** 11414608
-
 **Github repo:** https://github.com/NGrant92/geo-android-app
 
 ### Description:
