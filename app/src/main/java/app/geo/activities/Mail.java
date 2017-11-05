@@ -68,9 +68,11 @@ public class Mail extends Base implements TextWatcher,
     switch (requestCode)
     {
       case REQUEST_CONTACT:
-        String name = getContact(this, data);
-        emailAddress = getEmail(this, data);
-        mailSendToButton.setText(name + ": " + emailAddress);
+        if(data != null){
+          String name = getContact(this, data);
+          emailAddress = getEmail(this, data);
+          mailSendToButton.setText(name + ": " + emailAddress);
+        }
         break;
     }
   }
