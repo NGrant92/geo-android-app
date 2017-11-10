@@ -1,10 +1,19 @@
 package app.geo.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
+
+import com.google.android.gms.auth.api.Auth;
+import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.common.api.ResultCallback;
+import com.google.android.gms.common.api.Status;
 
 import app.geo.R;
 import app.geo.main.GeoApp;
@@ -20,12 +29,13 @@ import app.geo.main.GeoApp;
 
 public class GeoMenu extends Base {
 
+  public GeoApp app = GeoApp.getInstance();
+
   @Override
   protected void onCreate(Bundle savedInstanceState){
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_geo_menu);
 
-    GeoApp app = (GeoApp)getApplication();
     String menuTitle = app.currUser.firstName + "'s Geo Menu";
     ((TextView)findViewById(R.id.menuTitle)).setText(menuTitle);
   }
@@ -73,6 +83,37 @@ public class GeoMenu extends Base {
         break;
     }
     return true;
+  }
+
+  public void menuLogOut(MenuItem m) {
+
+    //https://stackoverflow.com/questions/38039320/googleapiclient-is-not-connected-yet-on-logout-when-using-firebase-auth-with-g
+    app.mGoogleApiClient.connect();
+    app.mGoogleApiClient.registerConnectionCallbacks(new GoogleApiClient.ConnectionCallbacks() {
+      @Override
+      public void onConnected(@Nullable Bundle bundle) {
+
+        //FirebaseAuth.getInstance().signOut();
+        if(app.mGoogleApiClient.isConnected()) {
+          Auth.GoogleSignInApi.signOut(app.mGoogleApiClient).setResultCallback(new ResultCallback<Status>() {
+            @Override
+            public void onResult(@NonNull Status status) {
+              if (status.isSuccess()) {
+                Log.v("Geo", "User Logged out");
+                Intent intent = new Intent(GeoMenu.this, Welcome.class);
+                startActivity(intent);
+                finish();
+              }
+            }
+          });
+        }
+      }
+
+      @Override
+      public void onConnectionSuspended(int i) {
+        Log.d("Geo", "Google API Client Connection Suspended");
+      }
+    });
   }
 
   /**
