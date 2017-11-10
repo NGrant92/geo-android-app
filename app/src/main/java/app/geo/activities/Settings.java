@@ -60,7 +60,7 @@ public class Settings extends Base {
       userStore.saveUsers();
 
       toastMessage("Profile updated!");
-      goToActivity(this, GeoMenu.class, null);
+      goToActivity(this, GeoHome.class, null);
     }
     else{
       toastMessage("Invalid Email.");

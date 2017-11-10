@@ -27,7 +27,7 @@ import app.geo.main.GeoApp;
  * Main reference source: 2(b). Activities and Layouts (Siobhán)
  */
 
-public class GeoMenu extends Base {
+public class GeoHome extends Base {
 
   public GeoApp app = GeoApp.getInstance();
 
@@ -90,7 +90,7 @@ public class GeoMenu extends Base {
             public void onResult(@NonNull Status status) {
               if (status.isSuccess()) {
                 Log.v("Geo", "User Logged out");
-                Intent intent = new Intent(GeoMenu.this, Login.class);
+                Intent intent = new Intent(GeoHome.this, Login.class);
                 startActivity(intent);
                 finish();
               }

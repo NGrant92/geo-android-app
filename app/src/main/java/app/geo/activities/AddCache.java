@@ -44,7 +44,7 @@ public class AddCache extends Base {
       app.cacheStore.saveCaches();
 
       Toast.makeText(this, "Cache Added!", Toast.LENGTH_SHORT).show();
-      startActivity(new Intent(this, GeoMenu.class));
+      startActivity(new Intent(this, GeoHome.class));
     }
   }
 }

@@ -24,7 +24,7 @@
       </intent-filter>
     </activity>
     <activity
-        android:name=".activities.GeoMenu"
+        android:name=".activities.GeoHome"
         android:label="@string/app_name"/>
     <activity
         android:name=".activities.Login"
