@@ -90,7 +90,7 @@ public class GeoMenu extends Base {
             public void onResult(@NonNull Status status) {
               if (status.isSuccess()) {
                 Log.v("Geo", "User Logged out");
-                Intent intent = new Intent(GeoMenu.this, Welcome.class);
+                Intent intent = new Intent(GeoMenu.this, Login.class);
                 startActivity(intent);
                 finish();
               }

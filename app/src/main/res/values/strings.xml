@@ -1,7 +1,8 @@
 <resources>
   <string name="app_name">Geo</string>
   
-  <string name="welcome">Welcome to Geo!</string>
+  <string name="welcome">Welcome to</string>
+  <string name="geo">Geo</string>
   <string name="login">Login</string>
   <string name="logout">Logout</string>
   <string name="signup">Sign Up</string>
@@ -12,6 +13,7 @@
   <string name="add">Add</string>
   <string name="update">Update</string>
   <string name="register">Register</string>
+  <string name="disconnect">Disconnect Account</string>
   <string name="delete">Delete</string>
   <string name="delete_selected">Delete Selected</string>
   

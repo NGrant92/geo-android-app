@@ -52,7 +52,7 @@ public class Base extends AppCompatActivity {
       case R.id.menuLogout:
         GeoApp app = (GeoApp)getApplication();
         app.currUser = null;
-        goToActivity(this, Welcome.class, null);
+        goToActivity(this, Login.class, null);
         break;
     }
     return true;
