@@ -1,5 +1,6 @@
 package app.geo.activities;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -7,7 +8,6 @@ import android.support.v4.app.FragmentActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.auth.api.Auth;
@@ -65,48 +65,6 @@ public class Login extends FragmentActivity implements GoogleApiClient.OnConnect
     findViewById(R.id.disconnect_button).setOnClickListener(this);
   }
 
-  public void loginPressed(View view){
-    GeoApp app = (GeoApp)getApplication();
-    this.userStore = app.userStore;
-
-    TextView email = (TextView)findViewById(R.id.loginEmail);
-    TextView password = (TextView)findViewById(R.id.loginPassword);
-
-    if(userStore.validUser(email.getText().toString(), password.getText().toString())){
-      app.currUser = userStore.getUserByEmail(email.getText().toString());
-      startActivity(new Intent(this, GeoMenu.class));
-    }
-    else{
-      toastMessage("Invalid Credentials");
-    }
-  }
-
-  @Override
-  public boolean onCreateOptionsMenu(Menu menu){
-    getMenuInflater().inflate(R.menu.menu_welcome, menu);
-    return true;
-  }
-
-  @Override
-  public boolean onOptionsItemSelected(MenuItem item){
-    switch(item.getItemId()){
-      case R.id.menuWelcome:
-        toastMessage("Fix me");
-        break;
-      case R.id.menuLogin:
-        toastMessage("Already on Login Page");
-        break;
-      case R.id.menusignup:
-        toastMessage("Fix me");
-        break;
-    }
-    return true;
-  }
-
-  protected void toastMessage(String s) {
-    Toast.makeText(this, s, Toast.LENGTH_SHORT).show();
-  }
-
   @Override
   public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
 
@@ -115,6 +73,17 @@ public class Login extends FragmentActivity implements GoogleApiClient.OnConnect
   @Override
   public void onClick(View v) {
 
+  }
+
+  /**
+   * Once logged out, if they hit the back button, trying to get back to the main logged in menu,
+   * they are exited from the app
+   *
+   * Reference: https://stackoverflow.com/a/26492794
+   */
+  @Override
+  public void onBackPressed() {
+    moveTaskToBack(true);
   }
 }
 
