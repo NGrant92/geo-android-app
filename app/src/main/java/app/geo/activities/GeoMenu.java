@@ -70,21 +70,11 @@ public class GeoMenu extends Base {
     return true;
   }
 
-  @Override
-  public boolean onOptionsItemSelected(MenuItem item){
-    switch(item.getItemId()){
-      case R.id.menuSettings:
-        goToActivity(this, Settings.class, null);
-        break;
-      case R.id.menuLogout:
-        GeoApp app = (GeoApp)getApplication();
-        app.currUser = null;
-        goToActivity(this, Welcome.class, null);
-        break;
-    }
-    return true;
+  public void menuSettings(MenuItem m){
+    goToActivity(this, Settings.class, null);
   }
 
+  //lab09 Google Services
   public void menuLogOut(MenuItem m) {
 
     //https://stackoverflow.com/questions/38039320/googleapiclient-is-not-connected-yet-on-logout-when-using-firebase-auth-with-g
