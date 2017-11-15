@@ -52,9 +52,8 @@ public class CacheFilter extends Filter{
       }
       else{
         if(filter.equals("mycache")){
-          int userid = app.currUser.userId;
           for (Cache c : caches){
-            if(c.ownerId == userid){
+            if(c.ownerId.equals(app.googleMail)){
               newCaches.add(c);
             }
           }
