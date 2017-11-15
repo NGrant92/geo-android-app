@@ -97,6 +97,15 @@ public class MapsFragment extends MapFragment implements GoogleMap.OnInfoWindowC
     }
   }
 
+  public void addCoffees(List<Cache> list){
+    for(Cache c : list)
+      mMap.addMarker(new MarkerOptions()
+          .position(new LatLng(c.latitude, c.longitude))
+          .title(c.name)
+          .snippet(c.ownerId)
+          .icon(BitmapDescriptorFactory.fromResource(R.drawable.location)));
+  }
+
   private void createLocationRequest() {
     mLocationRequest = new LocationRequest();
     mLocationRequest.setInterval(UPDATE_INTERVAL);
