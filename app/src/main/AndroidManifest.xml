@@ -53,9 +53,6 @@
     <activity
         android:name=".activities.Settings"
         android:label="@string/settings"/>
-    <activity
-        android:name=".activities.Signup"
-        android:label="@string/signup"/>
     
     <meta-data
         android:name="com.google.android.gms.version"
