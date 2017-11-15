@@ -39,7 +39,7 @@ public class AddCache extends Base {
       toastMessage("Please ensure no empty fields");
     }
     else{
-      Cache cache = new Cache(name.getText().toString(), location.getText().toString(), description.getText().toString(), currUser.userId);
+      Cache cache = new Cache(name.getText().toString(), location.getText().toString(), description.getText().toString(), app.googleMail);
       app.cacheStore.addCache(cache);
       app.cacheStore.saveCaches();
 
