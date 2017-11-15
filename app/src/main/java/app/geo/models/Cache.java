@@ -22,6 +22,8 @@ public class Cache {
   public String description;
   public boolean favourite;
   public String ownerId;
+  public double latitude;
+  public double longitude;
 
   private static final String JSON_CACHEID = "cacheId";
   private static final String JSON_CACHENAME = "name";
@@ -29,14 +31,19 @@ public class Cache {
   private static final String JSON_CACHEDESCRIPTION = "description";
   private static final String JSON_CACHEDFAVOURITE= "favourite";
   private static final String JSON_CACHEOWNERID = "ownerId";
+  private static final String JSON_CACHELATITUDE = "latitude";
+  private static final String JSON_CACHELONGITUDE = "longitude";
 
-  public Cache(String name, String location, String description, String ownerId){
+  public Cache(String name, String location, String description, String ownerId, double latitude, double longitude){
     this.cacheId = newid();
     this.name = name;
     this.location = location;
     this.description = description;
     this.favourite = false;
     this.ownerId = ownerId;
+
+    this.latitude = latitude;
+    this.longitude = longitude;
   }
 
   public Cache(JSONObject json) throws JSONException {
@@ -46,6 +53,8 @@ public class Cache {
     description = json.getString(JSON_CACHEDESCRIPTION);
     favourite = json.getBoolean(JSON_CACHEDFAVOURITE);
     ownerId = json.getString(JSON_CACHEOWNERID);
+    latitude = json.getDouble(JSON_CACHELATITUDE);
+    longitude = json.getDouble(JSON_CACHELONGITUDE);
   }
 
   public JSONObject toJSON() throws JSONException{
@@ -56,6 +65,8 @@ public class Cache {
     json.put(JSON_CACHEDESCRIPTION, description);
     json.put(JSON_CACHEDFAVOURITE, String.valueOf(favourite));
     json.put(JSON_CACHEOWNERID, ownerId);
+    json.put(JSON_CACHELATITUDE, String.valueOf(latitude));
+    json.put(JSON_CACHELONGITUDE, String.valueOf(longitude));
 
     return json;
   }
