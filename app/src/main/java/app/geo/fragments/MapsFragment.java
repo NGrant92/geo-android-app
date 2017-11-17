@@ -29,6 +29,7 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
@@ -154,10 +155,10 @@ public class MapsFragment extends MapFragment implements
   public void addCaches(ArrayList<Cache> list){
     for(Cache c : list) {
       mMap.addMarker(new MarkerOptions()
-          .position(new LatLng(c.latitude, c.longitude))
+          .position(new LatLng(52.2462, -7.1202))
           .title(c.name)
           .snippet(c.ownerId)
-          .icon(BitmapDescriptorFactory.fromResource(R.drawable.location)));
+          .icon(BitmapDescriptorFactory.fromResource(android.R.drawable.star_off)));
     }
   }
 
@@ -165,7 +166,6 @@ public class MapsFragment extends MapFragment implements
   public void onResume() {
     super.onResume();
     getMapAsync(this);
-    addCaches(app.cacheStore.caches);
     if (checkPermission()) {
       if (app.mCurrentLocation != null) {
         Toast.makeText(getActivity(), "GPS location was found!", Toast.LENGTH_SHORT).show();
@@ -198,6 +198,8 @@ public class MapsFragment extends MapFragment implements
 
     mMap.animateCamera(CameraUpdateFactory
         .newCameraPosition(position), null);
+
+    addCaches(app.cacheStore.caches);
   }
 
   public void startLocationUpdates() {
