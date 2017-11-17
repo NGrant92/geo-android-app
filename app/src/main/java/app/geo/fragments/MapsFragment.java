@@ -2,6 +2,7 @@ package app.geo.fragments;
 
 
 import android.app.AlertDialog;
+import android.app.Fragment;
 import android.os.Build;
 import android.content.DialogInterface;
 import android.content.pm.PackageManager;
@@ -34,6 +35,7 @@ import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 import app.geo.main.GeoApp;
+import app.geo.api.VolleyListener;
 import app.geo.models.Cache;
 import app.geo.R;
 
@@ -50,7 +52,12 @@ import static android.Manifest.permission.CAMERA;
  * Main reference source: 9 Google Services
  */
 
-public class MapsFragment extends MapFragment implements GoogleMap.OnInfoWindowClickListener, GoogleMap.OnMapClickListener, GoogleMap.OnMarkerClickListener, OnMapReadyCallback {
+public class MapsFragment extends MapFragment implements
+    GoogleMap.OnInfoWindowClickListener,
+    GoogleMap.OnMapClickListener,
+    GoogleMap.OnMarkerClickListener,
+    OnMapReadyCallback,
+    VolleyListener {
 
   private LocationRequest mLocationRequest;
   private FusedLocationProviderClient mFusedLocationClient;
@@ -85,7 +92,6 @@ public class MapsFragment extends MapFragment implements GoogleMap.OnInfoWindowC
   @Override
   public void onCreate(Bundle savedInstanceState) {
 
-    Log.v("Geo", "onCreate");
     super.onCreate(savedInstanceState);
     try {
       mFusedLocationClient = LocationServices.getFusedLocationProviderClient(getActivity());
@@ -97,13 +103,24 @@ public class MapsFragment extends MapFragment implements GoogleMap.OnInfoWindowC
     }
   }
 
-  public void addCoffees(List<Cache> list){
+  public void addCaches(List<Cache> list){
     for(Cache c : list)
       mMap.addMarker(new MarkerOptions()
           .position(new LatLng(c.latitude, c.longitude))
           .title(c.name)
           .snippet(c.ownerId)
           .icon(BitmapDescriptorFactory.fromResource(R.drawable.location)));
+  }
+
+  @Override
+  public void setList(List list) {
+    addCaches(list);
+    Log.v("Geo", "List to add is : " + list);
+  }
+
+  @Override
+  public void updateUI(Fragment fragment) {
+
   }
 
   private void createLocationRequest() {
