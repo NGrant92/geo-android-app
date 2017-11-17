@@ -17,6 +17,7 @@ import android.os.Bundle;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.google.android.gms.location.LocationCallback;
@@ -103,18 +104,9 @@ public class MapsFragment extends MapFragment implements
     }
   }
 
-  public void addCaches(List<Cache> list){
-    for(Cache c : list)
-      mMap.addMarker(new MarkerOptions()
-          .position(new LatLng(c.latitude, c.longitude))
-          .title(c.name)
-          .snippet(c.ownerId)
-          .icon(BitmapDescriptorFactory.fromResource(R.drawable.location)));
-  }
-
   @Override
   public void setList(List list) {
-    addCaches(list);
+    //addCaches(list);
     Log.v("Geo", "List to add is : " + list);
   }
 
@@ -159,10 +151,21 @@ public class MapsFragment extends MapFragment implements
     mMap.setOnMapClickListener(this);
   }
 
+  public void addCaches(ArrayList<Cache> list){
+    for(Cache c : list) {
+      mMap.addMarker(new MarkerOptions()
+          .position(new LatLng(c.latitude, c.longitude))
+          .title(c.name)
+          .snippet(c.ownerId)
+          .icon(BitmapDescriptorFactory.fromResource(R.drawable.location)));
+    }
+  }
+
   @Override
   public void onResume() {
     super.onResume();
     getMapAsync(this);
+    addCaches(app.cacheStore.caches);
     if (checkPermission()) {
       if (app.mCurrentLocation != null) {
         Toast.makeText(getActivity(), "GPS location was found!", Toast.LENGTH_SHORT).show();
