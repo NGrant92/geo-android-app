@@ -157,7 +157,7 @@ public class MapsFragment extends MapFragment implements
       mMap.addMarker(new MarkerOptions()
           .position(new LatLng(c.latitude, c.longitude))
           .title(c.name)
-          .snippet(c.ownerId)
+          .snippet(c.location)
           .icon(BitmapDescriptorFactory.fromResource(android.R.drawable.star_off)));
     }
   }
