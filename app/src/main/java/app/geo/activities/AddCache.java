@@ -36,13 +36,11 @@ public class AddCache extends Base {
 
   public void addCachePressed(View view){
     GeoApp app = (GeoApp)getApplication();
-    User currUser = app.currUser;
 
     TextView name = (TextView)findViewById(R.id.addCacheName);
-    TextView location = (TextView)findViewById(R.id.addCacheLocation);
     TextView description = (TextView)findViewById(R.id.addCacheDescription);
 
-    if(name.length() == 0 || location.length() == 0 || description.length() == 0){
+    if(name.length() == 0 || description.length() == 0){
       toastMessage("Please ensure no empty fields");
     }
     else{

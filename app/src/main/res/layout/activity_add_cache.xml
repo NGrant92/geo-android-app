@@ -38,27 +38,9 @@
       app:layout_constraintTop_toBottomOf="@+id/addCacheTitle" />
   
   <EditText
-      android:id="@+id/addCacheLocation"
-      android:layout_width="wrap_content"
-      android:layout_height="32dp"
-      android:layout_marginEnd="8dp"
-      android:layout_marginStart="8dp"
-      android:layout_marginTop="16dp"
-      android:background="@drawable/background"
-      android:paddingStart="5dp"
-      android:paddingEnd="5dp"
-      android:ems="10"
-      android:hint="@string/location"
-      android:inputType="textPersonName"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintHorizontal_bias="0.503"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toBottomOf="@+id/addCacheName" />
-  
-  <EditText
       android:id="@+id/addCacheDescription"
       android:layout_width="214dp"
-      android:layout_height="58dp"
+      android:layout_height="77dp"
       android:layout_marginEnd="8dp"
       android:layout_marginStart="8dp"
       android:layout_marginTop="16dp"
@@ -72,14 +54,14 @@
       android:paddingStart="5dp"
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toBottomOf="@+id/addCacheLocation"/>
+      app:layout_constraintTop_toBottomOf="@+id/addCacheName"/>
   
   
   <fragment
       android:id="@+id/map"
       android:name="app.geo.fragments.MapsFragment"
       android:layout_width="306dp"
-      android:layout_height="167dp"
+      android:layout_height="221dp"
       android:layout_marginBottom="8dp"
       android:layout_marginLeft="8dp"
       android:layout_marginRight="8dp"
