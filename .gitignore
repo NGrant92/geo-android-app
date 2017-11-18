@@ -17,3 +17,4 @@ gen/
 Thumbs.db
 app/libs/
 /.idea/
+/app/src/main/java/app/geo/fragments/MapsFragmentOld.java

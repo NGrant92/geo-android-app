@@ -3,6 +3,9 @@ package app.geo.fragments;
 
 import android.app.AlertDialog;
 import android.app.Fragment;
+import android.app.Service;
+import android.location.LocationListener;
+import android.location.LocationManager;
 import android.os.Build;
 import android.content.DialogInterface;
 import android.content.pm.PackageManager;
@@ -141,9 +144,6 @@ public class MapsFragment extends MapFragment implements
   public void onViewCreated(View view, Bundle savedInstanceState) {
     super.onViewCreated(view, savedInstanceState);
     setHasOptionsMenu(true);
-
-    //TextView titleBar = (TextView) getActivity().findViewById(R.id.recentAddedBarTextView);
-    //titleBar.setText("Cache Map");
   }
 
   public void initListeners() {
@@ -155,7 +155,7 @@ public class MapsFragment extends MapFragment implements
   public void addCaches(ArrayList<Cache> list){
     for(Cache c : list) {
       mMap.addMarker(new MarkerOptions()
-          .position(new LatLng(52.2462, -7.1202))
+          .position(new LatLng(c.latitude, c.longitude))
           .title(c.name)
           .snippet(c.ownerId)
           .icon(BitmapDescriptorFactory.fromResource(android.R.drawable.star_off)));
@@ -191,8 +191,7 @@ public class MapsFragment extends MapFragment implements
       zoom = mMap.getCameraPosition().zoom;
 
     CameraPosition position = CameraPosition.builder()
-        .target(new LatLng(location.getLatitude(),
-            location.getLongitude()))
+        .target(new LatLng(location.getLatitude(), location.getLongitude()))
         .zoom(zoom).bearing(0.0f)
         .tilt(0.0f).build();
 
