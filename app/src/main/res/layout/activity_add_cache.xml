@@ -5,88 +5,104 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+  
+  <TextView
+      android:id="@+id/addCacheTitle"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginEnd="32dp"
+      android:layout_marginStart="32dp"
+      android:layout_marginTop="32dp"
+      android:text="@string/add_cache"
+      android:textAppearance="@android:style/TextAppearance.Large"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent" />
+  
+  <EditText
+      android:id="@+id/addCacheName"
+      android:layout_width="wrap_content"
+      android:layout_height="32dp"
+      android:layout_marginEnd="8dp"
+      android:layout_marginStart="8dp"
+      android:layout_marginTop="24dp"
+      android:background="@drawable/background"
+      android:paddingStart="5dp"
+      android:paddingEnd="5dp"
+      android:ems="10"
+      android:hint="@string/name"
+      android:inputType="textPersonName"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.503"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/addCacheTitle" />
+  
+  <EditText
+      android:id="@+id/addCacheLocation"
+      android:layout_width="wrap_content"
+      android:layout_height="32dp"
+      android:layout_marginEnd="8dp"
+      android:layout_marginStart="8dp"
+      android:layout_marginTop="16dp"
+      android:background="@drawable/background"
+      android:paddingStart="5dp"
+      android:paddingEnd="5dp"
+      android:ems="10"
+      android:hint="@string/location"
+      android:inputType="textPersonName"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.503"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/addCacheName" />
+  
+  <EditText
+      android:id="@+id/addCacheDescription"
+      android:layout_width="214dp"
+      android:layout_height="58dp"
+      android:layout_marginEnd="8dp"
+      android:layout_marginStart="8dp"
+      android:layout_marginTop="16dp"
+      android:background="@drawable/background"
+      android:ems="10"
+      android:gravity="top"
+      android:hint="@string/description"
+      android:inputType="textMultiLine"
+      android:maxLength="140"
+      android:paddingEnd="5dp"
+      android:paddingStart="5dp"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/addCacheLocation"/>
+  
+  
+  <fragment
+      android:id="@+id/map"
+      android:name="app.geo.fragments.MapsFragment"
+      android:layout_width="306dp"
+      android:layout_height="167dp"
+      android:layout_marginBottom="8dp"
+      android:layout_marginLeft="8dp"
+      android:layout_marginRight="8dp"
+      android:layout_marginTop="8dp"
+      app:layout_constraintBottom_toTopOf="@+id/addCacheButton"
+      app:layout_constraintLeft_toLeftOf="parent"
+      app:layout_constraintRight_toRightOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/addCacheDescription"/>
+  
+  <Button
+      android:id="@+id/addCacheButton"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginBottom="32dp"
+      android:layout_marginEnd="8dp"
+      android:layout_marginStart="8dp"
+      android:text="@string/add"
+      android:onClick="addCachePressed"
+      android:textColor="@color/colorWhite"
+      android:background="@drawable/green_button"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent" />
 
-    <TextView
-        android:id="@+id/addCacheTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="32dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="32dp"
-        android:text="@string/add_cache"
-        android:textAppearance="@android:style/TextAppearance.Large"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/addCacheName"
-        android:layout_width="wrap_content"
-        android:layout_height="32dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="64dp"
-        android:background="@drawable/background"
-        android:paddingStart="5dp"
-        android:paddingEnd="5dp"
-        android:ems="10"
-        android:hint="@string/name"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/addCacheTitle" />
-
-    <EditText
-        android:id="@+id/addCacheLocation"
-        android:layout_width="wrap_content"
-        android:layout_height="32dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/background"
-        android:paddingStart="5dp"
-        android:paddingEnd="5dp"
-        android:ems="10"
-        android:hint="@string/location"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/addCacheName" />
-
-    <EditText
-        android:id="@+id/addCacheDescription"
-        android:layout_width="215dp"
-        android:layout_height="130dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="32dp"
-        android:ems="10"
-        android:hint="@string/description"
-        android:paddingStart="5dp"
-        android:paddingEnd="5dp"
-        android:inputType="textMultiLine"
-        android:maxLength="140"
-        android:gravity="top"
-        android:background="@drawable/background"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/addCacheLocation" />
-
-    <Button
-        android:id="@+id/addCacheButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="32dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:text="@string/add"
-        android:onClick="addCachePressed"
-        android:textColor="@color/colorWhite"
-        android:background="@drawable/green_button"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
 
 </android.support.constraint.ConstraintLayout>

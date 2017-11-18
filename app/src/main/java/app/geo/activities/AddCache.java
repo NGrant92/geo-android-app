@@ -21,6 +21,7 @@ import app.geo.models.User;
  */
 
 public class AddCache extends Base {
+  public GeoApp app = GeoApp.getInstance();
   @Override
   protected void onCreate(Bundle savedInstanceState){
     super.onCreate(savedInstanceState);
@@ -39,12 +40,18 @@ public class AddCache extends Base {
       toastMessage("Please ensure no empty fields");
     }
     else{
-      Cache cache = new Cache(name.getText().toString(), location.getText().toString(), description.getText().toString(), app.googleMail, 52.2462, -7.1202);
+      Cache cache = new Cache(name.getText().toString(),
+          location.getText().toString(),
+          description.getText().toString(),
+          app.googleMail,
+          app.mCurrentLocation.getLatitude(),
+          app.mCurrentLocation.getLongitude());
+
       app.cacheStore.addCache(cache);
       app.cacheStore.saveCaches();
 
       Toast.makeText(this, "Cache Added!", Toast.LENGTH_SHORT).show();
-      startActivity(new Intent(this, GeoHome.class));
+      //startActivity(new Intent(this, GeoHome.class));
     }
   }
 }
