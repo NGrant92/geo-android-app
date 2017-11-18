@@ -2,6 +2,10 @@ package app.geo.fragments;
 
 
 import android.app.AlertDialog;
+import android.app.Fragment;
+import android.app.Service;
+import android.location.LocationListener;
+import android.location.LocationManager;
 import android.os.Build;
 import android.content.DialogInterface;
 import android.content.pm.PackageManager;
@@ -16,6 +20,7 @@ import android.os.Bundle;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.google.android.gms.location.LocationCallback;
@@ -27,6 +32,7 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
@@ -34,6 +40,7 @@ import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 import app.geo.main.GeoApp;
+import app.geo.api.VolleyListener;
 import app.geo.models.Cache;
 import app.geo.R;
 
@@ -50,7 +57,12 @@ import static android.Manifest.permission.CAMERA;
  * Main reference source: 9 Google Services
  */
 
-public class MapsFragment extends MapFragment implements GoogleMap.OnInfoWindowClickListener, GoogleMap.OnMapClickListener, GoogleMap.OnMarkerClickListener, OnMapReadyCallback {
+public class MapsFragment extends MapFragment implements
+    GoogleMap.OnInfoWindowClickListener,
+    GoogleMap.OnMapClickListener,
+    GoogleMap.OnMarkerClickListener,
+    OnMapReadyCallback,
+    VolleyListener {
 
   private LocationRequest mLocationRequest;
   private FusedLocationProviderClient mFusedLocationClient;
@@ -85,7 +97,6 @@ public class MapsFragment extends MapFragment implements GoogleMap.OnInfoWindowC
   @Override
   public void onCreate(Bundle savedInstanceState) {
 
-    Log.v("Geo", "onCreate");
     super.onCreate(savedInstanceState);
     try {
       mFusedLocationClient = LocationServices.getFusedLocationProviderClient(getActivity());
@@ -95,6 +106,17 @@ public class MapsFragment extends MapFragment implements GoogleMap.OnInfoWindowC
     catch(SecurityException se) {
       Toast.makeText(getActivity(),"Check Your Permissions",Toast.LENGTH_SHORT).show();
     }
+  }
+
+  @Override
+  public void setList(List list) {
+    //addCaches(list);
+    Log.v("Geo", "List to add is : " + list);
+  }
+
+  @Override
+  public void updateUI(Fragment fragment) {
+
   }
 
   private void createLocationRequest() {
@@ -122,15 +144,22 @@ public class MapsFragment extends MapFragment implements GoogleMap.OnInfoWindowC
   public void onViewCreated(View view, Bundle savedInstanceState) {
     super.onViewCreated(view, savedInstanceState);
     setHasOptionsMenu(true);
-
-    //TextView titleBar = (TextView) getActivity().findViewById(R.id.recentAddedBarTextView);
-    //titleBar.setText("Cache Map");
   }
 
   public void initListeners() {
     mMap.setOnMarkerClickListener(this);
     mMap.setOnInfoWindowClickListener(this);
     mMap.setOnMapClickListener(this);
+  }
+
+  public void addCaches(ArrayList<Cache> list){
+    for(Cache c : list) {
+      mMap.addMarker(new MarkerOptions()
+          .position(new LatLng(c.latitude, c.longitude))
+          .title(c.name)
+          .snippet(c.location)
+          .icon(BitmapDescriptorFactory.fromResource(android.R.drawable.star_off)));
+    }
   }
 
   @Override
@@ -162,13 +191,14 @@ public class MapsFragment extends MapFragment implements GoogleMap.OnInfoWindowC
       zoom = mMap.getCameraPosition().zoom;
 
     CameraPosition position = CameraPosition.builder()
-        .target(new LatLng(location.getLatitude(),
-            location.getLongitude()))
+        .target(new LatLng(location.getLatitude(), location.getLongitude()))
         .zoom(zoom).bearing(0.0f)
         .tilt(0.0f).build();
 
     mMap.animateCamera(CameraUpdateFactory
         .newCameraPosition(position), null);
+
+    addCaches(app.cacheStore.caches);
   }
 
   public void startLocationUpdates() {

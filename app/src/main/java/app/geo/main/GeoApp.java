@@ -1,9 +1,11 @@
 package app.geo.main;
 
 import android.app.Application;
+import android.graphics.Bitmap;
 import android.location.Location;
 import android.util.Log;
 
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.common.api.GoogleApiClient;
 
 import app.geo.models.CacheSerializer;
@@ -26,7 +28,18 @@ public class GeoApp extends Application{
   public UserStore userStore;
   public CacheStore cacheStore;
   public Location mCurrentLocation;
+
+  //lab09 Google Services
   public GoogleApiClient mGoogleApiClient;
+  public GoogleSignInOptions mGoogleSignInOptions;
+
+  public boolean signedIn = false;
+  public String googleToken;
+  public String googleName;
+  public String googleMail;
+  public String googlePhotoURL;
+  public Bitmap googlePhoto;
+  public int drawerID = 0;
 
   private static GeoApp mInstance;
   private static final String USERSTORE = "userstore.json";

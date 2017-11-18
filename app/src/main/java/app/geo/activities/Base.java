@@ -47,12 +47,12 @@ public class Base extends AppCompatActivity {
         goToActivity(this, Settings.class, null);
         break;
       case R.id.menuHome:
-        goToActivity(this, GeoMenu.class, null);
+        goToActivity(this, GeoHome.class, null);
         break;
       case R.id.menuLogout:
         GeoApp app = (GeoApp)getApplication();
         app.currUser = null;
-        goToActivity(this, Welcome.class, null);
+        goToActivity(this, Login.class, null);
         break;
     }
     return true;

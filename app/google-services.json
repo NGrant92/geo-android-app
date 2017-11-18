@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "218069443939",
+    "project_id": "geoapp-1508326506578"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:218069443939:android:531b2e0bbe4610c8",
+        "android_client_info": {
+          "package_name": "app.geo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "218069443939-qi27ornun16rgbka1sbq61kohjtcbf47.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "app.geo",
+            "certificate_hash": "84b49643cc5a496e7eef8dcfff2c03f138fc5012"
+          }
+        },
+        {
+          "client_id": "218069443939-lk46luk94337oh426h4uof9ogubman7a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC1-Aw-K1Bhnm3t__OvHE578aur4dNBKO0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
