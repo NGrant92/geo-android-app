@@ -2,6 +2,7 @@ package app.geo.activities;
 
 import android.app.Activity;
 import android.app.Dialog;
+import android.app.FragmentTransaction;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
@@ -54,12 +55,12 @@ public class GeoHome extends AppCompatActivity
   protected void onCreate(Bundle savedInstanceState){
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_geo_home);
-//    Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-//    setSupportActionBar(toolbar);
+    Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+    setSupportActionBar(toolbar);
 
     DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
     ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-        this, drawer, /*toolbar,*/ R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
     drawer.addDrawerListener(toggle);
     toggle.syncState();
 
@@ -71,7 +72,7 @@ public class GeoHome extends AppCompatActivity
 
     //Ref: https://www.androidhive.info/2014/02/android-login-with-google-plus-account-1/
     Glide.with(getApplicationContext()).load(app.googlePhoto)
-        .thumbnail(0.5f)
+        .thumbnail(1.0f)
         .crossFade()
         .diskCacheStrategy(DiskCacheStrategy.ALL)
         .into(googlePhoto);
@@ -81,6 +82,12 @@ public class GeoHome extends AppCompatActivity
 
     TextView googleMail = (TextView)navigationView.getHeaderView(0).findViewById(R.id.googlemail);
     googleMail.setText(app.googleMail);
+
+    FragmentTransaction ft = getFragmentManager().beginTransaction();
+
+    MapsFragment fragment = MapsFragment.newInstance();
+    ft.replace(R.id.homeFrame, fragment);
+    ft.commit();
   }
 
   public void openInfoDialog(Activity current) {
@@ -93,43 +100,43 @@ public class GeoHome extends AppCompatActivity
     dialog.show();
   }
 
-  @Override
-  public boolean onCreateOptionsMenu(Menu menu){
-    getMenuInflater().inflate(R.menu.geo_home_menu, menu);
-    return true;
-  }
-
-  //lab09 Google Services
-  public void menuLogOut(MenuItem m) {
-
-    //https://stackoverflow.com/questions/38039320/googleapiclient-is-not-connected-yet-on-logout-when-using-firebase-auth-with-g
-    app.mGoogleApiClient.connect();
-    app.mGoogleApiClient.registerConnectionCallbacks(new GoogleApiClient.ConnectionCallbacks() {
-      @Override
-      public void onConnected(@Nullable Bundle bundle) {
-
-        //FirebaseAuth.getInstance().signOut();
-        if(app.mGoogleApiClient.isConnected()) {
-          Auth.GoogleSignInApi.signOut(app.mGoogleApiClient).setResultCallback(new ResultCallback<Status>() {
-            @Override
-            public void onResult(@NonNull Status status) {
-              if (status.isSuccess()) {
-                Log.v("Geo", "User Logged out");
-                Intent intent = new Intent(GeoHome.this, Login.class);
-                startActivity(intent);
-                finish();
-              }
-            }
-          });
-        }
-      }
-
-      @Override
-      public void onConnectionSuspended(int i) {
-        Log.d("Geo", "Google API Client Connection Suspended");
-      }
-    });
-  }
+//  @Override
+//  public boolean onCreateOptionsMenu(Menu menu){
+//    getMenuInflater().inflate(R.menu.geo_home_menu, menu);
+//    return true;
+//  }
+//
+//  //lab09 Google Services
+//  public void menuLogOut(MenuItem m) {
+//
+//    //https://stackoverflow.com/questions/38039320/googleapiclient-is-not-connected-yet-on-logout-when-using-firebase-auth-with-g
+//    app.mGoogleApiClient.connect();
+//    app.mGoogleApiClient.registerConnectionCallbacks(new GoogleApiClient.ConnectionCallbacks() {
+//      @Override
+//      public void onConnected(@Nullable Bundle bundle) {
+//
+//        //FirebaseAuth.getInstance().signOut();
+//        if(app.mGoogleApiClient.isConnected()) {
+//          Auth.GoogleSignInApi.signOut(app.mGoogleApiClient).setResultCallback(new ResultCallback<Status>() {
+//            @Override
+//            public void onResult(@NonNull Status status) {
+//              if (status.isSuccess()) {
+//                Log.v("Geo", "User Logged out");
+//                Intent intent = new Intent(GeoHome.this, Login.class);
+//                startActivity(intent);
+//                finish();
+//              }
+//            }
+//          });
+//        }
+//      }
+//
+//      @Override
+//      public void onConnectionSuspended(int i) {
+//        Log.d("Geo", "Google API Client Connection Suspended");
+//      }
+//    });
+//  }
 
   /**
    * Once logged in, if they hit the back button, trying to get back to the login menu,
