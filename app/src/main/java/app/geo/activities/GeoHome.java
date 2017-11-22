@@ -33,6 +33,7 @@ import com.google.android.gms.common.api.ResultCallback;
 import com.google.android.gms.common.api.Status;
 
 import app.geo.R;
+import app.geo.fragments.AddCachesFragment;
 import app.geo.fragments.CachesFragment;
 import app.geo.fragments.MapsFragment;
 import app.geo.main.GeoApp;
@@ -113,7 +114,7 @@ public class GeoHome extends AppCompatActivity
       ft.commit();
 
     } else if (id == R.id.nav_add) {
-      fragment = CachesFragment.newInstance();
+      fragment = AddCachesFragment.newInstance();
       ft.replace(R.id.homeFrame, fragment);
       ft.addToBackStack(null);
       ft.commit();
