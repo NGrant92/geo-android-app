@@ -1,13 +1,24 @@
 package app.geo.activities;
 
+import android.app.Activity;
+import android.app.Dialog;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.NavigationView;
+import android.support.design.widget.Snackbar;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -17,6 +28,7 @@ import com.google.android.gms.common.api.ResultCallback;
 import com.google.android.gms.common.api.Status;
 
 import app.geo.R;
+import app.geo.fragments.MapsFragment;
 import app.geo.main.GeoApp;
 
 /**
@@ -25,56 +37,45 @@ import app.geo.main.GeoApp;
  * This activity is the main menu for the user when they log in.
  * They are given a list of buttons that will direct them to the appropriate activity
  *
- * Main reference source: 2(b). Activities and Layouts (Siobhán)
+ * Main reference source: 8 Multithreading & Networking Lab-05
  */
 
-public class GeoHome extends Base {
+public class GeoHome extends AppCompatActivity
+    implements NavigationView.OnNavigationItemSelectedListener,
+    MapsFragment.OnFragmentInteractionListener {
 
   public GeoApp app = GeoApp.getInstance();
+  private ImageView googlePhoto;
+  public ProgressDialog dialog;
 
   @Override
   protected void onCreate(Bundle savedInstanceState){
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_geo_home);
+//    Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+//    setSupportActionBar(toolbar);
 
-    //String menuTitle = app.currUser.firstName + "'s Geo Menu";
-    String menuTitle = "Geo Home Menu";
-    ((TextView)findViewById(R.id.menuTitle)).setText(menuTitle);
+    DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+    ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+        this, drawer, /*toolbar,*/ R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+    drawer.addDrawerListener(toggle);
+    toggle.syncState();
   }
 
-  public void mapButtonPressed(View view){
-    goToActivity(this, Map.class, null);
-  }
+  public void openInfoDialog(Activity current) {
+    Dialog dialog = new Dialog(current);
+    dialog.setTitle("About CoffeeMate");
+    dialog.setContentView(R.layout.info);
 
-  public void cacheListButtonPressed(View view){
-    goToActivity(this, CacheList.class, null);
-  }
-
-  public void myCacheButtonPressed(View view){
-    goToActivity(this, MyCache.class, null);
-  }
-
-  public void addCacheButtonPressed(View view){
-    goToActivity(this, AddCache.class, null);
-  }
-
-  public void mailButtonPressed(View view){
-    goToActivity(this, Mail.class, null);
-  }
-
-  public void settingsButtonPressed(View view){
-    Toast.makeText(this, "Under Development", Toast.LENGTH_LONG).show();
-    //goToActivity(this, Settings.class, null);
+    dialog.setCancelable(true);
+    dialog.setCanceledOnTouchOutside(true);
+    dialog.show();
   }
 
   @Override
   public boolean onCreateOptionsMenu(Menu menu){
     getMenuInflater().inflate(R.menu.geo_home_menu, menu);
     return true;
-  }
-
-  public void menuSettings(MenuItem m){
-    goToActivity(this, Settings.class, null);
   }
 
   //lab09 Google Services
@@ -118,5 +119,20 @@ public class GeoHome extends Base {
   @Override
   public void onBackPressed() {
     moveTaskToBack(true);
+  }
+
+  @Override
+  public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+    return false;
+  }
+
+  @Override
+  public void toggle(View v) {
+
+  }
+
+  @Override
+  public void update(View v) {
+
   }
 }

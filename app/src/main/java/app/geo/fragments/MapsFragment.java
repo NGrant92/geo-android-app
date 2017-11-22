@@ -85,6 +85,11 @@ public class MapsFragment extends MapFragment implements
       GoogleMap.MAP_TYPE_NONE
   };
 
+  public interface OnFragmentInteractionListener {
+    void toggle(View v);
+    void update(View v);
+  }
+
   private int curMapTypeIndex = 1;
 
   public MapsFragment() {}

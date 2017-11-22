@@ -1,6 +1,9 @@
 <resources>
   <string name="app_name">Geo</string>
   
+  <string name="navigation_drawer_open">Open navigation drawer</string>
+  <string name="navigation_drawer_close">Close navigation drawer</string>
+  
   <string name="welcome">Welcome to</string>
   <string name="geo">Geo</string>
   <string name="login">Login</string>
@@ -48,6 +51,10 @@
   
   <string name="defaultName">Name</string>
   <string name="defaultLocation">Location</string>
+  
+  <string name="version">Version 1.0</string>
+  <string name="appDesc">Geo allows users to take part in an activity called Geocaching. It is a form of Orienteering that is managed solely by the players themselves.</string>
+  <string name="appMoreInfo">For more information about Geo please wait for our website thats coming soon!</string>
   
   <string name="title_map">Map</string>
   <string name="google_maps_key">AIzaSyDkWMmlfW_WEA7JpmqAdUBhoRrcKN_E6Us</string>

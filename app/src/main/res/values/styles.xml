@@ -5,9 +5,20 @@
     <!-- Customize your theme here. -->
     <item name="colorPrimary">@color/colorGreenDark</item>
     <item name="colorPrimaryDark">@color/colorGreenPrimary</item>
-    <item name="colorAccent">@color/colorAccent</item>
+    <item name="colorAccent">@color/colorGreenLight</item>
     <item name="windowActionModeOverlay">true</item>
     <item name="actionModeBackground">@color/colorGreenDark</item>
+  </style>
+  
+  <!-- Dialog Styles (Start) -->
+  
+  <style name="dialogContainer">
+    <item name="android:orientation">vertical</item>
+    <item name="android:layout_width">fill_parent</item>
+    <item name="android:layout_height">fill_parent</item>
+    <item name="android:paddingLeft">10dp</item>
+    <item name="android:paddingRight">10dp</item>
+    <item name="android:paddingBottom">10dp</item>
   </style>
 
 </resources>
