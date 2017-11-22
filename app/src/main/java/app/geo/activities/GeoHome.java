@@ -2,6 +2,7 @@ package app.geo.activities;
 
 import android.app.Activity;
 import android.app.Dialog;
+import android.app.Fragment;
 import android.app.FragmentTransaction;
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -32,6 +33,7 @@ import com.google.android.gms.common.api.ResultCallback;
 import com.google.android.gms.common.api.Status;
 
 import app.geo.R;
+import app.geo.fragments.CachesFragment;
 import app.geo.fragments.MapsFragment;
 import app.geo.main.GeoApp;
 
@@ -89,6 +91,61 @@ public class GeoHome extends AppCompatActivity
     MapsFragment fragment = MapsFragment.newInstance();
     ft.replace(R.id.homeFrame, fragment);
     ft.commit();
+  }
+
+
+
+  @SuppressWarnings("StatementWithEmptyBody")
+  @Override
+  public boolean onNavigationItemSelected(MenuItem item) {
+    // Handle navigation view item clicks here.
+
+    // http://stackoverflow.com/questions/32944798/switch-between-fragments-with-onnavigationitemselected-in-new-navigation-drawer
+    int id = item.getItemId();
+    Fragment fragment;
+    FragmentTransaction ft = getFragmentManager().beginTransaction();
+
+    if (id == R.id.nav_home) {
+      fragment = CachesFragment.newInstance();
+      ((CachesFragment)fragment).favouriteCaches = false;
+      ft.replace(R.id.homeFrame, fragment);
+      ft.addToBackStack(null);
+      ft.commit();
+
+    } else if (id == R.id.nav_add) {
+      fragment = CachesFragment.newInstance();
+      ft.replace(R.id.homeFrame, fragment);
+      ft.addToBackStack(null);
+      ft.commit();
+
+    } else if (id == R.id.nav_favourites) {
+      fragment = CachesFragment.newInstance();
+      ((CachesFragment)fragment).favouriteCaches = true;
+      ft.replace(R.id.homeFrame, fragment);
+      ft.addToBackStack(null);
+      ft.commit();
+
+    } else if (id == R.id.nav_search) {
+      fragment = CachesFragment.newInstance();
+      ft.replace(R.id.homeFrame, fragment);
+      ft.addToBackStack(null);
+      ft.commit();
+
+    } else if (id == R.id.nav_share) {
+
+    } else if (id == R.id.nav_camera) {
+
+    }
+    else if (id == R.id.nav_map) {
+      fragment = MapsFragment.newInstance();
+      ft.replace(R.id.homeFrame, fragment);
+      ft.addToBackStack(null);
+      ft.commit();
+    }
+
+    DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+    drawer.closeDrawer(GravityCompat.START);
+    return true;
   }
 
   public void openInfoDialog(Activity current) {
@@ -155,11 +212,6 @@ public class GeoHome extends AppCompatActivity
     } else {
       super.onBackPressed();
     }
-  }
-
-  @Override
-  public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-    return false;
   }
 
   @Override

@@ -47,6 +47,8 @@ public class CachesFragment extends ListFragment implements View.OnClickListener
   public ListView listView;
   public CacheStore cacheStore;
   public CacheFilter cacheFilter;
+  public boolean myCaches = false;
+  public boolean favouriteCaches = false;
 
   public CachesFragment(){}
 
