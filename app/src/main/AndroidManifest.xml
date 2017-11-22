@@ -30,30 +30,6 @@
     <activity
         android:name=".activities.Login"
         android:label="@string/login"/>
-    <activity
-        android:name=".activities.Map"
-        android:label="@string/map"/>
-    <activity
-        android:name=".activities.CacheList"
-        android:label="@string/cache_list"/>
-    <activity
-        android:name=".activities.MyCache"
-        android:label="@string/my_cache"/>
-    <activity
-        android:name=".activities.CacheInfo"
-        android:label="@string/cache_info"/>
-    <activity
-        android:name=".activities.EditCache"
-        android:label="@string/my_cache"/>
-    <activity
-        android:name=".activities.AddCache"
-        android:label="@string/add_cache"/>
-    <activity
-        android:name=".activities.Mail"
-        android:label="@string/mail"/>
-    <activity
-        android:name=".activities.Settings"
-        android:label="@string/settings"/>
     
     <meta-data
         android:name="com.google.android.gms.version"

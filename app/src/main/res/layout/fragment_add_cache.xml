@@ -4,7 +4,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context="app.geo.fragments.AddCachesFragment">
   
   <TextView
       android:id="@+id/addCacheTitle"
@@ -79,7 +80,6 @@
       android:layout_marginEnd="8dp"
       android:layout_marginStart="8dp"
       android:text="@string/add"
-      android:onClick="addCachePressed"
       android:textColor="@color/colorWhite"
       android:background="@drawable/green_button"
       app:layout_constraintBottom_toBottomOf="parent"

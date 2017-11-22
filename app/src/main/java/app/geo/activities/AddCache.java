@@ -1,6 +1,5 @@
 package app.geo.activities;
 
-import android.content.Intent;
 import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
@@ -15,7 +14,6 @@ import java.io.IOException;
 import app.geo.R;
 import app.geo.main.GeoApp;
 import app.geo.models.Cache;
-import app.geo.models.User;
 
 /**
  * @author Niall Grant 05/11/2017
@@ -31,7 +29,7 @@ public class AddCache extends Base {
   @Override
   protected void onCreate(Bundle savedInstanceState){
     super.onCreate(savedInstanceState);
-    setContentView(R.layout.activity_add_cache);
+    setContentView(R.layout.fragment_add_cache);
   }
 
   public void addCachePressed(View view){

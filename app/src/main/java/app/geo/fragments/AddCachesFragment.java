@@ -1,13 +1,14 @@
 package app.geo.fragments;
 
+
 import android.app.Fragment;
+import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -24,9 +25,7 @@ import app.geo.main.GeoApp;
  * If fields are full then the Cache is added and saved
  * The app also takes the user's current location and adds it to the cache
  */
-
 public class AddCachesFragment extends Fragment implements View.OnClickListener, OnMapReadyCallback {
-
   private EditText name, description;
 
   public GeoApp app = GeoApp.getInstance();
@@ -48,7 +47,10 @@ public class AddCachesFragment extends Fragment implements View.OnClickListener,
 
   @Override
   public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
-    View v = inflater.inflate(R.layout.activity_add_cache, container, false);
+
+    View v = inflater.inflate(R.layout.fragment_add_cache, container, false);
+    //View v = super.onCreateView(inflater, container, savedInstanceState);
+
     Button addCacheButton = (Button) v.findViewById(R.id.addCacheButton);
     name = (EditText) v.findViewById(R.id.addCacheName);
     description = (EditText) v.findViewById(R.id.addCacheDescription);
