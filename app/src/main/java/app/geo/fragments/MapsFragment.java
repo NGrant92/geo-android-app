@@ -172,10 +172,9 @@ public class MapsFragment extends MapFragment implements
     super.onResume();
     getMapAsync(this);
     if (checkPermission()) {
-      if (app.mCurrentLocation != null) {
-        Toast.makeText(getActivity(), "GPS location was found!", Toast.LENGTH_SHORT).show();
-      } else {
-        Toast.makeText(getActivity(), "Current location was null, Setting Default Values!", Toast.LENGTH_SHORT).show();
+      if (app.mCurrentLocation == null) {
+        //Toast.makeText(getActivity(), "GPS location was found!", Toast.LENGTH_SHORT).show();
+        //Toast.makeText(getActivity(), "Current location was null, Setting Default Values!", Toast.LENGTH_SHORT).show();
         app.mCurrentLocation = new Location("Waterford City Default (WIT)");
         app.mCurrentLocation.setLatitude(52.2462);
         app.mCurrentLocation.setLongitude(-7.1202);
