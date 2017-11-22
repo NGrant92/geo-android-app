@@ -1,0 +1,35 @@
+<LinearLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout_root"
+    style="@style/dialogContainer" >
+
+    <LinearLayout
+        android:id="@+id/appInfoLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" 
+		android:layout_marginBottom="10dp" >
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/version"
+            android:layout_marginRight="5dp" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/appInfoDesc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/appDesc" 
+        android:layout_marginBottom="5dp" />
+
+    <TextView
+        android:id="@+id/appMoreInfoDesc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/appMoreInfo" 
+		android:layout_marginBottom="5dp" />
+    
+</LinearLayout>
