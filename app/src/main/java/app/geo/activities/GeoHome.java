@@ -22,6 +22,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.google.android.gms.auth.api.Auth;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.common.api.ResultCallback;
@@ -65,8 +67,14 @@ public class GeoHome extends AppCompatActivity
     navigationView.setNavigationItemSelectedListener(this);
 
     //SetUp GooglePhoto and Email for Drawer here
-//    googlePhoto = (ImageView)navigationView.getHeaderView(0).findViewById(R.id.googlephoto);
-//    CoffeeApi.getGooglePhoto(app.googlePhotoURL,googlePhoto);
+    googlePhoto = (ImageView)navigationView.getHeaderView(0).findViewById(R.id.googlephoto);
+
+    //Ref: https://www.androidhive.info/2014/02/android-login-with-google-plus-account-1/
+    Glide.with(getApplicationContext()).load(app.googlePhoto)
+        .thumbnail(0.5f)
+        .crossFade()
+        .diskCacheStrategy(DiskCacheStrategy.ALL)
+        .into(googlePhoto);
 
     TextView googleName = (TextView)navigationView.getHeaderView(0).findViewById(R.id.googlename);
     googleName.setText(app.googleName);
