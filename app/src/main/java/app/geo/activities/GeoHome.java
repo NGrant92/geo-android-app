@@ -35,7 +35,7 @@ public class GeoHome extends Base {
   @Override
   protected void onCreate(Bundle savedInstanceState){
     super.onCreate(savedInstanceState);
-    setContentView(R.layout.activity_geo_menu);
+    setContentView(R.layout.activity_geo_home);
 
     //String menuTitle = app.currUser.firstName + "'s Geo Menu";
     String menuTitle = "Geo Home Menu";
