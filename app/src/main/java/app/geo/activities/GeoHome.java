@@ -93,13 +93,59 @@ public class GeoHome extends AppCompatActivity
 
   public void openInfoDialog(Activity current) {
     Dialog dialog = new Dialog(current);
-    dialog.setTitle("About CoffeeMate");
+    dialog.setTitle("About Geo");
     dialog.setContentView(R.layout.info);
 
     dialog.setCancelable(true);
     dialog.setCanceledOnTouchOutside(true);
     dialog.show();
   }
+
+  @Override
+  public boolean onCreateOptionsMenu(Menu menu) {
+    // Inflate the menu; this adds items to the action bar if it is present.
+    getMenuInflater().inflate(R.menu.geo_home_menu, menu);
+    return true;
+  }
+
+  public void menuInfo(MenuItem m) {
+    openInfoDialog(this);
+  }
+
+
+  // [START signOut]
+
+  public void menuLogOut(MenuItem m) {
+
+    //https://stackoverflow.com/questions/38039320/googleapiclient-is-not-connected-yet-on-logout-when-using-firebase-auth-with-g
+    app.mGoogleApiClient.connect();
+    app.mGoogleApiClient.registerConnectionCallbacks(new GoogleApiClient.ConnectionCallbacks() {
+      @Override
+      public void onConnected(@Nullable Bundle bundle) {
+
+        //FirebaseAuth.getInstance().signOut();
+        if(app.mGoogleApiClient.isConnected()) {
+          Auth.GoogleSignInApi.signOut(app.mGoogleApiClient).setResultCallback(new ResultCallback<Status>() {
+            @Override
+            public void onResult(@NonNull Status status) {
+              if (status.isSuccess()) {
+                Log.v("coffeemate", "User Logged out");
+                Intent intent = new Intent(GeoHome.this, Login.class);
+                startActivity(intent);
+                finish();
+              }
+            }
+          });
+        }
+      }
+
+      @Override
+      public void onConnectionSuspended(int i) {
+        Log.d("coffeemate", "Google API Client Connection Suspended");
+      }
+    });
+  }
+  // [END signOut]
 
   @Override
   public void onBackPressed() {
