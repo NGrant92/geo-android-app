@@ -113,6 +113,18 @@ public class GeoHome extends AppCompatActivity
       ft.addToBackStack(null);
       ft.commit();
 
+    } else if (id == R.id.nav_cache_list) {
+      fragment = AddCachesFragment.newInstance();
+      ft.replace(R.id.homeFrame, fragment);
+      ft.addToBackStack(null);
+      ft.commit();
+
+    } else if (id == R.id.nav_my_cache) {
+      fragment = AddCachesFragment.newInstance();
+      ft.replace(R.id.homeFrame, fragment);
+      ft.addToBackStack(null);
+      ft.commit();
+
     } else if (id == R.id.nav_add) {
       fragment = AddCachesFragment.newInstance();
       ft.replace(R.id.homeFrame, fragment);
@@ -120,6 +132,13 @@ public class GeoHome extends AppCompatActivity
       ft.commit();
 
     } else if (id == R.id.nav_favourites) {
+      fragment = CachesFragment.newInstance();
+      ((CachesFragment)fragment).favouriteCaches = true;
+      ft.replace(R.id.homeFrame, fragment);
+      ft.addToBackStack(null);
+      ft.commit();
+
+    } else if (id == R.id.nav_mail) {
       fragment = CachesFragment.newInstance();
       ((CachesFragment)fragment).favouriteCaches = true;
       ft.replace(R.id.homeFrame, fragment);

@@ -9,7 +9,7 @@
     android:layout_height="match_parent">
   
   <include
-      layout="@layout/app_bar_home"
+      layout="@layout/home_app_bar"
       android:layout_width="match_parent"
       android:layout_height="match_parent" />
   
@@ -19,7 +19,7 @@
       android:layout_height="match_parent"
       android:layout_gravity="start"
       android:fitsSystemWindows="true"
-      app:headerLayout="@layout/nav_header_home"
+      app:headerLayout="@layout/home_nav_header"
       app:menu="@menu/activity_home_drawer" />
 
 </android.support.v4.widget.DrawerLayout>
