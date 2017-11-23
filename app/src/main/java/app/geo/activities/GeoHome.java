@@ -109,18 +109,23 @@ public class GeoHome extends AppCompatActivity
     if (id == R.id.nav_home) {
       fragment = CachesFragment.newInstance();
       ((CachesFragment)fragment).favouriteCaches = false;
+      ((CachesFragment)fragment).myCaches = false;
       ft.replace(R.id.homeFrame, fragment);
       ft.addToBackStack(null);
       ft.commit();
 
     } else if (id == R.id.nav_cache_list) {
-      fragment = AddCachesFragment.newInstance();
+      fragment = CachesFragment.newInstance();
+      ((CachesFragment)fragment).favouriteCaches = false;
+      ((CachesFragment)fragment).myCaches = false;
       ft.replace(R.id.homeFrame, fragment);
       ft.addToBackStack(null);
       ft.commit();
 
     } else if (id == R.id.nav_my_cache) {
-      fragment = AddCachesFragment.newInstance();
+      fragment = CachesFragment.newInstance();
+      ((CachesFragment)fragment).favouriteCaches = false;
+      ((CachesFragment)fragment).myCaches = true;
       ft.replace(R.id.homeFrame, fragment);
       ft.addToBackStack(null);
       ft.commit();
