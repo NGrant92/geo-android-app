@@ -65,6 +65,7 @@ public class AddCachesFragment extends Fragment implements View.OnClickListener,
   @Override
   public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
 
+    //Ref: https://stackoverflow.com/a/14695397
     if(v != null){
       ViewGroup parent = (ViewGroup) v.getParent();
       if(parent != null){
@@ -78,7 +79,6 @@ public class AddCachesFragment extends Fragment implements View.OnClickListener,
     catch(InflateException err){
       Log.v("Geo", "ADD CACHE ON CREATE VIEW ERROR: " + err);
     }
-    //View v = super.onCreateView(inflater, container, savedInstanceState);
 
     Button addCacheButton = (Button) v.findViewById(R.id.addCacheButton);
     name = (EditText) v.findViewById(R.id.addCacheName);
