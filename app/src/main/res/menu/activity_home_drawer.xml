@@ -15,13 +15,13 @@
             android:icon="@drawable/ic_menu_search"
             android:title="@string/my_cache" />
         <item
-            android:id="@+id/nav_add"
-            android:icon="@drawable/ic_menu_add"
-            android:title="@string/add_cache" />
-        <item
             android:id="@+id/nav_favourites"
             android:icon="@drawable/ic_menu_favourites"
             android:title="@string/favourites" />
+        <item
+            android:id="@+id/nav_add"
+            android:icon="@drawable/ic_menu_add"
+            android:title="@string/add_cache" />
         <item
             android:id="@+id/nav_mail"
             android:icon="@drawable/ic_menu_favourites"

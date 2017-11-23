@@ -130,15 +130,16 @@ public class GeoHome extends AppCompatActivity
       ft.addToBackStack(null);
       ft.commit();
 
-    } else if (id == R.id.nav_add) {
-      fragment = AddCachesFragment.newInstance();
+    } else if (id == R.id.nav_favourites) {
+      fragment = CachesFragment.newInstance();
+      ((CachesFragment)fragment).favouriteCaches = true;
+      ((CachesFragment)fragment).myCaches = false;
       ft.replace(R.id.homeFrame, fragment);
       ft.addToBackStack(null);
       ft.commit();
 
-    } else if (id == R.id.nav_favourites) {
-      fragment = CachesFragment.newInstance();
-      ((CachesFragment)fragment).favouriteCaches = true;
+    } else if (id == R.id.nav_add) {
+      fragment = AddCachesFragment.newInstance();
       ft.replace(R.id.homeFrame, fragment);
       ft.addToBackStack(null);
       ft.commit();

@@ -71,8 +71,13 @@ public class CachesFragment extends ListFragment implements View.OnClickListener
     listAdapter = new CacheListAdapter(getActivity(), cacheStore.caches);
     cacheFilter = new CacheFilter(cacheStore.caches, "all", listAdapter);
 
-    if(myCaches){
-      cacheFilter.setFilter("mycache");
+    if(myCaches || favouriteCaches){
+      if(myCaches){
+        cacheFilter.setFilter("mycache");
+      }
+      else {
+        cacheFilter.setFilter("favourites");
+      }
       //filtering data but without a prefix
       cacheFilter.filter(null);
       //updating adapter
