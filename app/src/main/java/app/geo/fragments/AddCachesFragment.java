@@ -8,6 +8,7 @@ import android.location.Geocoder;
 import android.location.Location;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.InflateException;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -40,6 +41,8 @@ import app.geo.models.Cache;
  * The app also takes the user's current location and adds it to the cache
  */
 public class AddCachesFragment extends Fragment implements View.OnClickListener, OnMapReadyCallback {
+
+  private static View v;
   private EditText name, description;
 
   public GeoApp app = GeoApp.getInstance();
@@ -62,7 +65,19 @@ public class AddCachesFragment extends Fragment implements View.OnClickListener,
   @Override
   public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
 
-    View v = inflater.inflate(R.layout.fragment_add_cache, container, false);
+    if(v != null){
+      ViewGroup parent = (ViewGroup) v.getParent();
+      if(parent != null){
+        parent.removeView(v);
+      }
+    }
+
+    try{
+      v = inflater.inflate(R.layout.fragment_add_cache, container, false);
+    }
+    catch(InflateException err){
+      Log.v("Geo", "ADD CACHE ON CREATE VIEW ERROR: " + err);
+    }
     //View v = super.onCreateView(inflater, container, savedInstanceState);
 
     Button addCacheButton = (Button) v.findViewById(R.id.addCacheButton);
