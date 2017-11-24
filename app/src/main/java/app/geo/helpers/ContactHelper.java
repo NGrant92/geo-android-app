@@ -51,6 +51,7 @@ public class ContactHelper {
         String contactId = cur.getString(cur.getColumnIndex(ContactsContract.Contacts._ID));
         Cursor emails = cr.query(ContactsContract.CommonDataKinds.Email.CONTENT_URI, null,
             ContactsContract.CommonDataKinds.Email.CONTACT_ID + " = " + contactId, null, null);
+
         emails.moveToFirst();
         email = emails.getString(emails.getColumnIndex(ContactsContract.CommonDataKinds.Email.DATA));
         emails.close();

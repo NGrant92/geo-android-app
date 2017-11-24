@@ -77,7 +77,7 @@ public class MailFragment extends Fragment implements TextWatcher, CompoundButto
     switch (view.getId()) {
       case R.id.mailSendToButton:
         //Ref: https://stackoverflow.com/a/32890529
-        Intent intent = new Intent(Intent.ACTION_PICK, ContactsContract.CommonDataKinds.Phone.CONTENT_URI);
+        Intent intent = new Intent(Intent.ACTION_PICK, ContactsContract.Contacts.CONTENT_URI);
         startActivityForResult(intent, REQUEST_CONTACT);
         break;
 
