@@ -23,7 +23,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
@@ -64,8 +63,7 @@ public class GeoHome extends AppCompatActivity
     setSupportActionBar(toolbar);
 
     DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-    ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-        this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+    ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
     drawer.addDrawerListener(toggle);
     toggle.syncState();
 
@@ -212,7 +210,7 @@ public class GeoHome extends AppCompatActivity
             @Override
             public void onResult(@NonNull Status status) {
               if (status.isSuccess()) {
-                Log.v("coffeemate", "User Logged out");
+                Log.v("Geo", "User Logged out");
                 Intent intent = new Intent(GeoHome.this, Login.class);
                 startActivity(intent);
                 finish();
@@ -224,7 +222,7 @@ public class GeoHome extends AppCompatActivity
 
       @Override
       public void onConnectionSuspended(int i) {
-        Log.d("coffeemate", "Google API Client Connection Suspended");
+        Log.d("Geo", "Google API Client Connection Suspended");
       }
     });
   }
@@ -235,7 +233,8 @@ public class GeoHome extends AppCompatActivity
     DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
     if (drawer.isDrawerOpen(GravityCompat.START)) {
       drawer.closeDrawer(GravityCompat.START);
-    } else {
+    }
+    else {
       super.onBackPressed();
     }
   }
