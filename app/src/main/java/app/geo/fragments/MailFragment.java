@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.LayoutInflater;
@@ -75,7 +76,9 @@ public class MailFragment extends Fragment implements TextWatcher, CompoundButto
   {
     switch (view.getId()) {
       case R.id.mailSendToButton:
-        selectContact(getActivity(), REQUEST_CONTACT);
+        //Ref: https://stackoverflow.com/a/32890529
+        Intent intent = new Intent(Intent.ACTION_PICK, ContactsContract.CommonDataKinds.Phone.CONTENT_URI);
+        startActivityForResult(intent, REQUEST_CONTACT);
         break;
 
       case R.id.sendMailButton:
@@ -87,6 +90,7 @@ public class MailFragment extends Fragment implements TextWatcher, CompoundButto
   @SuppressLint("SetTextI18n")
   @Override
   public void onActivityResult(int requestCode, int resultCode, Intent data) {
+    super.onActivityResult(requestCode, resultCode, data);
     switch (requestCode) {
       case REQUEST_CONTACT:
         if(data != null){
