@@ -43,9 +43,6 @@ public class Base extends AppCompatActivity {
   @Override
   public boolean onOptionsItemSelected(MenuItem item){
     switch(item.getItemId()){
-      case R.id.menuSettings:
-        goToActivity(this, Settings.class, null);
-        break;
       case R.id.menuHome:
         goToActivity(this, GeoHome.class, null);
         break;

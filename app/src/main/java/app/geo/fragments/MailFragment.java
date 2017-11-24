@@ -95,9 +95,8 @@ public class MailFragment extends Fragment implements TextWatcher, CompoundButto
           String name = getContact(getActivity(), data);
           emailAddress = getEmail(getActivity(), data);
           mailSendToButton.setText(name + ": " + emailAddress);
-          Toast.makeText(getActivity(), "Contact found", Toast.LENGTH_SHORT).show();
         }
-        else{
+        else {
           Toast.makeText(getActivity(), "Contact not found", Toast.LENGTH_SHORT).show();
         }
         break;
