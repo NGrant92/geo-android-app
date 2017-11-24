@@ -38,7 +38,6 @@ public class CacheItem extends Base {
   public void updateControls(Cache cache){
     ((TextView) view.findViewById(R.id.cacheRowName)).setText(cache.name);
     ((TextView) view.findViewById(R.id.cacheRowLocation)).setText(cache.location);
-    ((TextView) view.findViewById(R.id.cacheRowOwner)).setText(cache.ownerId);
 
     ImageView starIcon = (ImageView) view.findViewById(R.id.cacheRowStar);
 

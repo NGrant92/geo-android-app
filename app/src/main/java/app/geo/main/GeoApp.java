@@ -3,6 +3,7 @@ package app.geo.main;
 import android.app.Application;
 import android.graphics.Bitmap;
 import android.location.Location;
+import android.net.Uri;
 import android.util.Log;
 
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
@@ -38,7 +39,7 @@ public class GeoApp extends Application{
   public String googleName;
   public String googleMail;
   public String googlePhotoURL;
-  public Bitmap googlePhoto;
+  public Uri googlePhoto;
   public int drawerID = 0;
 
   private static GeoApp mInstance;

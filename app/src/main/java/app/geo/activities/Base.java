@@ -1,6 +1,7 @@
 package app.geo.activities;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -43,16 +44,8 @@ public class Base extends AppCompatActivity {
   @Override
   public boolean onOptionsItemSelected(MenuItem item){
     switch(item.getItemId()){
-      case R.id.menuSettings:
-        goToActivity(this, Settings.class, null);
-        break;
       case R.id.menuHome:
         goToActivity(this, GeoHome.class, null);
-        break;
-      case R.id.menuLogout:
-        GeoApp app = (GeoApp)getApplication();
-        app.currUser = null;
-        goToActivity(this, Login.class, null);
         break;
     }
     return true;

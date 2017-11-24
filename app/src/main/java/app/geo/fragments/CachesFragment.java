@@ -47,6 +47,8 @@ public class CachesFragment extends ListFragment implements View.OnClickListener
   public ListView listView;
   public CacheStore cacheStore;
   public CacheFilter cacheFilter;
+  public boolean myCaches = false;
+  public boolean favouriteCaches = false;
 
   public CachesFragment(){}
 
@@ -69,8 +71,13 @@ public class CachesFragment extends ListFragment implements View.OnClickListener
     listAdapter = new CacheListAdapter(getActivity(), cacheStore.caches);
     cacheFilter = new CacheFilter(cacheStore.caches, "all", listAdapter);
 
-    if(getActivity() instanceof MyCache){
-      cacheFilter.setFilter("mycache");
+    if(myCaches || favouriteCaches){
+      if(myCaches){
+        cacheFilter.setFilter("mycache");
+      }
+      else {
+        cacheFilter.setFilter("favourites");
+      }
       //filtering data but without a prefix
       cacheFilter.filter(null);
       //updating adapter
@@ -110,7 +117,7 @@ public class CachesFragment extends ListFragment implements View.OnClickListener
     Bundle activityInfo = new Bundle();
     activityInfo.putInt("cache_id", view.getId());
 
-    if(getActivity() instanceof MyCache){
+    if(myCaches){
       Intent goEdit = new Intent(getActivity(), EditCache.class);
       goEdit.putExtras(activityInfo);
       getActivity().startActivity(goEdit);

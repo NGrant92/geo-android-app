@@ -46,20 +46,29 @@ public class CacheFilter extends Filter{
     }
     if(prefix == null || prefix.length() == 0){
       ArrayList<Cache> newCaches = new ArrayList<Cache>();
-      if (filter.equals("all")){
-        results.values = caches;
-        results.count = caches.size();
-      }
-      else{
-        if(filter.equals("mycache")){
-          for (Cache c : caches){
-            if(c.ownerId.equals(app.googleMail)){
+      switch (filter) {
+        case "all":
+          results.values = caches;
+          results.count = caches.size();
+          break;
+        case "mycache":
+          for (Cache c : caches) {
+            if (c.ownerId.equals(app.googleMail)) {
               newCaches.add(c);
             }
           }
-        }
-        results.values = newCaches;
-        results.count = newCaches.size();
+          results.values = newCaches;
+          results.count = newCaches.size();
+          break;
+        case "favourites":
+          for (Cache c : caches) {
+            if (c.favourite) {
+              newCaches.add(c);
+            }
+          }
+          results.values = newCaches;
+          results.count = newCaches.size();
+          break;
       }
     }
     else{

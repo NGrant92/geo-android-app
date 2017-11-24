@@ -48,7 +48,7 @@ public class CacheInfo extends Base implements TextWatcher, CompoundButton.OnChe
     int resId = (int)getIntent().getExtras().getSerializable("cache_id");
     cache = cacheStore.getCache(resId);
 
-     starIcon = (ImageView)findViewById(R.id.cacheInfoStar);
+    starIcon = (ImageView)findViewById(R.id.cacheInfoStar);
 
     if(cache != null){
       updateControls(cache);

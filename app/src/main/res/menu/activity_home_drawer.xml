@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_menu_home"
+            android:title="@string/home" />
+        <item
+            android:id="@+id/nav_cache_list"
+            android:icon="@drawable/ic_menu_search"
+            android:title="@string/cache_list" />
+        <item
+            android:id="@+id/nav_my_cache"
+            android:icon="@drawable/ic_menu_search"
+            android:title="@string/my_cache" />
+        <item
+            android:id="@+id/nav_favourites"
+            android:icon="@drawable/ic_menu_favourites"
+            android:title="@string/favourites" />
+        <item
+            android:id="@+id/nav_add"
+            android:icon="@drawable/ic_menu_add"
+            android:title="@string/add_cache" />
+        <item
+            android:id="@+id/nav_mail"
+            android:icon="@drawable/ic_menu_favourites"
+            android:title="@string/mail" />
+        <item
+            android:id="@+id/nav_search"
+            android:icon="@drawable/ic_menu_search"
+            android:title="@string/search" />
+        <item
+            android:id="@+id/nav_camera"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="@string/take_photo" />
+    </group>
+
+    <item android:title="@string/communicate_locate">
+        <menu>
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/ic_menu_share"
+                android:title="@string/share" />
+            <item
+                android:id="@+id/nav_map"
+                android:icon="@drawable/ic_menu_map"
+                android:title="@string/map" />
+        </menu>
+    </item>
+
+</menu>
