@@ -5,7 +5,7 @@
     <!-- Customize your theme here. -->
     <item name="colorPrimary">@color/colorGreenDark</item>
     <item name="colorPrimaryDark">@color/colorGreenPrimary</item>
-    <item name="colorAccent">@color/colorGreenLight</item>
+    <item name="colorAccent">@color/colorGreenDark</item>
     <item name="windowActionModeOverlay">true</item>
     <item name="actionModeBackground">@color/colorGreenDark</item>
   </style>
