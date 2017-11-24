@@ -47,9 +47,6 @@ public class EditCache extends Base implements TextWatcher, CompoundButton.OnChe
     cacheName = (EditText)findViewById(R.id.editCacheName);
     cacheName.addTextChangedListener(this);
 
-    cacheLocation = (EditText)findViewById(R.id.editCacheLocation);
-    cacheLocation.addTextChangedListener(this);
-
     cacheDescription = (EditText)findViewById(R.id.editCacheDescription);
     cacheDescription.addTextChangedListener(this);
 
@@ -68,7 +65,6 @@ public class EditCache extends Base implements TextWatcher, CompoundButton.OnChe
 
   public void updateControls(Cache cache){
     cacheName.setText(cache.name);
-    cacheLocation.setText(cache.location);
     cacheDescription.setText(cache.description);
 
     if(cache.favourite){
@@ -84,14 +80,10 @@ public class EditCache extends Base implements TextWatcher, CompoundButton.OnChe
   public void updateCacheButtonPressed(View view) {
 
     String newName = ((TextView) findViewById(R.id.editCacheName)).getText().toString();
-    String newLocation = ((TextView) findViewById(R.id.editCacheLocation)).getText().toString();
     String newDescription = ((TextView) findViewById(R.id.editCacheDescription)).getText().toString();
 
     if (isNew(newName, cache.name)) {
       cache.name = newName;
-    }
-    if (isNew(newLocation, cache.location)) {
-      cache.location = newLocation;
     }
     if (isNew(newDescription, cache.description)) {
       cache.description = newDescription;
