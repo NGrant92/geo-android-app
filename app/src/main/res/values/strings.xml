@@ -20,6 +20,7 @@
   <string name="disconnect">Disconnect Account</string>
   <string name="delete">Delete</string>
   <string name="delete_selected">Delete Selected</string>
+  <string name="current_location">Set to current location</string>
   
   <string name="menu">Geo Menu</string>
   <string name="search">Search</string>
