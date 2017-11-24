@@ -202,6 +202,7 @@ public class MapsFragment extends MapFragment implements
     mMap.animateCamera(CameraUpdateFactory
         .newCameraPosition(position), null);
 
+    mMap.clear();
     addCaches(app.cacheStore.caches);
   }
 
