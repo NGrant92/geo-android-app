@@ -21,7 +21,6 @@ import android.widget.TextView;
 import java.io.IOException;
 
 import app.geo.R;
-import app.geo.helpers.MapHelper;
 import app.geo.main.GeoApp;
 import app.geo.models.Cache;
 import app.geo.models.CacheStore;
@@ -106,8 +105,9 @@ public class EditCache extends Base implements TextWatcher, CompoundButton.OnChe
       cache.description = newDescription;
     }
     if(checkSetLocation.isChecked()){
-      cacheLocation = getAddress(app.mCurrentLocation, EditCache.this);
-      Log.v("Geo", cacheLocation);
+      cache.location = getAddress(app.mCurrentLocation, this);
+      cache.latitude = app.mCurrentLocation.getLatitude();
+      cache.longitude = app.mCurrentLocation.getLongitude();
     }
     cacheStore.saveCaches();
 
