@@ -18,24 +18,6 @@ import android.util.Log;
 
 public class ContactHelper {
 
-  public static String getDisplayName(Context context, Intent data)
-  {
-    String contact = "unable to find contact";
-    Uri contactUri = data.getData();
-    String[] queryFields = new String[] { ContactsContract.Contacts.DISPLAY_NAME };
-    Cursor c = context.getContentResolver().query(contactUri, queryFields, null, null, null);
-    if (c.getCount() == 0)
-    {
-      c.close();
-      return contact;
-    }
-    c.moveToFirst();
-    contact = c.getString(0);
-    c.close();
-
-    return contact;
-  }
-
   public static String getEmail(Context context, Intent data)
   {
     String email = "no email";
