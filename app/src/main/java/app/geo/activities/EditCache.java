@@ -99,7 +99,6 @@ public class EditCache extends Base implements TextWatcher, CompoundButton.OnChe
     cacheStore.saveCaches();
 
     toastMessage("Cache updated!");
-    //goToActivity(this, MyCache.class, null);
   }
 
   public void deleteCacheButtonPressed(View view){
@@ -115,7 +114,7 @@ public class EditCache extends Base implements TextWatcher, CompoundButton.OnChe
         cacheStore.remCache(cache);
         cacheStore.saveCaches();
         toastMessage(cache.name + " removed!");
-        goToActivity(EditCache.this, GeoHome.class, null);
+        finish();
       }
     }).setNegativeButton("No", new DialogInterface.OnClickListener()
     {
