@@ -16,12 +16,10 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import app.geo.R;
-import app.geo.activities.Mail;
 
 import static app.geo.helpers.ContactHelper.getContact;
 import static app.geo.helpers.ContactHelper.getEmail;
 import static app.geo.helpers.ContactHelper.sendEmail;
-import static app.geo.helpers.IntentHelper.selectContact;
 
 /**
  * @author Niall Grant 05/11/2017
@@ -54,7 +52,7 @@ public class MailFragment extends Fragment implements TextWatcher, CompoundButto
   @Override
   public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
 
-    View view = inflater.inflate(R.layout.activity_mail, container, false);
+    View view = inflater.inflate(R.layout.fragment_mail, container, false);
 
     mailSendToButton = (Button)view.findViewById(R.id.mailSendToButton);
     mailSendToButton.setOnClickListener(this);
