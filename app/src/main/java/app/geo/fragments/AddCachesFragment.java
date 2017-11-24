@@ -31,6 +31,8 @@ import app.geo.R;
 import app.geo.main.GeoApp;
 import app.geo.models.Cache;
 
+import static app.geo.helpers.MapHelper.getAddress;
+
 /**
  * @author Niall Grant 05/11/2017
  * This activity is used to add a new cache
@@ -98,7 +100,7 @@ public class AddCachesFragment extends Fragment implements View.OnClickListener,
     else{
 
       Cache cache = new Cache(name.getText().toString(),
-          getAddress(app.mCurrentLocation),
+          getAddress(app.mCurrentLocation, getActivity()),
           description.getText().toString(),
           app.googleMail,
           app.mCurrentLocation.getLatitude(),
@@ -110,30 +112,6 @@ public class AddCachesFragment extends Fragment implements View.OnClickListener,
       Toast.makeText(getActivity(), "Cache Added!", Toast.LENGTH_SHORT).show();
       //startActivity(new Intent(this, GeoHome.class));
     }
-  }
-
-  public String getAddress(Location location){
-    Geocoder geocoder = new Geocoder(getActivity());
-
-    String strAddress = "";
-    Address address;
-
-    try{
-      address = geocoder.getFromLocation(location.getLatitude(), location.getLongitude(), 1).get(0);
-      strAddress = address.getAddressLine(0);
-
-      if(address.getAddressLine(1) != null){
-        strAddress += " " + address.getAddressLine(1);
-      }
-      if(address.getAddressLine(2) != null){
-        strAddress += " " + address.getAddressLine(2);
-      }
-    }
-    catch (IOException err){
-      Log.v("Geo", String.valueOf(err));
-    }
-    Log.v("Geo", "getAddress(): " + strAddress);
-    return strAddress;
   }
 
 

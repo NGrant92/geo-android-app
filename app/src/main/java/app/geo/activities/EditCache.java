@@ -2,7 +2,11 @@ package app.geo.activities;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
+import android.location.Address;
+import android.location.Geocoder;
+import android.location.Location;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -14,11 +18,15 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.io.IOException;
+
 import app.geo.R;
+import app.geo.helpers.MapHelper;
 import app.geo.main.GeoApp;
 import app.geo.models.Cache;
 import app.geo.models.CacheStore;
 
+import static app.geo.helpers.MapHelper.getAddress;
 /**
  * @author Niall Grant 05/11/2017
  *
@@ -32,8 +40,12 @@ import app.geo.models.CacheStore;
 
 public class EditCache extends Base implements TextWatcher, CompoundButton.OnCheckedChangeListener {
 
+  GeoApp app = GeoApp.getInstance();
+
   public EditText cacheName;
-  public EditText cacheLocation;
+  public String cacheLocation;
+  public double latitude;
+  public double longitude;
   public EditText cacheDescription;
   public CheckBox checkSetLocation;
   public ImageView starIcon;
@@ -94,7 +106,8 @@ public class EditCache extends Base implements TextWatcher, CompoundButton.OnChe
       cache.description = newDescription;
     }
     if(checkSetLocation.isChecked()){
-      toastMessage("Check confirmed");
+      cacheLocation = getAddress(app.mCurrentLocation, EditCache.this);
+      Log.v("Geo", cacheLocation);
     }
     cacheStore.saveCaches();
 
@@ -167,5 +180,30 @@ public class EditCache extends Base implements TextWatcher, CompoundButton.OnChe
   @Override
   public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
 
+  }
+
+
+  public String getAddress(Location location, Context context){
+    Geocoder geocoder = new Geocoder(context);
+
+    String strAddress = "";
+    Address address;
+
+    try{
+      address = geocoder.getFromLocation(location.getLatitude(), location.getLongitude(), 1).get(0);
+      strAddress = address.getAddressLine(0);
+
+      if(address.getAddressLine(1) != null){
+        strAddress += " " + address.getAddressLine(1);
+      }
+      if(address.getAddressLine(2) != null){
+        strAddress += " " + address.getAddressLine(2);
+      }
+    }
+    catch (IOException err){
+      Log.v("Geo", String.valueOf(err));
+    }
+    Log.v("Geo", "getAddress(): " + strAddress);
+    return strAddress;
   }
 }
