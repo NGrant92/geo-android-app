@@ -6,7 +6,9 @@ import android.content.DialogInterface;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.View;
+import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -33,6 +35,7 @@ public class EditCache extends Base implements TextWatcher, CompoundButton.OnChe
   public EditText cacheName;
   public EditText cacheLocation;
   public EditText cacheDescription;
+  public CheckBox checkSetLocation;
   public ImageView starIcon;
   public Boolean isFavourite;
 
@@ -46,6 +49,8 @@ public class EditCache extends Base implements TextWatcher, CompoundButton.OnChe
 
     cacheName = (EditText)findViewById(R.id.editCacheName);
     cacheName.addTextChangedListener(this);
+
+    checkSetLocation = (CheckBox) findViewById(R.id.editCacheCheckBox);
 
     cacheDescription = (EditText)findViewById(R.id.editCacheDescription);
     cacheDescription.addTextChangedListener(this);
@@ -87,6 +92,9 @@ public class EditCache extends Base implements TextWatcher, CompoundButton.OnChe
     }
     if (isNew(newDescription, cache.description)) {
       cache.description = newDescription;
+    }
+    if(checkSetLocation.isChecked()){
+      toastMessage("Check confirmed");
     }
     cacheStore.saveCaches();
 
