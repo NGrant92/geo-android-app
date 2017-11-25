@@ -4,15 +4,15 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_home"
-            android:icon="@drawable/ic_menu_home"
+            android:icon="@drawable/ic_home_white_full"
             android:title="@string/home" />
         <item
             android:id="@+id/nav_cache_list"
-            android:icon="@drawable/ic_menu_search"
+            android:icon="@drawable/ic_list"
             android:title="@string/cache_list" />
         <item
             android:id="@+id/nav_my_cache"
-            android:icon="@drawable/ic_menu_search"
+            android:icon="@drawable/ic_locations_white"
             android:title="@string/my_cache" />
         <item
             android:id="@+id/nav_favourites"
@@ -24,7 +24,7 @@
             android:title="@string/add_cache" />
         <item
             android:id="@+id/nav_mail"
-            android:icon="@drawable/ic_menu_favourites"
+            android:icon="@drawable/ic_mail"
             android:title="@string/mail" />
         <item
             android:id="@+id/nav_search"
@@ -32,7 +32,7 @@
             android:title="@string/search" />
         <item
             android:id="@+id/nav_camera"
-            android:icon="@drawable/ic_menu_camera"
+            android:icon="@drawable/ic_camera"
             android:title="@string/take_photo" />
     </group>
 
