@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+   
+  <string-array name="cacheTypes">
+        <item>All Types</item>
+        <item>Favourites</item>
+    </string-array>
+
+</resources>

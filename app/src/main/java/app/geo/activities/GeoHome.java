@@ -36,6 +36,7 @@ import app.geo.fragments.AddCachesFragment;
 import app.geo.fragments.CachesFragment;
 import app.geo.fragments.MailFragment;
 import app.geo.fragments.MapsFragment;
+import app.geo.fragments.SearchFragment;
 import app.geo.main.GeoApp;
 
 /**
@@ -150,7 +151,7 @@ public class GeoHome extends AppCompatActivity
       ft.commit();
 
     } else if (id == R.id.nav_search) {
-      fragment = CachesFragment.newInstance();
+      fragment = SearchFragment.newInstance();
       ft.replace(R.id.homeFrame, fragment);
       ft.addToBackStack(null);
       ft.commit();
