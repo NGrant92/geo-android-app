@@ -118,10 +118,10 @@ public class Login extends FragmentActivity implements GoogleApiClient.OnConnect
       app.googleName = acct.getDisplayName();
 
       app.googleToken = acct.getId();
+      Log.v("Geo", "TOKEN: " + String.valueOf(app.googleToken));
       app.signedIn = true;
       app.googleMail = acct.getEmail();
       app.googlePhoto = acct.getPhotoUrl();
-      Log.v("Geo", "GOOGLE PHOTO: " + String.valueOf(app.googlePhoto));
 
       if(acct.getPhotoUrl() == null)
         ; //New Account may not have Google+ photo

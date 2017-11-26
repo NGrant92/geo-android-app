@@ -22,6 +22,8 @@ public class Cache {
   public String description;
   public boolean favourite;
   public String ownerId;
+  public String ownerName;
+  public String ownerEmail;
   public double latitude;
   public double longitude;
 
@@ -31,16 +33,21 @@ public class Cache {
   private static final String JSON_CACHEDESCRIPTION = "description";
   private static final String JSON_CACHEDFAVOURITE= "favourite";
   private static final String JSON_CACHEOWNERID = "ownerId";
+  private static final String JSON_CACHEOWNERNAME = "ownerName";
+  private static final String JSON_CACHEOWNEREMAIL = "ownerEmail";
   private static final String JSON_CACHELATITUDE = "latitude";
   private static final String JSON_CACHELONGITUDE = "longitude";
 
-  public Cache(String name, String location, String description, String ownerId, double latitude, double longitude){
+  public Cache(String name, String location, String description, String ownerId, String ownerName, String ownerEmail, double latitude, double longitude){
     this.cacheId = newid();
     this.name = name;
     this.location = location;
     this.description = description;
     this.favourite = false;
+
     this.ownerId = ownerId;
+    this.ownerName = ownerName;
+    this.ownerEmail = ownerEmail;
 
     this.latitude = latitude;
     this.longitude = longitude;
@@ -53,6 +60,8 @@ public class Cache {
     description = json.getString(JSON_CACHEDESCRIPTION);
     favourite = json.getBoolean(JSON_CACHEDFAVOURITE);
     ownerId = json.getString(JSON_CACHEOWNERID);
+    ownerName = json.getString(JSON_CACHEOWNERNAME);
+    ownerEmail = json.getString(JSON_CACHEOWNEREMAIL);
     latitude = json.getDouble(JSON_CACHELATITUDE);
     longitude = json.getDouble(JSON_CACHELONGITUDE);
   }
@@ -65,6 +74,8 @@ public class Cache {
     json.put(JSON_CACHEDESCRIPTION, description);
     json.put(JSON_CACHEDFAVOURITE, String.valueOf(favourite));
     json.put(JSON_CACHEOWNERID, ownerId);
+    json.put(JSON_CACHEOWNERNAME, ownerName);
+    json.put(JSON_CACHEOWNEREMAIL, ownerEmail);
     json.put(JSON_CACHELATITUDE, String.valueOf(latitude));
     json.put(JSON_CACHELONGITUDE, String.valueOf(longitude));
 

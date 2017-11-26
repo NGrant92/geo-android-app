@@ -102,6 +102,8 @@ public class AddCachesFragment extends Fragment implements View.OnClickListener,
       Cache cache = new Cache(name.getText().toString(),
           getAddress(app.mCurrentLocation, getActivity()),
           description.getText().toString(),
+          app.googleToken,
+          app.googleName,
           app.googleMail,
           app.mCurrentLocation.getLatitude(),
           app.mCurrentLocation.getLongitude());
