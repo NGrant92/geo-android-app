@@ -16,7 +16,7 @@
       android:layout_alignParentTop="true"
       android:contentDescription="fav"
       android:gravity="center_vertical"
-      android:src="@drawable/star_green_empty"
+      android:src="@drawable/ic_star_green_empty"
       tools:ignore="HardcodedText"/>
   
   <TextView

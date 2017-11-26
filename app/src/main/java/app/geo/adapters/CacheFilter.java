@@ -53,7 +53,7 @@ public class CacheFilter extends Filter{
           break;
         case "mycache":
           for (Cache c : caches) {
-            if (c.ownerId.equals(app.googleMail)) {
+            if (c.ownerId.equals(app.googleToken)) {
               newCaches.add(c);
             }
           }

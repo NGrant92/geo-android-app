@@ -61,11 +61,11 @@ public class CacheInfo extends Base implements TextWatcher, CompoundButton.OnChe
     cacheDescription.setText(cache.description);
 
     if(cache.favourite){
-      starIcon.setImageResource(R.drawable.star_green_full);
+      starIcon.setImageResource(R.drawable.ic_star_green_full);
       isFavourite = true;
     }
     else{
-      starIcon.setImageResource(R.drawable.star_green_empty);
+      starIcon.setImageResource(R.drawable.ic_star_green_empty);
       isFavourite = false;
     }
   }
@@ -77,14 +77,14 @@ public class CacheInfo extends Base implements TextWatcher, CompoundButton.OnChe
       isFavourite = false;
       toastMessage("Removed from favourites");
 
-      starIcon.setImageResource(R.drawable.star_green_empty);
+      starIcon.setImageResource(R.drawable.ic_star_green_empty);
     }
     else{
       cache.favourite = true;
       isFavourite = true;
       toastMessage("Added to favourites");
 
-      starIcon.setImageResource(R.drawable.star_green_full);
+      starIcon.setImageResource(R.drawable.ic_star_green_full);
     }
     cacheStore.saveCaches();
   }
