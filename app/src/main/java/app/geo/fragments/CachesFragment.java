@@ -30,6 +30,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.AbsListView;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -172,6 +173,15 @@ public class CachesFragment extends ListFragment implements View.OnClickListener
     }
     mode.finish();
     listAdapter.notifyDataSetChanged();
+  }
+
+  public void setListView(ListView listview) {
+
+    listview.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE_MODAL);
+    listview.setMultiChoiceModeListener((AbsListView.MultiChoiceModeListener) getActivity());
+    listview.setAdapter (listAdapter);
+    listview.setOnItemClickListener((AdapterView.OnItemClickListener) getActivity());
+    listview.setEmptyView(getActivity().findViewById(R.id.empty_list_view));
   }
 
   @Override

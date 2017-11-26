@@ -22,6 +22,12 @@
   <string name="delete_selected">Delete Selected</string>
   <string name="current_location">Set to current location</string>
   
+  <string name="recentlyViewedEmptyMessage">No Caches found.</string>
+  
+  <string name="searchCacheHint">Enter Cache Name</string>
+  <string name="searchCacheTypePrompt">Type of Cache</string>
+  <string name="searchCacheResultsLbl">Search Results</string>
+  
   <string name="menu">Geo Menu</string>
   <string name="search">Search</string>
   <string name="map">Map</string>
