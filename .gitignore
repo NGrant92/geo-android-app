@@ -18,3 +18,4 @@ Thumbs.db
 app/libs/
 /.idea/
 /app/src/main/java/app/geo/fragments/MapsFragmentOld.java
+/app/src/main/res/values/keys.xml
