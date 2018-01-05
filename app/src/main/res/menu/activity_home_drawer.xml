@@ -8,11 +8,11 @@
             android:title="@string/home" />
         <item
             android:id="@+id/nav_cache_list"
-            android:icon="@drawable/ic_list"
+            android:icon="@drawable/list"
             android:title="@string/cache_list" />
         <item
             android:id="@+id/nav_my_cache"
-            android:icon="@drawable/ic_locations_white"
+            android:icon="@drawable/locations_white"
             android:title="@string/my_cache" />
         <item
             android:id="@+id/nav_favourites"
@@ -24,7 +24,7 @@
             android:title="@string/add_cache" />
         <item
             android:id="@+id/nav_mail"
-            android:icon="@drawable/ic_mail"
+            android:icon="@drawable/mail"
             android:title="@string/mail" />
         <item
             android:id="@+id/nav_search"
@@ -32,7 +32,7 @@
             android:title="@string/search" />
         <item
             android:id="@+id/nav_camera"
-            android:icon="@drawable/ic_camera"
+            android:icon="@drawable/camera"
             android:title="@string/take_photo" />
     </group>
 

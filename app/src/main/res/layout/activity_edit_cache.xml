@@ -31,7 +31,7 @@
       android:contentDescription="fav"
       android:gravity="center_vertical"
       android:onClick="toggle"
-      android:src="@drawable/ic_star_green_empty"
+      android:src="@drawable/star_green_empty"
       app:layout_constraintHorizontal_bias="0.505"
       app:layout_constraintLeft_toRightOf="@+id/editCacheTitle"
       app:layout_constraintRight_toRightOf="parent"

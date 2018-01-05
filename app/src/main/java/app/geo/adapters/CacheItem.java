@@ -42,10 +42,10 @@ public class CacheItem extends Base {
     ImageView starIcon = (ImageView) view.findViewById(R.id.cacheRowStar);
 
     if(cache.favourite){
-      starIcon.setImageResource(R.drawable.ic_star_green_full);
+      starIcon.setImageResource(R.drawable.star_green_full);
     }
     else{
-      starIcon.setImageResource(R.drawable.ic_star_green_empty);
+      starIcon.setImageResource(R.drawable.star_green_empty);
     }
   }
 }
