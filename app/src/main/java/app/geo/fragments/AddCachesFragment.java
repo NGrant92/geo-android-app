@@ -180,6 +180,7 @@ public class AddCachesFragment extends Fragment implements View.OnClickListener,
         String filename = data.getStringExtra(Camera.EXTRA_PHOTO_FILENAME);
         if (filename != null)
         {
+          Log.v("Geo", filename);
           photo = filename;
           showPhoto(getActivity(), this, photoView );
         }
