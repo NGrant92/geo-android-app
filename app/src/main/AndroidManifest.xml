@@ -44,6 +44,21 @@
         android:value="@string/google_maps_key" />
     
     <activity android:name=".fragments.MapsFragment"/>
+  
+    <activity
+        android:name=".activities.CameraActivity"
+        android:label="@string/app_name">
+    
+      <meta-data android:name="android.support.PARENT_ACTIVITY"
+                 android:value=".activities.PagerActivity"/>
+    </activity>
+    <activity
+        android:name=".activities.GalleryActivity"
+        android:label="@string/app_name">
+    
+      <meta-data android:name="android.support.PARENT_ACTIVITY"
+                 android:value=".activities.PagerActivity"/>
+    </activity>
   </application>
 
 </manifest>
