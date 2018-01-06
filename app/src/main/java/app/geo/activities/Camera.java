@@ -96,6 +96,34 @@ public class Camera extends AppCompatActivity implements OnClickListener
   }
 
   @Override
+  protected void onActivityResult(int requestCode, int resultCode, Intent data)
+  {
+    super.onActivityResult(requestCode, resultCode, data);
+    switch (requestCode)
+    {
+      case Camera.CAMERA_RESULT :
+        if(data != null) {
+          processImage(data);
+        }
+        else {
+          Toast.makeText(this, "Camera failure: check simulated camera present emulator advanced settings",
+              Toast.LENGTH_LONG).show();
+        }
+        break;
+    }
+  }
+
+  private void processImage(Intent data)
+  {
+    cachePhoto = (Bitmap) data.getExtras().get("data");
+    if(cachePhoto == null)
+    {
+      Toast.makeText(this, "Attempt to take photo did not succeed", Toast.LENGTH_SHORT).show();
+    }
+    cacheImage.setImageBitmap(cachePhoto);
+  }
+
+  @Override
   public void onBackPressed() {
     DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
     if (drawer.isDrawerOpen(GravityCompat.START)) {

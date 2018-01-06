@@ -30,6 +30,8 @@ import java.util.List;
 import app.geo.R;
 import app.geo.main.GeoApp;
 import app.geo.models.Cache;
+import static app.geo.helpers.CameraHelper.showPhoto;
+import android.widget.ImageView;
 
 import static app.geo.helpers.MapHelper.getAddress;
 
@@ -44,9 +46,13 @@ import static app.geo.helpers.MapHelper.getAddress;
  */
 public class AddCachesFragment extends Fragment implements View.OnClickListener, OnMapReadyCallback {
 
+  private static final int REQUEST_PHOTO = 0;
   private static View v;
+
   private EditText name, description;
   public String photo = "photo";
+  private ImageView cameraButton;
+  private ImageView photoView;
 
   public GeoApp app = GeoApp.getInstance();
 
@@ -117,7 +123,6 @@ public class AddCachesFragment extends Fragment implements View.OnClickListener,
     }
   }
 
-
   @Override
   public void onMapReady(GoogleMap googleMap) {
     googleMap.clear();
@@ -132,5 +137,12 @@ public class AddCachesFragment extends Fragment implements View.OnClickListener,
           .snippet(c.location)
           .icon(BitmapDescriptorFactory.fromResource(android.R.drawable.star_off)));
     }
+  }
+
+  @Override
+  public void onStart(){
+    super.onStart();
+
+    showPhoto(getActivity(), photoView);
   }
 }
