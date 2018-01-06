@@ -39,7 +39,7 @@
       app:layout_constraintTop_toBottomOf="@+id/addCacheTitle"/>
   
   <ImageButton
-      android:id="@+id/add_cache_camera_button"
+      android:id="@+id/addCacheCameraButton"
       android:layout_width="40dp"
       android:layout_height="40dp"
       android:layout_gravity="top"
@@ -51,7 +51,7 @@
       app:layout_constraintTop_toBottomOf="@+id/addCacheTitle"/>
   
   <ImageView
-      android:id="@+id/add_cache_image"
+      android:id="@+id/addCacheImage"
       android:layout_width="40dp"
       android:layout_height="40dp"
       android:layout_gravity="top|end"
@@ -61,7 +61,7 @@
       android:background="@android:color/darker_gray"
       android:cropToPadding="true"
       android:scaleType="centerInside"
-      app:layout_constraintStart_toEndOf="@+id/camera_button"
+      app:layout_constraintStart_toEndOf="@+id/addCacheCameraButton"
       app:layout_constraintTop_toBottomOf="@+id/addCacheTitle"/>
   
   <EditText
