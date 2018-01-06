@@ -54,7 +54,6 @@ public class GeoHome extends AppCompatActivity
   public GeoApp app = GeoApp.getInstance();
   private ImageView googlePhoto;
   public ProgressDialog dialog;
-  public String photo = "photo";
 
   @Override
   protected void onCreate(Bundle savedInstanceState){

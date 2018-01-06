@@ -18,9 +18,9 @@ public class CameraHelper {
   /**
    * Render the photo on the ImageView
    */
-  public static void showPhoto(Activity activity, GeoHome res, ImageView photoView)
+  public static void showPhoto(Activity activity, AddCachesFragment addC, ImageView photoView)
   {
-    String path = activity.getFileStreamPath(res.photo).getAbsolutePath();
+    String path = activity.getFileStreamPath(addC.photo).getAbsolutePath();
     BitmapDrawable b = getScaledDrawable(activity, path);
     if (b != null)
       photoView.setImageDrawable(b);

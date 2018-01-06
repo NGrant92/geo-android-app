@@ -46,6 +46,7 @@ public class AddCachesFragment extends Fragment implements View.OnClickListener,
 
   private static View v;
   private EditText name, description;
+  public String photo = "photo";
 
   public GeoApp app = GeoApp.getInstance();
 
