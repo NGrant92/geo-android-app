@@ -46,18 +46,18 @@
     <activity android:name=".fragments.MapsFragment"/>
   
     <activity
-        android:name=".activities.CameraActivity"
+        android:name=".activities.Camera"
         android:label="@string/app_name">
     
       <meta-data android:name="android.support.PARENT_ACTIVITY"
-                 android:value=".activities.PagerActivity"/>
+                 android:value=".activities.Pager"/>
     </activity>
     <activity
-        android:name=".activities.GalleryActivity"
+        android:name=".activities.Gallery"
         android:label="@string/app_name">
     
       <meta-data android:name="android.support.PARENT_ACTIVITY"
-                 android:value=".activities.PagerActivity"/>
+                 android:value=".activities.Pager"/>
     </activity>
   </application>
 
