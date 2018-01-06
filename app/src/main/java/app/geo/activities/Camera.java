@@ -2,6 +2,7 @@ package app.geo.activities;
 
 import app.geo.R;
 
+import android.content.pm.PackageManager;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
@@ -10,6 +11,8 @@ import android.view.View.OnClickListener;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.content.Intent;
+import android.widget.Toast;
 
 /**
  * @author Niall Grant 05/11/2017
@@ -31,7 +34,7 @@ public class Camera extends AppCompatActivity implements OnClickListener
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_photo);
 
-    cacheImage = (ImageView) findViewById(R.id.residenceImage);
+    cacheImage = (ImageView) findViewById(R.id.cacheImage);
     takePhoto = (Button)findViewById(R.id.takePhoto);
     savePhoto = (Button)findViewById(R.id.savePhoto);
     savePhoto.setEnabled(false);
@@ -45,8 +48,28 @@ public class Camera extends AppCompatActivity implements OnClickListener
   @Override
   public void onClick(View v)
   {
-    // TODO Auto-generated method stub
+    switch(v.getId())
+    {
+      case R.id.takePhoto: onTakePhotoClicked(v);
+        break;
 
+      case R.id.savePhoto: onPictureTaken(cachePhoto);
+        break;
+    }
+  }
+
+  public void onTakePhotoClicked(View v)
+  {
+    // Check for presence of device camera. If not present advise user and quit method.
+    PackageManager pm = getPackageManager();
+    if (!pm.hasSystemFeature(PackageManager.FEATURE_CAMERA)) {
+      Toast.makeText(this, "Camera app not present on this device", Toast.LENGTH_SHORT).show();
+      return;
+    }
+    // The device has a camera app ... so use it.
+    Intent cameraIntent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
+    startActivityForResult(cameraIntent,CAMERA_RESULT);
+    savePhoto.setEnabled(true);
   }
 
   @Override
@@ -59,5 +82,4 @@ public class Camera extends AppCompatActivity implements OnClickListener
       super.onBackPressed();
     }
   }
-
 }
