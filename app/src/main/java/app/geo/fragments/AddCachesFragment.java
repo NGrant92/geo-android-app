@@ -105,25 +105,33 @@ public class AddCachesFragment extends Fragment implements View.OnClickListener,
   @Override
   public void onClick(View v) {
 
-    if(name.length() == 0 || description.length() == 0){
-      Toast.makeText(getActivity(), "Please ensure no empty fields", Toast.LENGTH_SHORT).show();
-    }
-    else{
-      Cache cache = new Cache(name.getText().toString(),
-          getAddress(app.mCurrentLocation, getActivity()),
-          description.getText().toString(),
-          app.googleToken,
-          app.googleName,
-          app.googleMail,
-          photo,
-          app.mCurrentLocation.getLatitude(),
-          app.mCurrentLocation.getLongitude());
+    switch(v.getId()){
+      case R.id.addCacheCameraButton:
+        Intent ic = new Intent(getActivity(), Camera.class);
+        startActivityForResult(ic, REQUEST_PHOTO);
+        break;
 
-      app.cacheStore.addCache(cache);
-      app.cacheStore.saveCaches();
+      case R.id.addCacheButton:
+        if(name.length() == 0 || description.length() == 0){
+          Toast.makeText(getActivity(), "Please ensure no empty fields", Toast.LENGTH_SHORT).show();
+        }
+        else{
+          Cache cache = new Cache(name.getText().toString(),
+              getAddress(app.mCurrentLocation, getActivity()),
+              description.getText().toString(),
+              app.googleToken,
+              app.googleName,
+              app.googleMail,
+              photo,
+              app.mCurrentLocation.getLatitude(),
+              app.mCurrentLocation.getLongitude());
 
-      Toast.makeText(getActivity(), "Cache Added!", Toast.LENGTH_SHORT).show();
-      //startActivity(new Intent(this, GeoHome.class));
+          app.cacheStore.addCache(cache);
+          app.cacheStore.saveCaches();
+
+          Toast.makeText(getActivity(), "Cache Added!", Toast.LENGTH_SHORT).show();
+          //startActivity(new Intent(this, GeoHome.class));
+        }
     }
   }
 
