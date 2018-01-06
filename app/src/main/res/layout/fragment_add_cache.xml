@@ -26,25 +26,51 @@
       android:layout_height="32dp"
       android:layout_marginEnd="8dp"
       android:layout_marginStart="8dp"
-      android:layout_marginTop="24dp"
+      android:layout_marginTop="28dp"
       android:background="@drawable/background"
-      android:paddingStart="5dp"
-      android:paddingEnd="5dp"
       android:ems="10"
       android:hint="@string/name"
       android:inputType="textPersonName"
+      android:paddingEnd="5dp"
+      android:paddingStart="5dp"
       app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintHorizontal_bias="0.503"
+      app:layout_constraintHorizontal_bias="0.149"
       app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toBottomOf="@+id/addCacheTitle" />
+      app:layout_constraintTop_toBottomOf="@+id/addCacheTitle"/>
+  
+  <ImageButton
+      android:id="@+id/add_cache_camera_button"
+      android:layout_width="40dp"
+      android:layout_height="40dp"
+      android:layout_gravity="top"
+      android:layout_marginStart="8dp"
+      android:layout_marginTop="20dp"
+      android:scaleType="centerInside"
+      android:src="@android:drawable/ic_menu_camera"
+      app:layout_constraintStart_toEndOf="@+id/addCacheName"
+      app:layout_constraintTop_toBottomOf="@+id/addCacheTitle"/>
+  
+  <ImageView
+      android:id="@+id/add_cache_image"
+      android:layout_width="40dp"
+      android:layout_height="40dp"
+      android:layout_gravity="top|end"
+      android:layout_margin="16dp"
+      android:layout_marginStart="8dp"
+      android:layout_marginTop="24dp"
+      android:background="@android:color/darker_gray"
+      android:cropToPadding="true"
+      android:scaleType="centerInside"
+      app:layout_constraintStart_toEndOf="@+id/camera_button"
+      app:layout_constraintTop_toBottomOf="@+id/addCacheTitle"/>
   
   <EditText
       android:id="@+id/addCacheDescription"
-      android:layout_width="214dp"
+      android:layout_width="306dp"
       android:layout_height="77dp"
       android:layout_marginEnd="8dp"
       android:layout_marginStart="8dp"
-      android:layout_marginTop="16dp"
+      android:layout_marginTop="20dp"
       android:background="@drawable/background"
       android:ems="10"
       android:gravity="top"
