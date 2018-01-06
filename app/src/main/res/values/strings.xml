@@ -37,6 +37,9 @@
   <string name="share">Share</string>
   <string name="communicate_locate">Communicate &amp; Locate</string>
   
+  <string name="take_photo">Take Photo</string>
+  <string name="save_photo">Save Photo</string>
+  
   <string name="name">Name</string>
   <string name="firstName">First Name</string>
   <string name="lastName">Last Name</string>
