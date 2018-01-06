@@ -4,9 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/RelativeLayout1"
     android:layout_width="fill_parent"
-    android:layout_height="50dp"
+    android:layout_height="200dp"
     android:padding="8dp"
-    android:background="@drawable/background_activated">
+    android:background="@drawable/border_green">
+  
   
   <ImageView
       android:id="@+id/cacheRowStar"
@@ -17,6 +18,18 @@
       android:contentDescription="fav"
       android:gravity="center_vertical"
       android:src="@drawable/star_green_empty"
+      tools:ignore="HardcodedText"/>
+  
+  <ImageView
+      android:id="@+id/cacheRowPhoto"
+      android:layout_width="30dp"
+      android:layout_height="150dp"
+      android:layout_alignParentBottom="true"
+      android:layout_alignParentEnd="true"
+      android:layout_alignParentStart="true"
+      android:contentDescription="fav"
+      android:gravity="center_vertical"
+      android:src="@drawable/locations"
       tools:ignore="HardcodedText"/>
   
   <TextView

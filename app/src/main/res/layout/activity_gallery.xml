@@ -11,7 +11,7 @@
              tools:context="app.geo.activities.Camera" >
   
   <ImageView
-      android:id="@+id/residenceGalleryImage"
+      android:id="@+id/cacheGalleryImage"
       android:layout_width="match_parent"
       android:layout_height="426dp"
       android:src="@mipmap/ic_launcher" />
