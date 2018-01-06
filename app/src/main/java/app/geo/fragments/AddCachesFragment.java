@@ -97,6 +97,10 @@ public class AddCachesFragment extends Fragment implements View.OnClickListener,
     name = (EditText) v.findViewById(R.id.addCacheName);
     description = (EditText) v.findViewById(R.id.addCacheDescription);
 
+    photoView = (ImageView) v.findViewById(R.id.addCacheImage);
+    cameraButton = (ImageView) v.findViewById(R.id.addCacheCameraButton);
+    cameraButton.setOnClickListener(this);
+
     addCacheButton.setOnClickListener(this);
 
     return v;
@@ -156,12 +160,6 @@ public class AddCachesFragment extends Fragment implements View.OnClickListener,
     super.onStart();
 
     showPhoto(getActivity(), this, photoView);
-  }
-
-  private void addListeners(View v){
-    photoView = (ImageView) v.findViewById(R.id.addCacheImage);
-    cameraButton = (ImageView) v.findViewById(R.id.addCacheCameraButton);
-    cameraButton.setOnClickListener(this);
   }
 
   @Override
