@@ -159,7 +159,7 @@ public class AddCachesFragment extends Fragment implements View.OnClickListener,
   public void onStart(){
     super.onStart();
 
-    showPhoto(getActivity(), this, photoView);
+    showPhoto(getActivity(), photo, photoView);
   }
 
   @Override
@@ -182,7 +182,7 @@ public class AddCachesFragment extends Fragment implements View.OnClickListener,
         {
           Log.v("Geo", filename);
           photo = filename;
-          showPhoto(getActivity(), this, photoView );
+          showPhoto(getActivity(), photo, photoView );
         }
         break;
     }

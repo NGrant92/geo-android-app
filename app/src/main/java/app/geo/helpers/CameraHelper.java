@@ -4,6 +4,7 @@ import java.util.List;
 
 import app.geo.activities.GeoHome;
 import app.geo.fragments.AddCachesFragment;
+import app.geo.models.Cache;
 
 import android.app.Activity;
 import android.graphics.Bitmap;
@@ -18,9 +19,9 @@ public class CameraHelper {
   /**
    * Render the photo on the ImageView
    */
-  public static void showPhoto(Activity activity, AddCachesFragment addC, ImageView photoView)
+  public static void showPhoto(Activity activity, String photo, ImageView photoView)
   {
-    String path = activity.getFileStreamPath(addC.photo).getAbsolutePath();
+    String path = activity.getFileStreamPath(photo).getAbsolutePath();
     BitmapDrawable b = getScaledDrawable(activity, path);
     if (b != null)
       photoView.setImageDrawable(b);
