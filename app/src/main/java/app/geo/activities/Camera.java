@@ -2,6 +2,7 @@ package app.geo.activities;
 
 import app.geo.R;
 
+import android.app.Activity;
 import android.content.pm.PackageManager;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -13,6 +14,11 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.content.Intent;
 import android.widget.Toast;
+import android.graphics.Bitmap;
+
+import java.util.UUID;
+
+import static app.geo.helpers.FileIOHelper.writeBitmap;
 
 /**
  * @author Niall Grant 05/11/2017
@@ -21,12 +27,16 @@ import android.widget.Toast;
  * Main reference source: https://wit-hdip-computer-science.github.io/semester-2-mobile-app-dev/topic11-a/book-a-myrent-11%20(Camera)/index.html
  */
 
+
 public class Camera extends AppCompatActivity implements OnClickListener
 {
+  private static  final int CAMERA_RESULT = 5;
+  public static final String EXTRA_PHOTO_FILENAME = "app.geo.photo.filename";
 
   private Button savePhoto;
   private Button takePhoto;
   private ImageView cacheImage;
+  private Bitmap cachePhoto;
 
   @Override
   protected void onCreate(Bundle savedInstanceState)
@@ -70,6 +80,19 @@ public class Camera extends AppCompatActivity implements OnClickListener
     Intent cameraIntent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
     startActivityForResult(cameraIntent,CAMERA_RESULT);
     savePhoto.setEnabled(true);
+  }
+
+  private void onPictureTaken(Bitmap data) {
+    String filename = UUID.randomUUID().toString() + ".png";
+    if (writeBitmap(this, filename, data) == true) {
+      Intent intent = new Intent();
+      intent.putExtra(EXTRA_PHOTO_FILENAME, filename);
+      setResult(Activity.RESULT_OK, intent);
+    }
+    else {
+      setResult(Activity.RESULT_CANCELED);
+    }
+    finish();
   }
 
   @Override
