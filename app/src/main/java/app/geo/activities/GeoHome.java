@@ -106,9 +106,7 @@ public class GeoHome extends AppCompatActivity
     FragmentTransaction ft = getFragmentManager().beginTransaction();
 
     if (id == R.id.nav_home) {
-      fragment = CachesFragment.newInstance();
-      ((CachesFragment)fragment).favouriteCaches = false;
-      ((CachesFragment)fragment).myCaches = false;
+      fragment = MapsFragment.newInstance();
       ft.replace(R.id.homeFrame, fragment);
       ft.addToBackStack(null);
       ft.commit();
@@ -145,23 +143,6 @@ public class GeoHome extends AppCompatActivity
 
     } else if (id == R.id.nav_mail) {
       fragment = MailFragment.newInstance();
-      ft.replace(R.id.homeFrame, fragment);
-      ft.addToBackStack(null);
-      ft.commit();
-
-    } else if (id == R.id.nav_search) {
-      fragment = CachesFragment.newInstance();
-      ft.replace(R.id.homeFrame, fragment);
-      ft.addToBackStack(null);
-      ft.commit();
-
-    } else if (id == R.id.nav_share) {
-
-    } else if (id == R.id.nav_camera) {
-
-    }
-    else if (id == R.id.nav_map) {
-      fragment = MapsFragment.newInstance();
       ft.replace(R.id.homeFrame, fragment);
       ft.addToBackStack(null);
       ft.commit();

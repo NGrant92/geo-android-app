@@ -26,27 +26,6 @@
             android:id="@+id/nav_mail"
             android:icon="@drawable/mail"
             android:title="@string/mail" />
-        <item
-            android:id="@+id/nav_search"
-            android:icon="@drawable/ic_menu_search"
-            android:title="@string/search" />
-        <item
-            android:id="@+id/nav_camera"
-            android:icon="@drawable/camera"
-            android:title="@string/take_photo" />
     </group>
-
-    <item android:title="@string/communicate_locate">
-        <menu>
-            <item
-                android:id="@+id/nav_share"
-                android:icon="@drawable/ic_menu_share"
-                android:title="@string/share" />
-            <item
-                android:id="@+id/nav_map"
-                android:icon="@drawable/ic_menu_map"
-                android:title="@string/map" />
-        </menu>
-    </item>
 
 </menu>
