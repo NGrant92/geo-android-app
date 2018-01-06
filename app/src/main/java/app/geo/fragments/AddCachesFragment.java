@@ -1,8 +1,10 @@
 package app.geo.fragments;
 
 
+import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentTransaction;
+import android.content.Intent;
 import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
@@ -28,6 +30,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import app.geo.R;
+import app.geo.activities.Camera;
+import app.geo.helpers.ContactHelper;
 import app.geo.main.GeoApp;
 import app.geo.models.Cache;
 import static app.geo.helpers.CameraHelper.showPhoto;
@@ -105,13 +109,13 @@ public class AddCachesFragment extends Fragment implements View.OnClickListener,
       Toast.makeText(getActivity(), "Please ensure no empty fields", Toast.LENGTH_SHORT).show();
     }
     else{
-
       Cache cache = new Cache(name.getText().toString(),
           getAddress(app.mCurrentLocation, getActivity()),
           description.getText().toString(),
           app.googleToken,
           app.googleName,
           app.googleMail,
+          photo,
           app.mCurrentLocation.getLatitude(),
           app.mCurrentLocation.getLongitude());
 
@@ -143,6 +147,37 @@ public class AddCachesFragment extends Fragment implements View.OnClickListener,
   public void onStart(){
     super.onStart();
 
-    showPhoto(getActivity(), photoView);
+    showPhoto(getActivity(), this, photoView);
+  }
+
+  private void addListeners(View v){
+    photoView = (ImageView) v.findViewById(R.id.addCacheImage);
+    cameraButton = (ImageView) v.findViewById(R.id.addCacheCameraButton);
+    cameraButton.setOnClickListener(this);
+  }
+
+  @Override
+  public void onActivityResult(int requestCode, int resultCode, Intent data)
+  {
+    if (resultCode != Activity.RESULT_OK)
+    {
+      return;
+    }
+    switch (requestCode)
+    {
+//      case REQUEST_CONTACT:
+//        String name = ContactHelper.getContact(getActivity(), data);
+//        residence.tenant = name;
+//        tenantButton.setText(name);
+//        break;
+      case REQUEST_PHOTO:
+        String filename = data.getStringExtra(Camera.EXTRA_PHOTO_FILENAME);
+        if (filename != null)
+        {
+          photo = filename;
+          showPhoto(getActivity(), this, photoView );
+        }
+        break;
+    }
   }
 }
