@@ -58,14 +58,14 @@ New*
 
 ##### Images:
 
-![login](http://res.cloudinary.com/ngrant/image/upload/v1515329272/00-login_ywn6xg.png)
+![login](http://res.cloudinary.com/ngrant/image/upload/c_scale,w_400/v1515329272/00-login_ywn6xg.png)
 
-![nav drawer](http://res.cloudinary.com/ngrant/image/upload/v1515329272/02-nav-drawer_h9kyny.png)
+![nav drawer](http://res.cloudinary.com/ngrant/image/upload/c_scale,w_400/v1515329272/02-nav-drawer_h9kyny.png)
 
-![map](http://res.cloudinary.com/ngrant/image/upload/v1515329272/05-map_hb81q8.png)
+![map](http://res.cloudinary.com/ngrant/image/upload/c_scale,w_400/v1515329272/05-map_hb81q8.png)
 
-![add cache](http://res.cloudinary.com/ngrant/image/upload/v1515329272/03-add-cache_aboocl.png)
+![add cache](http://res.cloudinary.com/ngrant/image/upload/c_scale,w_400/v1515329272/03-add-cache_aboocl.png)
 
-![edit cache](http://res.cloudinary.com/ngrant/image/upload/v1515329272/04-edit-cache_czaodw.png)
+![edit cache](http://res.cloudinary.com/ngrant/image/upload/c_scale,w_400/v1515329272/04-edit-cache_czaodw.png)
 
-![cache list](http://res.cloudinary.com/ngrant/image/upload/v1515329273/07-cache-list_nhmycb.png)
+![cache list](http://res.cloudinary.com/ngrant/image/upload/c_scale,w_400/v1515329273/07-cache-list_nhmycb.png)
