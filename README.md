@@ -27,19 +27,25 @@ their settings.
 - Google maps to track location without having to leave the app
 - Email integration
 - User and Cache persistence
+- Add cache location using maps*
+- Edit location of Cache*
+- Tracking Caches in map*
+- List of favourite caches*
+- Add Images to Caches*
+- Google Account Sign In*
+
+*- New
 
 ##### Features in Development:
 
-- List of favourite caches
-- Tracking Caches in map
-- Add cache location using maps
 - Star rating for each caches
 - A list of players who visted the cache
 - A scoreboard for players who earned points finding caches
 
 ##### References:
 
-- Most of the code is based on the MyRent and CoffeeMate labs on https://edge.moodle.wit.ie/
+- Most of the code is based on the MyRent and CoffeeMate labs: https://edge.moodle.wit.ie/
+- Camera integration: https://wit-hdip-computer-science.github.io/semester-2-mobile-app-dev/topic11-a/index.html
 - onBackPressed() in Welcome and GeoMenu: https://stackoverflow.com/a/26492794
 
 

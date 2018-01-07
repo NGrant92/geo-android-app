@@ -84,7 +84,7 @@ public class Camera extends AppCompatActivity implements OnClickListener
 
   private void onPictureTaken(Bitmap data) {
     String filename = UUID.randomUUID().toString() + ".png";
-    if (writeBitmap(this, filename, data) == true) {
+    if (writeBitmap(this, filename, data)) {
       Intent intent = new Intent();
       intent.putExtra(EXTRA_PHOTO_FILENAME, filename);
       setResult(Activity.RESULT_OK, intent);
