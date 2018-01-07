@@ -15,7 +15,7 @@ online, others can go visit it and usually leave notes for the next visitors.
 
 This app allows users to create/update/delete their own caches while also being able to view other
 user caches. Users can also favourite any cache they wish. There is a built in map so the user can
-track their location without leaving the app, along wither built in Email and and the ability to update
+track their location without leaving the app, along with built in Email and and the ability to update
 their settings.
 
 ### Details:
